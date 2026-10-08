@@ -274,7 +274,7 @@ export default function RiskDashboardView({
           const categoryLabel =
             CLAUSE_CATEGORIES[finding.clause_category] || finding.clause_category
           const isExpanded = expandedCardIndices.has(idx)
-          const evConfig = EVIDENCE_STATUSES[finding.evidence_status] || EVIDENCE_STATUSES.verified
+          const evConfig = EVIDENCE_STATUSES[finding.evidence_status] || EVIDENCE_STATUSES.needs_review
 
           return (
             <div
@@ -288,7 +288,7 @@ export default function RiskDashboardView({
                     {riskConfig.label}
                   </span>
                   <h3 className="font-sans text-lg sm:text-xl font-semibold text-[#F2F5F0]">
-                    {categoryLabel} Risk
+                    {categoryLabel} {finding.finding_status === 'compliant' ? '— Compliant' : finding.potential_omission ? '— Potential omission' : 'Risk'}
                   </h3>
                 </div>
 
@@ -369,7 +369,7 @@ export default function RiskDashboardView({
                       </div>
                     ) : finding.potential_omission ? (
                       <div className="p-3 rounded-lg bg-[#180E10] border border-[#F87171]/30 text-[#F87171]">
-                        Potential Omission: Required clause terms not found in document text.
+                        Potential omission — absence and policy applicability require human review.
                       </div>
                     ) : null}
 

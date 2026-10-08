@@ -1,10 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import { ANALYSIS_STAGES } from '../types/constants'
-import { IconSparkles, IconCheckCircle, IconClock } from './icons/Icons'
+import { IconSparkles, IconClock } from './icons/Icons'
 
 export default function AnalysisProgressModal({ isOpen, onCancel }) {
   const [elapsedSeconds, setElapsedSeconds] = useState(0)
-  const [currentStageIndex, setCurrentStageIndex] = useState(0)
 
   useEffect(() => {
     if (!isOpen) return
@@ -13,18 +12,8 @@ export default function AnalysisProgressModal({ isOpen, onCancel }) {
       setElapsedSeconds((prev) => prev + 1)
     }, 1000)
 
-    const stageInterval = setInterval(() => {
-      setCurrentStageIndex((prev) => {
-        if (prev < ANALYSIS_STAGES.length - 1) {
-          return prev + 1
-        }
-        return prev
-      })
-    }, 11000)
-
     return () => {
       clearInterval(timer)
-      clearInterval(stageInterval)
     }
   }, [isOpen])
 
@@ -52,61 +41,22 @@ export default function AnalysisProgressModal({ isOpen, onCancel }) {
 
         {/* Informative Note */}
         <div className="mt-4 p-3.5 rounded-xl bg-[#080B0A] border border-[rgba(197,245,213,0.08)] text-xs text-[#8A9B91] font-sans">
-          <span className="font-semibold text-[#C5F5D5]">Auditable Pipeline:</span> Deep semantic analysis against your corporate playbook with Gemini reasoning and Ollama vector retrieval. Every finding is checked against original text tokens.
+          <span className="font-semibold text-[#C5F5D5]">Auditable Pipeline:</span> Deep semantic analysis against your corporate playbook with Gemini reasoning and Ollama vector retrieval. Quoted evidence is checked against extracted text; potential omissions require review. Pipeline steps below are informational; the server does not stream stage completion.
         </div>
 
         {/* Clear Stages List (No fake percentage) */}
         <div className="mt-6 space-y-3">
-          {ANALYSIS_STAGES.map((stage, idx) => {
-            const isCompleted = idx < currentStageIndex
-            const isCurrent = idx === currentStageIndex
-
-            return (
-              <div
-                key={stage.id}
-                className={`p-3.5 rounded-xl border transition-all flex items-start gap-3 ${
-                  isCurrent
-                    ? 'bg-[#15231B] border-[#C5F5D5]/40 text-[#F2F5F0]'
-                    : isCompleted
-                    ? 'bg-[#080B0A] border-[rgba(197,245,213,0.1)] text-[#8A9B91]'
-                    : 'bg-[#080B0A]/50 border-white/5 text-[#8A9B91]/50'
-                }`}
-              >
-                <div className="mt-0.5">
-                  {isCompleted ? (
-                    <IconCheckCircle className="w-5 h-5 text-[#C5F5D5]" />
-                  ) : isCurrent ? (
-                    <div className="w-5 h-5 rounded-full border-2 border-t-[#C5F5D5] border-[rgba(197,245,213,0.2)] animate-spin" />
-                  ) : (
-                    <div className="w-5 h-5 rounded-full border border-white/10 flex items-center justify-center text-[10px] text-[#8A9B91] font-mono">
-                      {idx + 1}
-                    </div>
-                  )}
-                </div>
-
-                <div className="flex-1">
-                  <div className="flex items-center justify-between">
-                    <span
-                      className={`text-sm font-sans font-medium ${
-                        isCurrent ? 'text-[#C5F5D5]' : isCompleted ? 'text-[#F2F5F0]' : 'text-[#8A9B91]'
-                      }`}
-                    >
-                      {stage.label}
-                    </span>
-                    <span className="text-[10px] font-mono uppercase tracking-wider text-[#8A9B91]">
-                      {isCompleted ? 'Verified' : isCurrent ? 'Active' : 'Pending'}
-                    </span>
-                  </div>
-                  <p className="text-xs text-[#8A9B91] mt-0.5">{stage.detail}</p>
-                </div>
-              </div>
-            )
-          })}
+          {ANALYSIS_STAGES.map((stage, idx) => (
+            <div key={stage.id} className="p-3.5 rounded-xl border border-white/10 bg-[#080B0A] flex items-start gap-3">
+              <span className="text-[#C5F5D5] font-mono text-xs">{idx + 1}</span>
+              <div><h4 className="text-sm text-[#F2F5F0]">{stage.label}</h4><p className="text-xs text-[#8A9B91] mt-0.5">{stage.detail}</p></div>
+            </div>
+          ))}
         </div>
 
         {/* Footer */}
         <div className="mt-8 pt-4 border-t border-[rgba(197,245,213,0.08)] flex items-center justify-between text-xs font-mono text-[#8A9B91]">
-          <span>Standard analysis runs between 40–90 seconds</span>
+          <span>Waiting for server response — duration varies</span>
           {onCancel && (
             <button
               onClick={onCancel}

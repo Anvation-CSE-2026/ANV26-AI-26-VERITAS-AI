@@ -8,7 +8,7 @@ export default defineConfig(({ mode }) => {
     plugins: [react(), tailwindcss()],
     server: {
       host: '127.0.0.1', port: 5173, strictPort: true,
-      proxy: { '/api': {
+      proxy: { '/health': { target: env.BACKEND_URL || 'http://127.0.0.1:8000', changeOrigin: true }, '/api': {
         target: env.BACKEND_URL || 'http://127.0.0.1:8000',
         changeOrigin: true,
         rewrite: (path) => path,

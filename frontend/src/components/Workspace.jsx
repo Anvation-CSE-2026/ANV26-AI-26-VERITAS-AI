@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import Navigation from './Navigation'
 import ErrorBanner from './ErrorBanner'
 import AnalysisProgressModal from './AnalysisProgressModal'
@@ -34,9 +34,12 @@ export default function Workspace({
   const [selectedFinding, setSelectedFinding] = useState(null)
   const { isAuthenticated, openAuthModal, isExpired, openQuotaModal } = useAuth()
 
+  const quotaErrorRef = useRef(null)
+
   // Catch HTTP 429 quota exhaustion and open the upgrade dialog
   useEffect(() => {
-    if (error && (error.status === 429 || error.state === 'quota_exhausted')) {
+    if (error?.state === 'quota_exhausted' && quotaErrorRef.current !== error) {
+      quotaErrorRef.current = error
       openQuotaModal(error)
     }
   }, [error, openQuotaModal])
@@ -199,7 +202,7 @@ export default function Workspace({
       </main>
 
       {/* Synchronous Analysis Progress Modal */}
-      <AnalysisProgressModal isOpen={isAnalyzing} />
+      <AnalysisProgressModal key={isAnalyzing ? 'running' : 'idle'} isOpen={isAnalyzing} />
 
       {/* Minimal Footer */}
       <footer className="border-t border-[rgba(197,245,213,0.08)] py-6 px-6 text-center text-xs text-[#8A9B91]">

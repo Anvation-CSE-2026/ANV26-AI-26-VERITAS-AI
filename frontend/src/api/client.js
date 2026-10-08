@@ -5,7 +5,16 @@
  * - docs/BILLING_API_CONTRACT.md
  */
 
-export const API_BASE_URL = (import.meta.env.VITE_API_BASE_URL || 'http://127.0.0.1:8000').replace(/\/$/, '')
+// Blank uses the same-origin development proxy; set an explicit origin for separate deployments.
+export const API_BASE_URL = (import.meta.env.VITE_API_BASE_URL || '').replace(/\/$/, '')
+
+async function request(url, options) {
+  try { return await fetch(url, options) }
+  catch (err) {
+    if (err.name === 'AbortError' || err.name === 'TimeoutError') throw err
+    throw { status: 0, message: 'Cannot reach the backend. Start FastAPI on port 8000, then retry. Check the API URL if using a separate deployment.' }
+  }
+}
 
 const TOKEN_STORAGE_KEY = 'veritas_jwt_token'
 
@@ -120,7 +129,7 @@ export async function parseErrorResponse(response) {
  */
 export async function checkHealth(signal) {
   try {
-    const res = await fetch(`${API_BASE_URL}/health`, {
+    const res = await request(`${API_BASE_URL}/health`, {
       method: 'GET',
       headers: { Accept: 'application/json' },
       signal: signal || AbortSignal.timeout(5000),
@@ -144,7 +153,7 @@ export async function checkHealth(signal) {
  * POST /api/auth/register
  */
 export async function registerUser(email, password, signal) {
-  const res = await fetch(`${API_BASE_URL}/api/auth/register`, {
+  const res = await request(`${API_BASE_URL}/api/auth/register`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -169,7 +178,7 @@ export async function registerUser(email, password, signal) {
  * POST /api/auth/login
  */
 export async function loginUser(email, password, signal) {
-  const res = await fetch(`${API_BASE_URL}/api/auth/login`, {
+  const res = await request(`${API_BASE_URL}/api/auth/login`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -194,7 +203,7 @@ export async function loginUser(email, password, signal) {
  * GET /api/auth/me
  */
 export async function getCurrentUser(signal) {
-  const res = await fetch(`${API_BASE_URL}/api/auth/me`, {
+  const res = await request(`${API_BASE_URL}/api/auth/me`, {
     method: 'GET',
     headers: getAuthHeaders({ Accept: 'application/json' }),
     signal,
@@ -212,7 +221,7 @@ export async function getCurrentUser(signal) {
  */
 export async function logoutUser(signal) {
   try {
-    await fetch(`${API_BASE_URL}/api/auth/logout`, {
+    await request(`${API_BASE_URL}/api/auth/logout`, {
       method: 'POST',
       headers: getAuthHeaders({ Accept: 'application/json' }),
       signal,
@@ -231,7 +240,7 @@ export async function logoutUser(signal) {
  * GET /api/billing/plans
  */
 export async function getBillingPlans(signal) {
-  const res = await fetch(`${API_BASE_URL}/api/billing/plans`, {
+  const res = await request(`${API_BASE_URL}/api/billing/plans`, {
     method: 'GET',
     headers: { Accept: 'application/json' },
     signal,
@@ -249,7 +258,7 @@ export async function getBillingPlans(signal) {
  * Body: { plan: "standard" | "pro" }
  */
 export async function startFreeTrial(plan = 'standard', signal) {
-  const res = await fetch(`${API_BASE_URL}/api/billing/trial/start`, {
+  const res = await request(`${API_BASE_URL}/api/billing/trial/start`, {
     method: 'POST',
     headers: getAuthHeaders({
       'Content-Type': 'application/json',
@@ -270,7 +279,7 @@ export async function startFreeTrial(plan = 'standard', signal) {
  * GET /api/billing/subscription
  */
 export async function getUserSubscription(signal) {
-  const res = await fetch(`${API_BASE_URL}/api/billing/subscription`, {
+  const res = await request(`${API_BASE_URL}/api/billing/subscription`, {
     method: 'GET',
     headers: getAuthHeaders({ Accept: 'application/json' }),
     signal,
@@ -288,7 +297,7 @@ export async function getUserSubscription(signal) {
  * Body: { plan: "standard" | "pro" }
  */
 export async function createCheckout(plan = 'pro', signal) {
-  const res = await fetch(`${API_BASE_URL}/api/billing/checkout`, {
+  const res = await request(`${API_BASE_URL}/api/billing/checkout`, {
     method: 'POST',
     headers: getAuthHeaders({
       'Content-Type': 'application/json',
@@ -310,7 +319,7 @@ export async function createCheckout(plan = 'pro', signal) {
  * Body: { razorpay_payment_id, razorpay_subscription_id, razorpay_signature }
  */
 export async function verifyPayment(paymentData, signal) {
-  const res = await fetch(`${API_BASE_URL}/api/billing/verify`, {
+  const res = await request(`${API_BASE_URL}/api/billing/verify`, {
     method: 'POST',
     headers: getAuthHeaders({
       'Content-Type': 'application/json',
@@ -331,7 +340,7 @@ export async function verifyPayment(paymentData, signal) {
  * POST /api/billing/cancel
  */
 export async function cancelSubscription(signal) {
-  const res = await fetch(`${API_BASE_URL}/api/billing/cancel`, {
+  const res = await request(`${API_BASE_URL}/api/billing/cancel`, {
     method: 'POST',
     headers: getAuthHeaders({
       Accept: 'application/json',
@@ -359,7 +368,7 @@ export async function uploadContract(file, signal) {
   const formData = new FormData()
   formData.append('file', file)
 
-  const res = await fetch(`${API_BASE_URL}/api/contracts/upload`, {
+  const res = await request(`${API_BASE_URL}/api/contracts/upload`, {
     method: 'POST',
     headers: getAuthHeaders(),
     body: formData,
@@ -380,7 +389,7 @@ export async function uploadContract(file, signal) {
  * Returns Analysis (HTTP 200)
  */
 export async function analyzeContract(contractId, signal) {
-  const res = await fetch(`${API_BASE_URL}/api/analyze`, {
+  const res = await request(`${API_BASE_URL}/api/analyze`, {
     method: 'POST',
     headers: getAuthHeaders({
       'Content-Type': 'application/json',
@@ -402,7 +411,7 @@ export async function analyzeContract(contractId, signal) {
  * Returns Analysis (status: "completed"|"partial") or AnalysisFailure (status: "failed")
  */
 export async function getAnalysis(analysisId, signal) {
-  const res = await fetch(`${API_BASE_URL}/api/analysis/${encodeURIComponent(analysisId)}`, {
+  const res = await request(`${API_BASE_URL}/api/analysis/${encodeURIComponent(analysisId)}`, {
     method: 'GET',
     headers: getAuthHeaders({ Accept: 'application/json' }),
     signal,
@@ -424,7 +433,7 @@ import fallbackDemoData from './demoData.json'
  */
 export async function getDemoAnalysis(signal) {
   try {
-    const res = await fetch(`${API_BASE_URL}/api/demo/analysis`, {
+    const res = await request(`${API_BASE_URL}/api/demo/analysis`, {
       method: 'GET',
       headers: { Accept: 'application/json' },
       signal,
