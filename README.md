@@ -1,5 +1,11 @@
 ﻿# VERITAS AI
 
+ Businesses, startups, and individuals frequently enter into legally binding contracts without fully understanding their risks, obligations, and potentially unfavorable clauses.
+
+Traditional contract review is time-consuming, expensive, and often requires specialized legal expertise. Manual reviews can overlook critical issues such as unfair liability provisions, ambiguous terms, unfavorable termination conditions, intellectual property risks, and data privacy obligations.
+
+The challenge is to develop an AI-powered contract intelligence platform that automatically analyzes uploaded legal agreements, identifies potentially risky clauses, extracts contractual obligations, and provides clear, actionable recommendations supported by evidence from the original document.
+
 Evidence-grounded contract analysis MVP: PDF extraction, local Ollama policy retrieval, structured Gemini findings, and deterministic evidence checks. The existing React landing page and health endpoint are preserved. Decision support, not legal advice.
 
 ## Requirements
