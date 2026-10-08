@@ -1,0 +1,496 @@
+{
+  "label": "SAMPLE ANALYSIS — DEMO DATA",
+  "output_origin": "synthetic_demo",
+  "live_ai_used": false,
+  "description": "Hand-authored precomputed analysis of a synthetic contract against a synthetic company playbook; no live Gemini claims.",
+  "contract": {
+    "contract_id": "synthetic-demo-contract-v1",
+    "filename": "SYNTHETIC-DEMO.pdf",
+    "pages": [
+      {
+        "page_number": 1,
+        "text": "SYNTHETIC SUPPLIER AGREEMENT - TEST FIXTURE\n\n\n1. Liability\nSupplier liability is capped at USD 100 in aggregate, including data breaches and confidentiality\nbreaches.\n\n2. Indemnification\nThe Company shall indemnify Supplier against all third-party claims, including claims caused by\nSupplier negligence. Supplier has no duty to defend intellectual property infringement claims.\n\n3. Termination\nThe Company may terminate for convenience only on 90 days notice and must pay an early termination\nfee equal to all remaining contract fees.\n\n4. Confidentiality\nSupplier shall keep Company confidential information secret during the agreement and for one year\nafter termination."
+      },
+      {
+        "page_number": 2,
+        "text": "SYNTHETIC SUPPLIER AGREEMENT - PAGE 2\n\n\n5. Payment\nThe Company shall pay each invoice within 10 days after receipt. Late amounts accrue interest at 3\npercent per month. The Company may not withhold disputed amounts.\n\n6. Data Protection\nSupplier shall notify the Company within 7 days of discovering a personal data breach. Supplier shall\ndelete Company personal data within 60 days after termination. Supplier shall implement appropriate\nsecurity measures.\n\n7. Intellectual Property\nSupplier owns all bespoke deliverables. The Company receives a revocable license to use deliverables\nonly during the agreement.\n\n8. Reporting\nSupplier shall deliver a monthly service report to the Company by the fifth day of each month."
+      }
+    ],
+    "clauses": [
+      {
+        "clause_id": "P001-C001",
+        "page_number": 1,
+        "text": "SYNTHETIC SUPPLIER AGREEMENT - TEST FIXTURE",
+        "start_offset": 0,
+        "end_offset": 43
+      },
+      {
+        "clause_id": "P001-C002",
+        "page_number": 1,
+        "text": "1. Liability\nSupplier liability is capped at USD 100 in aggregate, including data breaches and confidentiality\nbreaches.",
+        "start_offset": 46,
+        "end_offset": 166
+      },
+      {
+        "clause_id": "P001-C003",
+        "page_number": 1,
+        "text": "2. Indemnification\nThe Company shall indemnify Supplier against all third-party claims, including claims caused by\nSupplier negligence. Supplier has no duty to defend intellectual property infringement claims.",
+        "start_offset": 168,
+        "end_offset": 377
+      },
+      {
+        "clause_id": "P001-C004",
+        "page_number": 1,
+        "text": "3. Termination\nThe Company may terminate for convenience only on 90 days notice and must pay an early termination\nfee equal to all remaining contract fees.",
+        "start_offset": 379,
+        "end_offset": 534
+      },
+      {
+        "clause_id": "P001-C005",
+        "page_number": 1,
+        "text": "4. Confidentiality\nSupplier shall keep Company confidential information secret during the agreement and for one year\nafter termination.",
+        "start_offset": 536,
+        "end_offset": 671
+      },
+      {
+        "clause_id": "P002-C001",
+        "page_number": 2,
+        "text": "SYNTHETIC SUPPLIER AGREEMENT - PAGE 2",
+        "start_offset": 0,
+        "end_offset": 37
+      },
+      {
+        "clause_id": "P002-C002",
+        "page_number": 2,
+        "text": "5. Payment\nThe Company shall pay each invoice within 10 days after receipt. Late amounts accrue interest at 3\npercent per month. The Company may not withhold disputed amounts.",
+        "start_offset": 40,
+        "end_offset": 215
+      },
+      {
+        "clause_id": "P002-C003",
+        "page_number": 2,
+        "text": "6. Data Protection\nSupplier shall notify the Company within 7 days of discovering a personal data breach. Supplier shall\ndelete Company personal data within 60 days after termination. Supplier shall implement appropriate\nsecurity measures.",
+        "start_offset": 217,
+        "end_offset": 456
+      },
+      {
+        "clause_id": "P002-C004",
+        "page_number": 2,
+        "text": "7. Intellectual Property\nSupplier owns all bespoke deliverables. The Company receives a revocable license to use deliverables\nonly during the agreement.",
+        "start_offset": 458,
+        "end_offset": 610
+      },
+      {
+        "clause_id": "P002-C005",
+        "page_number": 2,
+        "text": "8. Reporting\nSupplier shall deliver a monthly service report to the Company by the fifth day of each month.",
+        "start_offset": 612,
+        "end_offset": 719
+      }
+    ],
+    "warnings": []
+  },
+  "playbook": {
+    "playbook_id": "sample-company-policy",
+    "version": "1.0",
+    "description": "Synthetic demonstration policy, not a statement of actual company requirements.",
+    "rules": [
+      {
+        "policy_id": "POL-LIAB-001",
+        "category": "liability",
+        "rule": "Aggregate supplier liability must be at least the fees paid or payable in the preceding 12 months. Fraud, willful misconduct, confidentiality breaches, and data protection breaches must be excluded from the cap.",
+        "recommended_action": "Negotiate an adequate cap and explicit exclusions."
+      },
+      {
+        "policy_id": "POL-INDEM-001",
+        "category": "indemnification",
+        "rule": "The supplier must defend and indemnify the company against third-party intellectual property infringement claims arising from supplier deliverables. The company must not give an unlimited indemnity for supplier misconduct.",
+        "recommended_action": "Add supplier IP indemnification and limit company indemnity."
+      },
+      {
+        "policy_id": "POL-TERM-001",
+        "category": "termination",
+        "rule": "The company must be able to terminate for material breach after a cure period of no more than 30 days and terminate for convenience on no more than 30 days notice without a penalty.",
+        "recommended_action": "Add company termination rights and remove early termination penalties."
+      },
+      {
+        "policy_id": "POL-CONF-001",
+        "category": "confidentiality",
+        "rule": "Both parties must protect confidential information, restrict use to contract performance, and preserve confidentiality for at least three years after termination, with trade secrets protected while they remain trade secrets.",
+        "recommended_action": "Make confidentiality mutual and extend survival and trade secret protection."
+      },
+      {
+        "policy_id": "POL-PAY-001",
+        "category": "payment",
+        "rule": "Undisputed invoices must be payable no earlier than 30 days after receipt. The company must be allowed to withhold disputed amounts in good faith and late charges must not exceed 1 percent per month.",
+        "recommended_action": "Negotiate net 30 payment, a dispute process, and capped late charges."
+      },
+      {
+        "policy_id": "POL-DATA-001",
+        "category": "data_protection",
+        "rule": "The supplier must notify the company of a personal data breach within 48 hours of discovery, implement appropriate security measures, and delete or return company personal data within 30 days after termination.",
+        "recommended_action": "Add a 48-hour breach notification deadline, security duties, and timely data deletion or return."
+      },
+      {
+        "policy_id": "POL-IP-001",
+        "category": "intellectual_property",
+        "rule": "The company must own bespoke deliverables paid for under the agreement or receive a perpetual, irrevocable, worldwide license sufficient to use and modify them. Pre-existing supplier IP must be identified separately.",
+        "recommended_action": "Assign bespoke deliverables or secure a sufficient perpetual license."
+      }
+    ]
+  },
+  "analysis": {
+    "gemini_attempts": 0,
+    "gemini_response_model": null,
+    "processing_seconds": 0.0,
+    "output_origin": "synthetic_demo",
+    "requires_human_review": true,
+    "document_instruction_alerts": [],
+    "analysis_id": "synthetic-demo-analysis-v1",
+    "contract_id": "synthetic-demo-contract-v1",
+    "created_at": "2026-10-08T06:32:10.540588Z",
+    "status": "completed",
+    "gemini_model": "not_used",
+    "embedding_model": "not_used",
+    "playbook_id": "sample-company-policy",
+    "playbook_version": "1.0",
+    "findings": [
+      {
+        "finding_status": "risky",
+        "policy_requirement": "Aggregate supplier liability must be at least the fees paid or payable in the preceding 12 months. Fraud, willful misconduct, confidentiality breaches, and data protection breaches must be excluded from the cap.",
+        "referenced_parties": [],
+        "referenced_dates": [],
+        "policy_match_reliable": true,
+        "uncertainty": null,
+        "unsupported_assumptions": [],
+        "risk_level": "high",
+        "clause_category": "liability",
+        "explanation": "Hand-authored demo interpretation: The USD 100 cap expressly includes data and confidentiality breaches, while the sample policy requires exclusions and a fee-based minimum.",
+        "evidence_quote": "1. Liability\nSupplier liability is capped at USD 100 in aggregate, including data breaches and confidentiality\nbreaches.",
+        "page_number": 1,
+        "clause_id": "P001-C002",
+        "policy_id": "POL-LIAB-001",
+        "recommended_action": "Negotiate an adequate cap and explicit exclusions.",
+        "applicable_policy_rule": {
+          "policy_id": "POL-LIAB-001",
+          "category": "liability",
+          "rule": "Aggregate supplier liability must be at least the fees paid or payable in the preceding 12 months. Fraud, willful misconduct, confidentiality breaches, and data protection breaches must be excluded from the cap.",
+          "recommended_action": "Negotiate an adequate cap and explicit exclusions."
+        },
+        "evidence_verified": true,
+        "evidence_status": "verified",
+        "source_facts": {
+          "clause_id": "P001-C002",
+          "page_number": 1,
+          "evidence_quote": "1. Liability\nSupplier liability is capped at USD 100 in aggregate, including data breaches and confidentiality\nbreaches.",
+          "referenced_parties": [],
+          "referenced_dates": []
+        },
+        "model_interpretation": {
+          "finding_status": "risky",
+          "explanation": "Hand-authored demo interpretation: The USD 100 cap expressly includes data and confidentiality breaches, while the sample policy requires exclusions and a fee-based minimum.",
+          "recommended_action": "Negotiate an adequate cap and explicit exclusions.",
+          "uncertainty": null,
+          "unsupported_assumptions": []
+        },
+        "potential_omission": false,
+        "complete_document_review_required": false,
+        "absence_confirmed": false
+      },
+      {
+        "finding_status": "risky",
+        "policy_requirement": "The supplier must defend and indemnify the company against third-party intellectual property infringement claims arising from supplier deliverables. The company must not give an unlimited indemnity for supplier misconduct.",
+        "referenced_parties": [],
+        "referenced_dates": [],
+        "policy_match_reliable": true,
+        "uncertainty": null,
+        "unsupported_assumptions": [],
+        "risk_level": "high",
+        "clause_category": "indemnification",
+        "explanation": "Hand-authored demo interpretation: The Company indemnifies Supplier even for Supplier negligence, while Supplier expressly has no duty to defend IP claims.",
+        "evidence_quote": "2. Indemnification\nThe Company shall indemnify Supplier against all third-party claims, including claims caused by\nSupplier negligence. Supplier has no duty to defend intellectual property infringement claims.",
+        "page_number": 1,
+        "clause_id": "P001-C003",
+        "policy_id": "POL-INDEM-001",
+        "recommended_action": "Add supplier IP indemnification and limit company indemnity.",
+        "applicable_policy_rule": {
+          "policy_id": "POL-INDEM-001",
+          "category": "indemnification",
+          "rule": "The supplier must defend and indemnify the company against third-party intellectual property infringement claims arising from supplier deliverables. The company must not give an unlimited indemnity for supplier misconduct.",
+          "recommended_action": "Add supplier IP indemnification and limit company indemnity."
+        },
+        "evidence_verified": true,
+        "evidence_status": "verified",
+        "source_facts": {
+          "clause_id": "P001-C003",
+          "page_number": 1,
+          "evidence_quote": "2. Indemnification\nThe Company shall indemnify Supplier against all third-party claims, including claims caused by\nSupplier negligence. Supplier has no duty to defend intellectual property infringement claims.",
+          "referenced_parties": [],
+          "referenced_dates": []
+        },
+        "model_interpretation": {
+          "finding_status": "risky",
+          "explanation": "Hand-authored demo interpretation: The Company indemnifies Supplier even for Supplier negligence, while Supplier expressly has no duty to defend IP claims.",
+          "recommended_action": "Add supplier IP indemnification and limit company indemnity.",
+          "uncertainty": null,
+          "unsupported_assumptions": []
+        },
+        "potential_omission": false,
+        "complete_document_review_required": false,
+        "absence_confirmed": false
+      },
+      {
+        "finding_status": "risky",
+        "policy_requirement": "The company must be able to terminate for material breach after a cure period of no more than 30 days and terminate for convenience on no more than 30 days notice without a penalty.",
+        "referenced_parties": [],
+        "referenced_dates": [],
+        "policy_match_reliable": true,
+        "uncertainty": null,
+        "unsupported_assumptions": [],
+        "risk_level": "medium",
+        "clause_category": "termination",
+        "explanation": "Hand-authored demo interpretation: The 90-day notice and remaining-fees penalty conflict with the sample convenience-termination requirements.",
+        "evidence_quote": "3. Termination\nThe Company may terminate for convenience only on 90 days notice and must pay an early termination\nfee equal to all remaining contract fees.",
+        "page_number": 1,
+        "clause_id": "P001-C004",
+        "policy_id": "POL-TERM-001",
+        "recommended_action": "Add company termination rights and remove early termination penalties.",
+        "applicable_policy_rule": {
+          "policy_id": "POL-TERM-001",
+          "category": "termination",
+          "rule": "The company must be able to terminate for material breach after a cure period of no more than 30 days and terminate for convenience on no more than 30 days notice without a penalty.",
+          "recommended_action": "Add company termination rights and remove early termination penalties."
+        },
+        "evidence_verified": true,
+        "evidence_status": "verified",
+        "source_facts": {
+          "clause_id": "P001-C004",
+          "page_number": 1,
+          "evidence_quote": "3. Termination\nThe Company may terminate for convenience only on 90 days notice and must pay an early termination\nfee equal to all remaining contract fees.",
+          "referenced_parties": [],
+          "referenced_dates": []
+        },
+        "model_interpretation": {
+          "finding_status": "risky",
+          "explanation": "Hand-authored demo interpretation: The 90-day notice and remaining-fees penalty conflict with the sample convenience-termination requirements.",
+          "recommended_action": "Add company termination rights and remove early termination penalties.",
+          "uncertainty": null,
+          "unsupported_assumptions": []
+        },
+        "potential_omission": false,
+        "complete_document_review_required": false,
+        "absence_confirmed": false
+      },
+      {
+        "finding_status": "risky",
+        "policy_requirement": "Both parties must protect confidential information, restrict use to contract performance, and preserve confidentiality for at least three years after termination, with trade secrets protected while they remain trade secrets.",
+        "referenced_parties": [],
+        "referenced_dates": [],
+        "policy_match_reliable": true,
+        "uncertainty": null,
+        "unsupported_assumptions": [],
+        "risk_level": "medium",
+        "clause_category": "confidentiality",
+        "explanation": "Hand-authored demo interpretation: The one-year confidentiality survival period is shorter than the sample three-year requirement.",
+        "evidence_quote": "4. Confidentiality\nSupplier shall keep Company confidential information secret during the agreement and for one year\nafter termination.",
+        "page_number": 1,
+        "clause_id": "P001-C005",
+        "policy_id": "POL-CONF-001",
+        "recommended_action": "Make confidentiality mutual and extend survival and trade secret protection.",
+        "applicable_policy_rule": {
+          "policy_id": "POL-CONF-001",
+          "category": "confidentiality",
+          "rule": "Both parties must protect confidential information, restrict use to contract performance, and preserve confidentiality for at least three years after termination, with trade secrets protected while they remain trade secrets.",
+          "recommended_action": "Make confidentiality mutual and extend survival and trade secret protection."
+        },
+        "evidence_verified": true,
+        "evidence_status": "verified",
+        "source_facts": {
+          "clause_id": "P001-C005",
+          "page_number": 1,
+          "evidence_quote": "4. Confidentiality\nSupplier shall keep Company confidential information secret during the agreement and for one year\nafter termination.",
+          "referenced_parties": [],
+          "referenced_dates": []
+        },
+        "model_interpretation": {
+          "finding_status": "risky",
+          "explanation": "Hand-authored demo interpretation: The one-year confidentiality survival period is shorter than the sample three-year requirement.",
+          "recommended_action": "Make confidentiality mutual and extend survival and trade secret protection.",
+          "uncertainty": null,
+          "unsupported_assumptions": []
+        },
+        "potential_omission": false,
+        "complete_document_review_required": false,
+        "absence_confirmed": false
+      },
+      {
+        "finding_status": "risky",
+        "policy_requirement": "Undisputed invoices must be payable no earlier than 30 days after receipt. The company must be allowed to withhold disputed amounts in good faith and late charges must not exceed 1 percent per month.",
+        "referenced_parties": [],
+        "referenced_dates": [],
+        "policy_match_reliable": true,
+        "uncertainty": null,
+        "unsupported_assumptions": [],
+        "risk_level": "medium",
+        "clause_category": "payment",
+        "explanation": "Hand-authored demo interpretation: The ten-day payment period, three-percent monthly interest and ban on withholding disputes conflict with sample payment rules.",
+        "evidence_quote": "5. Payment\nThe Company shall pay each invoice within 10 days after receipt. Late amounts accrue interest at 3\npercent per month. The Company may not withhold disputed amounts.",
+        "page_number": 2,
+        "clause_id": "P002-C002",
+        "policy_id": "POL-PAY-001",
+        "recommended_action": "Negotiate net 30 payment, a dispute process, and capped late charges.",
+        "applicable_policy_rule": {
+          "policy_id": "POL-PAY-001",
+          "category": "payment",
+          "rule": "Undisputed invoices must be payable no earlier than 30 days after receipt. The company must be allowed to withhold disputed amounts in good faith and late charges must not exceed 1 percent per month.",
+          "recommended_action": "Negotiate net 30 payment, a dispute process, and capped late charges."
+        },
+        "evidence_verified": true,
+        "evidence_status": "verified",
+        "source_facts": {
+          "clause_id": "P002-C002",
+          "page_number": 2,
+          "evidence_quote": "5. Payment\nThe Company shall pay each invoice within 10 days after receipt. Late amounts accrue interest at 3\npercent per month. The Company may not withhold disputed amounts.",
+          "referenced_parties": [],
+          "referenced_dates": []
+        },
+        "model_interpretation": {
+          "finding_status": "risky",
+          "explanation": "Hand-authored demo interpretation: The ten-day payment period, three-percent monthly interest and ban on withholding disputes conflict with sample payment rules.",
+          "recommended_action": "Negotiate net 30 payment, a dispute process, and capped late charges.",
+          "uncertainty": null,
+          "unsupported_assumptions": []
+        },
+        "potential_omission": false,
+        "complete_document_review_required": false,
+        "absence_confirmed": false
+      },
+      {
+        "finding_status": "risky",
+        "policy_requirement": "The supplier must notify the company of a personal data breach within 48 hours of discovery, implement appropriate security measures, and delete or return company personal data within 30 days after termination.",
+        "referenced_parties": [],
+        "referenced_dates": [],
+        "policy_match_reliable": true,
+        "uncertainty": null,
+        "unsupported_assumptions": [],
+        "risk_level": "high",
+        "clause_category": "data_protection",
+        "explanation": "Hand-authored demo interpretation: Seven-day breach notification and sixty-day deletion exceed the sample deadlines.",
+        "evidence_quote": "6. Data Protection\nSupplier shall notify the Company within 7 days of discovering a personal data breach. Supplier shall\ndelete Company personal data within 60 days after termination. Supplier shall implement appropriate\nsecurity measures.",
+        "page_number": 2,
+        "clause_id": "P002-C003",
+        "policy_id": "POL-DATA-001",
+        "recommended_action": "Add a 48-hour breach notification deadline, security duties, and timely data deletion or return.",
+        "applicable_policy_rule": {
+          "policy_id": "POL-DATA-001",
+          "category": "data_protection",
+          "rule": "The supplier must notify the company of a personal data breach within 48 hours of discovery, implement appropriate security measures, and delete or return company personal data within 30 days after termination.",
+          "recommended_action": "Add a 48-hour breach notification deadline, security duties, and timely data deletion or return."
+        },
+        "evidence_verified": true,
+        "evidence_status": "verified",
+        "source_facts": {
+          "clause_id": "P002-C003",
+          "page_number": 2,
+          "evidence_quote": "6. Data Protection\nSupplier shall notify the Company within 7 days of discovering a personal data breach. Supplier shall\ndelete Company personal data within 60 days after termination. Supplier shall implement appropriate\nsecurity measures.",
+          "referenced_parties": [],
+          "referenced_dates": []
+        },
+        "model_interpretation": {
+          "finding_status": "risky",
+          "explanation": "Hand-authored demo interpretation: Seven-day breach notification and sixty-day deletion exceed the sample deadlines.",
+          "recommended_action": "Add a 48-hour breach notification deadline, security duties, and timely data deletion or return.",
+          "uncertainty": null,
+          "unsupported_assumptions": []
+        },
+        "potential_omission": false,
+        "complete_document_review_required": false,
+        "absence_confirmed": false
+      },
+      {
+        "finding_status": "risky",
+        "policy_requirement": "The company must own bespoke deliverables paid for under the agreement or receive a perpetual, irrevocable, worldwide license sufficient to use and modify them. Pre-existing supplier IP must be identified separately.",
+        "referenced_parties": [],
+        "referenced_dates": [],
+        "policy_match_reliable": true,
+        "uncertainty": null,
+        "unsupported_assumptions": [],
+        "risk_level": "high",
+        "clause_category": "intellectual_property",
+        "explanation": "Hand-authored demo interpretation: Supplier owns bespoke deliverables and grants only a revocable term license, contrary to sample ownership or perpetual-license rules.",
+        "evidence_quote": "7. Intellectual Property\nSupplier owns all bespoke deliverables. The Company receives a revocable license to use deliverables\nonly during the agreement.",
+        "page_number": 2,
+        "clause_id": "P002-C004",
+        "policy_id": "POL-IP-001",
+        "recommended_action": "Assign bespoke deliverables or secure a sufficient perpetual license.",
+        "applicable_policy_rule": {
+          "policy_id": "POL-IP-001",
+          "category": "intellectual_property",
+          "rule": "The company must own bespoke deliverables paid for under the agreement or receive a perpetual, irrevocable, worldwide license sufficient to use and modify them. Pre-existing supplier IP must be identified separately.",
+          "recommended_action": "Assign bespoke deliverables or secure a sufficient perpetual license."
+        },
+        "evidence_verified": true,
+        "evidence_status": "verified",
+        "source_facts": {
+          "clause_id": "P002-C004",
+          "page_number": 2,
+          "evidence_quote": "7. Intellectual Property\nSupplier owns all bespoke deliverables. The Company receives a revocable license to use deliverables\nonly during the agreement.",
+          "referenced_parties": [],
+          "referenced_dates": []
+        },
+        "model_interpretation": {
+          "finding_status": "risky",
+          "explanation": "Hand-authored demo interpretation: Supplier owns bespoke deliverables and grants only a revocable term license, contrary to sample ownership or perpetual-license rules.",
+          "recommended_action": "Assign bespoke deliverables or secure a sufficient perpetual license.",
+          "uncertainty": null,
+          "unsupported_assumptions": []
+        },
+        "potential_omission": false,
+        "complete_document_review_required": false,
+        "absence_confirmed": false
+      }
+    ],
+    "obligations": [
+      {
+        "description": "Pay invoices.",
+        "evidence_quote": "5. Payment\nThe Company shall pay each invoice within 10 days after receipt. Late amounts accrue interest at 3\npercent per month. The Company may not withhold disputed amounts.",
+        "page_number": 2,
+        "clause_id": "P002-C002",
+        "responsible_party": "The Company",
+        "deadline": "within 10 days after receipt",
+        "evidence_verified": true,
+        "evidence_status": "verified",
+        "deadline_type": "relative"
+      },
+      {
+        "description": "Notify the Company of a personal data breach.",
+        "evidence_quote": "6. Data Protection\nSupplier shall notify the Company within 7 days of discovering a personal data breach. Supplier shall\ndelete Company personal data within 60 days after termination. Supplier shall implement appropriate\nsecurity measures.",
+        "page_number": 2,
+        "clause_id": "P002-C003",
+        "responsible_party": "Supplier",
+        "deadline": "within 7 days",
+        "evidence_verified": true,
+        "evidence_status": "verified",
+        "deadline_type": "relative"
+      },
+      {
+        "description": "Deliver the monthly service report.",
+        "evidence_quote": "8. Reporting\nSupplier shall deliver a monthly service report to the Company by the fifth day of each month.",
+        "page_number": 2,
+        "clause_id": "P002-C005",
+        "responsible_party": "Supplier",
+        "deadline": "by the fifth day of each month",
+        "evidence_verified": true,
+        "evidence_status": "verified",
+        "deadline_type": "relative"
+      }
+    ],
+    "semantic_matches": [],
+    "unassessed_policy_ids": [],
+    "verification_rejections": [],
+    "warnings": [
+      "SAMPLE ANALYSIS — DEMO DATA. Hand-authored, precomputed synthetic findings; not live Gemini output.",
+      "No AI generation or embedding retrieval is used by demo mode. Evidence verification proves provenance, not legal correctness."
+    ]
+  }
+}

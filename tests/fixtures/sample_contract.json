@@ -1,0 +1,19 @@
+{
+  "filename": "synthetic_supplier_contract.pdf",
+  "pages": [
+    [
+      "SYNTHETIC SUPPLIER AGREEMENT - TEST FIXTURE",
+      "1. Liability\nSupplier liability is capped at USD 100 in aggregate, including data breaches and confidentiality breaches.",
+      "2. Indemnification\nThe Company shall indemnify Supplier against all third-party claims, including claims caused by Supplier negligence. Supplier has no duty to defend intellectual property infringement claims.",
+      "3. Termination\nThe Company may terminate for convenience only on 90 days notice and must pay an early termination fee equal to all remaining contract fees.",
+      "4. Confidentiality\nSupplier shall keep Company confidential information secret during the agreement and for one year after termination."
+    ],
+    [
+      "SYNTHETIC SUPPLIER AGREEMENT - PAGE 2",
+      "5. Payment\nThe Company shall pay each invoice within 10 days after receipt. Late amounts accrue interest at 3 percent per month. The Company may not withhold disputed amounts.",
+      "6. Data Protection\nSupplier shall notify the Company within 7 days of discovering a personal data breach. Supplier shall delete Company personal data within 60 days after termination. Supplier shall implement appropriate security measures.",
+      "7. Intellectual Property\nSupplier owns all bespoke deliverables. The Company receives a revocable license to use deliverables only during the agreement.",
+      "8. Reporting\nSupplier shall deliver a monthly service report to the Company by the fifth day of each month."
+    ]
+  ]
+}

@@ -1,0 +1,1306 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "VERITAS AI",
+    "version": "0.1.0"
+  },
+  "paths": {
+    "/api/embeddings/test": {
+      "post": {
+        "tags": [
+          "Embeddings"
+        ],
+        "summary": "Test Embedding",
+        "operationId": "test_embedding_api_embeddings_test_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/EmbeddingTestRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/EmbeddingTestResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/contracts/upload": {
+      "post": {
+        "tags": [
+          "Contracts"
+        ],
+        "summary": "Upload Contract",
+        "operationId": "upload_contract_api_contracts_upload_post",
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "$ref": "#/components/schemas/Body_upload_contract_api_contracts_upload_post"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "201": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Contract"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/analyze": {
+      "post": {
+        "tags": [
+          "Contracts"
+        ],
+        "summary": "Analyze",
+        "operationId": "analyze_api_analyze_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AnalyzeRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Analysis"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/analysis/{analysis_id}": {
+      "get": {
+        "tags": [
+          "Contracts"
+        ],
+        "summary": "Read Analysis",
+        "operationId": "read_analysis_api_analysis__analysis_id__get",
+        "parameters": [
+          {
+            "name": "analysis_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Analysis Id"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "anyOf": [
+                    {
+                      "$ref": "#/components/schemas/Analysis"
+                    },
+                    {
+                      "$ref": "#/components/schemas/AnalysisFailure"
+                    }
+                  ],
+                  "title": "Response Read Analysis Api Analysis  Analysis Id  Get"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/demo/analysis": {
+      "get": {
+        "tags": [
+          "Contracts",
+          "Demo"
+        ],
+        "summary": "Read Demo",
+        "operationId": "read_demo_api_demo_analysis_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DemoArtifact"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/health": {
+      "get": {
+        "tags": [
+          "System"
+        ],
+        "summary": "Health",
+        "description": "Process health only; does not check AI-service readiness.",
+        "operationId": "health_health_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HealthResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Analysis": {
+        "properties": {
+          "gemini_attempts": {
+            "type": "integer",
+            "minimum": 0.0,
+            "title": "Gemini Attempts",
+            "default": 0
+          },
+          "gemini_response_model": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Gemini Response Model"
+          },
+          "processing_seconds": {
+            "type": "number",
+            "minimum": 0.0,
+            "title": "Processing Seconds",
+            "default": 0
+          },
+          "output_origin": {
+            "type": "string",
+            "enum": [
+              "live_gemini",
+              "synthetic_demo"
+            ],
+            "title": "Output Origin",
+            "default": "live_gemini"
+          },
+          "requires_human_review": {
+            "type": "boolean",
+            "const": true,
+            "title": "Requires Human Review",
+            "default": true
+          },
+          "document_instruction_alerts": {
+            "items": {
+              "$ref": "#/components/schemas/InstructionAlert"
+            },
+            "type": "array",
+            "title": "Document Instruction Alerts"
+          },
+          "analysis_id": {
+            "type": "string",
+            "title": "Analysis Id"
+          },
+          "contract_id": {
+            "type": "string",
+            "title": "Contract Id"
+          },
+          "created_at": {
+            "type": "string",
+            "format": "date-time",
+            "title": "Created At"
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "completed",
+              "partial"
+            ],
+            "title": "Status"
+          },
+          "gemini_model": {
+            "type": "string",
+            "title": "Gemini Model"
+          },
+          "embedding_model": {
+            "type": "string",
+            "title": "Embedding Model"
+          },
+          "playbook_id": {
+            "type": "string",
+            "title": "Playbook Id"
+          },
+          "playbook_version": {
+            "type": "string",
+            "title": "Playbook Version"
+          },
+          "findings": {
+            "items": {
+              "$ref": "#/components/schemas/VerifiedFinding"
+            },
+            "type": "array",
+            "title": "Findings"
+          },
+          "obligations": {
+            "items": {
+              "$ref": "#/components/schemas/VerifiedObligation"
+            },
+            "type": "array",
+            "title": "Obligations"
+          },
+          "semantic_matches": {
+            "items": {
+              "$ref": "#/components/schemas/PolicyMatch"
+            },
+            "type": "array",
+            "title": "Semantic Matches"
+          },
+          "unassessed_policy_ids": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Unassessed Policy Ids"
+          },
+          "verification_rejections": {
+            "items": {
+              "$ref": "#/components/schemas/RejectedRecord"
+            },
+            "type": "array",
+            "title": "Verification Rejections"
+          },
+          "warnings": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Warnings"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "analysis_id",
+          "contract_id",
+          "created_at",
+          "status",
+          "gemini_model",
+          "embedding_model",
+          "playbook_id",
+          "playbook_version",
+          "findings",
+          "obligations",
+          "semantic_matches",
+          "unassessed_policy_ids",
+          "verification_rejections",
+          "warnings"
+        ],
+        "title": "Analysis"
+      },
+      "AnalysisFailure": {
+        "properties": {
+          "analysis_id": {
+            "type": "string",
+            "title": "Analysis Id"
+          },
+          "contract_id": {
+            "type": "string",
+            "title": "Contract Id"
+          },
+          "created_at": {
+            "type": "string",
+            "format": "date-time",
+            "title": "Created At"
+          },
+          "status": {
+            "type": "string",
+            "const": "failed",
+            "title": "Status",
+            "default": "failed"
+          },
+          "output_origin": {
+            "type": "string",
+            "const": "live_gemini",
+            "title": "Output Origin",
+            "default": "live_gemini"
+          },
+          "failed_stage": {
+            "type": "string",
+            "title": "Failed Stage"
+          },
+          "error_category": {
+            "type": "string",
+            "title": "Error Category"
+          },
+          "message": {
+            "type": "string",
+            "title": "Message"
+          },
+          "http_status": {
+            "type": "integer",
+            "title": "Http Status"
+          },
+          "upstream_http_status": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Upstream Http Status"
+          },
+          "gemini_model": {
+            "type": "string",
+            "title": "Gemini Model"
+          },
+          "gemini_attempts": {
+            "type": "integer",
+            "minimum": 0.0,
+            "title": "Gemini Attempts"
+          },
+          "retries_occurred": {
+            "type": "boolean",
+            "title": "Retries Occurred"
+          },
+          "processing_seconds": {
+            "type": "number",
+            "minimum": 0.0,
+            "title": "Processing Seconds"
+          },
+          "verification_rejections": {
+            "items": {
+              "$ref": "#/components/schemas/RejectedRecord"
+            },
+            "type": "array",
+            "title": "Verification Rejections"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "analysis_id",
+          "contract_id",
+          "created_at",
+          "failed_stage",
+          "error_category",
+          "message",
+          "http_status",
+          "gemini_model",
+          "gemini_attempts",
+          "retries_occurred",
+          "processing_seconds"
+        ],
+        "title": "AnalysisFailure"
+      },
+      "AnalyzeRequest": {
+        "properties": {
+          "contract_id": {
+            "type": "string",
+            "maxLength": 100,
+            "minLength": 1,
+            "title": "Contract Id"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "contract_id"
+        ],
+        "title": "AnalyzeRequest"
+      },
+      "Body_upload_contract_api_contracts_upload_post": {
+        "properties": {
+          "file": {
+            "type": "string",
+            "contentMediaType": "application/octet-stream",
+            "title": "File"
+          }
+        },
+        "type": "object",
+        "required": [
+          "file"
+        ],
+        "title": "Body_upload_contract_api_contracts_upload_post"
+      },
+      "Clause": {
+        "properties": {
+          "clause_id": {
+            "type": "string",
+            "title": "Clause Id"
+          },
+          "page_number": {
+            "type": "integer",
+            "minimum": 1.0,
+            "title": "Page Number"
+          },
+          "text": {
+            "type": "string",
+            "title": "Text"
+          },
+          "start_offset": {
+            "type": "integer",
+            "minimum": 0.0,
+            "title": "Start Offset"
+          },
+          "end_offset": {
+            "type": "integer",
+            "minimum": 1.0,
+            "title": "End Offset"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "clause_id",
+          "page_number",
+          "text",
+          "start_offset",
+          "end_offset"
+        ],
+        "title": "Clause"
+      },
+      "Contract": {
+        "properties": {
+          "contract_id": {
+            "type": "string",
+            "title": "Contract Id"
+          },
+          "filename": {
+            "type": "string",
+            "title": "Filename"
+          },
+          "pages": {
+            "items": {
+              "$ref": "#/components/schemas/PageText"
+            },
+            "type": "array",
+            "title": "Pages"
+          },
+          "clauses": {
+            "items": {
+              "$ref": "#/components/schemas/Clause"
+            },
+            "type": "array",
+            "title": "Clauses"
+          },
+          "warnings": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Warnings"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "contract_id",
+          "filename",
+          "pages",
+          "clauses",
+          "warnings"
+        ],
+        "title": "Contract"
+      },
+      "DemoArtifact": {
+        "properties": {
+          "label": {
+            "type": "string",
+            "const": "SAMPLE ANALYSIS \u2014 DEMO DATA",
+            "title": "Label"
+          },
+          "output_origin": {
+            "type": "string",
+            "const": "synthetic_demo",
+            "title": "Output Origin"
+          },
+          "live_ai_used": {
+            "type": "boolean",
+            "const": false,
+            "title": "Live Ai Used"
+          },
+          "description": {
+            "type": "string",
+            "title": "Description"
+          },
+          "contract": {
+            "$ref": "#/components/schemas/Contract"
+          },
+          "playbook": {
+            "$ref": "#/components/schemas/Playbook"
+          },
+          "analysis": {
+            "$ref": "#/components/schemas/Analysis"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "label",
+          "output_origin",
+          "live_ai_used",
+          "description",
+          "contract",
+          "playbook",
+          "analysis"
+        ],
+        "title": "DemoArtifact"
+      },
+      "EmbeddingTestRequest": {
+        "properties": {
+          "text": {
+            "type": "string",
+            "title": "Text"
+          }
+        },
+        "type": "object",
+        "required": [
+          "text"
+        ],
+        "title": "EmbeddingTestRequest"
+      },
+      "EmbeddingTestResponse": {
+        "properties": {
+          "success": {
+            "type": "boolean",
+            "title": "Success"
+          },
+          "model": {
+            "type": "string",
+            "title": "Model"
+          },
+          "dimensions": {
+            "type": "integer",
+            "title": "Dimensions"
+          }
+        },
+        "type": "object",
+        "required": [
+          "success",
+          "model",
+          "dimensions"
+        ],
+        "title": "EmbeddingTestResponse"
+      },
+      "HTTPValidationError": {
+        "properties": {
+          "detail": {
+            "items": {
+              "$ref": "#/components/schemas/ValidationError"
+            },
+            "type": "array",
+            "title": "Detail"
+          }
+        },
+        "type": "object",
+        "title": "HTTPValidationError"
+      },
+      "HealthResponse": {
+        "properties": {
+          "status": {
+            "type": "string",
+            "title": "Status"
+          },
+          "service": {
+            "type": "string",
+            "title": "Service"
+          },
+          "version": {
+            "type": "string",
+            "title": "Version"
+          },
+          "environment": {
+            "type": "string",
+            "title": "Environment"
+          }
+        },
+        "type": "object",
+        "required": [
+          "status",
+          "service",
+          "version",
+          "environment"
+        ],
+        "title": "HealthResponse"
+      },
+      "InstructionAlert": {
+        "properties": {
+          "source_type": {
+            "type": "string",
+            "enum": [
+              "clause",
+              "policy"
+            ],
+            "title": "Source Type"
+          },
+          "source_id": {
+            "type": "string",
+            "title": "Source Id"
+          },
+          "reason": {
+            "type": "string",
+            "title": "Reason"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "source_type",
+          "source_id",
+          "reason"
+        ],
+        "title": "InstructionAlert"
+      },
+      "ModelInterpretation": {
+        "properties": {
+          "finding_status": {
+            "type": "string",
+            "enum": [
+              "compliant",
+              "risky",
+              "ambiguous",
+              "conflicting",
+              "missing"
+            ],
+            "title": "Finding Status"
+          },
+          "explanation": {
+            "type": "string",
+            "title": "Explanation"
+          },
+          "recommended_action": {
+            "type": "string",
+            "title": "Recommended Action"
+          },
+          "uncertainty": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Uncertainty"
+          },
+          "unsupported_assumptions": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Unsupported Assumptions"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "finding_status",
+          "explanation",
+          "recommended_action",
+          "uncertainty",
+          "unsupported_assumptions"
+        ],
+        "title": "ModelInterpretation"
+      },
+      "PageText": {
+        "properties": {
+          "page_number": {
+            "type": "integer",
+            "minimum": 1.0,
+            "title": "Page Number"
+          },
+          "text": {
+            "type": "string",
+            "title": "Text"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "page_number",
+          "text"
+        ],
+        "title": "PageText"
+      },
+      "Playbook": {
+        "properties": {
+          "playbook_id": {
+            "type": "string",
+            "title": "Playbook Id"
+          },
+          "version": {
+            "type": "string",
+            "title": "Version"
+          },
+          "description": {
+            "type": "string",
+            "title": "Description"
+          },
+          "rules": {
+            "items": {
+              "$ref": "#/components/schemas/PolicyRule"
+            },
+            "type": "array",
+            "title": "Rules"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "playbook_id",
+          "version",
+          "description",
+          "rules"
+        ],
+        "title": "Playbook"
+      },
+      "PolicyMatch": {
+        "properties": {
+          "clause_id": {
+            "type": "string",
+            "title": "Clause Id"
+          },
+          "policy_id": {
+            "type": "string",
+            "title": "Policy Id"
+          },
+          "similarity": {
+            "type": "number",
+            "maximum": 1.0,
+            "minimum": -1.0,
+            "title": "Similarity"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "clause_id",
+          "policy_id",
+          "similarity"
+        ],
+        "title": "PolicyMatch"
+      },
+      "PolicyRule": {
+        "properties": {
+          "policy_id": {
+            "type": "string",
+            "title": "Policy Id"
+          },
+          "category": {
+            "type": "string",
+            "enum": [
+              "liability",
+              "indemnification",
+              "termination",
+              "confidentiality",
+              "payment",
+              "data_protection",
+              "intellectual_property"
+            ],
+            "title": "Category"
+          },
+          "rule": {
+            "type": "string",
+            "title": "Rule"
+          },
+          "recommended_action": {
+            "type": "string",
+            "title": "Recommended Action"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "policy_id",
+          "category",
+          "rule",
+          "recommended_action"
+        ],
+        "title": "PolicyRule"
+      },
+      "RejectedRecord": {
+        "properties": {
+          "record_type": {
+            "type": "string",
+            "enum": [
+              "finding",
+              "obligation"
+            ],
+            "title": "Record Type"
+          },
+          "index": {
+            "type": "integer",
+            "title": "Index"
+          },
+          "reason": {
+            "type": "string",
+            "title": "Reason"
+          },
+          "evidence_status": {
+            "type": "string",
+            "const": "unsupported",
+            "title": "Evidence Status",
+            "default": "unsupported"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "record_type",
+          "index",
+          "reason"
+        ],
+        "title": "RejectedRecord"
+      },
+      "SourceFacts": {
+        "properties": {
+          "clause_id": {
+            "type": "string",
+            "title": "Clause Id"
+          },
+          "page_number": {
+            "type": "integer",
+            "title": "Page Number"
+          },
+          "evidence_quote": {
+            "type": "string",
+            "title": "Evidence Quote"
+          },
+          "referenced_parties": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Referenced Parties"
+          },
+          "referenced_dates": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Referenced Dates"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "clause_id",
+          "page_number",
+          "evidence_quote",
+          "referenced_parties",
+          "referenced_dates"
+        ],
+        "title": "SourceFacts"
+      },
+      "ValidationError": {
+        "properties": {
+          "loc": {
+            "items": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "integer"
+                }
+              ]
+            },
+            "type": "array",
+            "title": "Location"
+          },
+          "msg": {
+            "type": "string",
+            "title": "Message"
+          },
+          "type": {
+            "type": "string",
+            "title": "Error Type"
+          },
+          "input": {
+            "title": "Input"
+          },
+          "ctx": {
+            "type": "object",
+            "title": "Context"
+          }
+        },
+        "type": "object",
+        "required": [
+          "loc",
+          "msg",
+          "type"
+        ],
+        "title": "ValidationError"
+      },
+      "VerifiedFinding": {
+        "properties": {
+          "finding_status": {
+            "type": "string",
+            "enum": [
+              "compliant",
+              "risky",
+              "ambiguous",
+              "conflicting",
+              "missing"
+            ],
+            "title": "Finding Status",
+            "default": "risky"
+          },
+          "policy_requirement": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Policy Requirement"
+          },
+          "referenced_parties": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "maxItems": 20,
+            "title": "Referenced Parties"
+          },
+          "referenced_dates": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "maxItems": 20,
+            "title": "Referenced Dates"
+          },
+          "policy_match_reliable": {
+            "type": "boolean",
+            "title": "Policy Match Reliable",
+            "default": true
+          },
+          "uncertainty": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Uncertainty"
+          },
+          "unsupported_assumptions": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "maxItems": 20,
+            "title": "Unsupported Assumptions"
+          },
+          "risk_level": {
+            "type": "string",
+            "enum": [
+              "low",
+              "medium",
+              "high",
+              "critical"
+            ],
+            "title": "Risk Level"
+          },
+          "clause_category": {
+            "type": "string",
+            "enum": [
+              "liability",
+              "indemnification",
+              "termination",
+              "confidentiality",
+              "payment",
+              "data_protection",
+              "intellectual_property"
+            ],
+            "title": "Clause Category"
+          },
+          "explanation": {
+            "type": "string",
+            "maxLength": 2000,
+            "minLength": 1,
+            "title": "Explanation"
+          },
+          "evidence_quote": {
+            "anyOf": [
+              {
+                "type": "string",
+                "maxLength": 2000,
+                "minLength": 1
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Evidence Quote"
+          },
+          "page_number": {
+            "anyOf": [
+              {
+                "type": "integer",
+                "minimum": 1.0
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Page Number"
+          },
+          "clause_id": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Clause Id"
+          },
+          "policy_id": {
+            "type": "string",
+            "title": "Policy Id"
+          },
+          "recommended_action": {
+            "type": "string",
+            "maxLength": 2000,
+            "minLength": 1,
+            "title": "Recommended Action"
+          },
+          "applicable_policy_rule": {
+            "$ref": "#/components/schemas/PolicyRule"
+          },
+          "evidence_verified": {
+            "type": "boolean",
+            "title": "Evidence Verified",
+            "default": true
+          },
+          "evidence_status": {
+            "type": "string",
+            "enum": [
+              "verified",
+              "unsupported",
+              "needs_review"
+            ],
+            "title": "Evidence Status",
+            "default": "verified"
+          },
+          "source_facts": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/SourceFacts"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "model_interpretation": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/ModelInterpretation"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "potential_omission": {
+            "type": "boolean",
+            "title": "Potential Omission",
+            "default": false
+          },
+          "complete_document_review_required": {
+            "type": "boolean",
+            "title": "Complete Document Review Required",
+            "default": false
+          },
+          "absence_confirmed": {
+            "type": "boolean",
+            "const": false,
+            "title": "Absence Confirmed",
+            "default": false
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "risk_level",
+          "clause_category",
+          "explanation",
+          "policy_id",
+          "recommended_action",
+          "applicable_policy_rule"
+        ],
+        "title": "VerifiedFinding"
+      },
+      "VerifiedObligation": {
+        "properties": {
+          "description": {
+            "type": "string",
+            "maxLength": 2000,
+            "minLength": 1,
+            "title": "Description"
+          },
+          "evidence_quote": {
+            "type": "string",
+            "maxLength": 2000,
+            "minLength": 1,
+            "title": "Evidence Quote"
+          },
+          "page_number": {
+            "type": "integer",
+            "minimum": 1.0,
+            "title": "Page Number"
+          },
+          "clause_id": {
+            "type": "string",
+            "title": "Clause Id"
+          },
+          "responsible_party": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Responsible Party"
+          },
+          "deadline": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Deadline"
+          },
+          "evidence_verified": {
+            "type": "boolean",
+            "const": true,
+            "title": "Evidence Verified",
+            "default": true
+          },
+          "evidence_status": {
+            "type": "string",
+            "enum": [
+              "verified",
+              "unsupported",
+              "needs_review"
+            ],
+            "title": "Evidence Status",
+            "default": "verified"
+          },
+          "deadline_type": {
+            "type": "string",
+            "enum": [
+              "fixed_date",
+              "relative",
+              "ambiguous",
+              "unspecified"
+            ],
+            "title": "Deadline Type",
+            "default": "unspecified"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "description",
+          "evidence_quote",
+          "page_number",
+          "clause_id",
+          "responsible_party",
+          "deadline"
+        ],
+        "title": "VerifiedObligation"
+      }
+    }
+  }
+}
