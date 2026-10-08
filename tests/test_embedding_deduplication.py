@@ -83,7 +83,7 @@ class DeduplicationTests(unittest.TestCase):
         self.assertEqual(first, second)
 
     def test_configuration_changes_do_not_share_local_entries(self):
-        # Change one dimension between two identical clauses inside one invocation.
+        # A mid-request vector-space change must fail before comparing mixed embeddings.
         for field, replacement in [('ollama_embedding_model', 'synthetic-other-model'),
                                    ('ollama_base_url', 'http://synthetic-other:11434'),
                                    ('ollama_connect_timeout', 6.0), ('ollama_read_timeout', 121.0)]:
@@ -100,8 +100,9 @@ class DeduplicationTests(unittest.TestCase):
                 with no_network(), patch.object(settings, field, getattr(settings, field)), \
                      patch.object(retrieval, 'policy_vectors', return_value=tuple(tuple(fake_vector(r.rule)) for r in self.book.rules)), \
                      patch.object(retrieval, 'embed_text', side_effect=embed):
-                    retrieval.match_policies(contract, self.book)
-                self.assertEqual(count, 2)
+                    with self.assertRaisesRegex(EmbeddingError, 'configuration changed'):
+                        retrieval.match_policies(contract, self.book)
+                self.assertEqual(count, 1)
 
     def test_all_fixture_rankings_and_scores_match_original_loop(self):
         for case in self.dataset.cases:

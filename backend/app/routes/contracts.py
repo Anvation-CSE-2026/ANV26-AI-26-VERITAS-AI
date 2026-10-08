@@ -16,6 +16,7 @@ from app.services.demo import load_demo
 from app.services.evidence import EvidenceError
 from app.services.gemini_analysis import GeminiError
 from app.services.ollama_embeddings import EmbeddingError, EmbeddingTimeout, EmbeddingUnavailable
+from app.services.gemini_embeddings import HostedEmbeddingError
 from app.services.pdf_extraction import ContractLimitError, PDFError, extract_contract
 from app.services.security import get_current_user
 from app.services.storage import (
@@ -97,6 +98,8 @@ def analyze(
             },
             headers=headers,
         ) from None
+    except HostedEmbeddingError as exc:
+        raise HTTPException(status_code=exc.status_code, detail=exc.detail()) from None
     except EmbeddingTimeout:
         raise HTTPException(status_code=504, detail="Ollama embedding request timed out.") from None
     except EmbeddingUnavailable:
