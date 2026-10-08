@@ -12,7 +12,7 @@ class Settings(BaseSettings):
     gemini_model: str = "gemini-3.5-flash"
     gemini_max_attempts: int = Field(default=3, ge=1, le=5)
     gemini_retry_base_seconds: float = Field(default=1.0, ge=0, le=10)
-    gemini_timeout_seconds: float = Field(default=90.0, gt=0)
+    gemini_timeout_seconds: float = Field(default=180.0, gt=0)
     storage_path: Path = Path(__file__).resolve().parents[2] / "data" / "contracts" / "veritas.sqlite3"
     max_upload_bytes: int = Field(default=10 * 1024 * 1024, gt=0)
     max_contract_pages: int = Field(default=30, gt=0)

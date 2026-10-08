@@ -42,6 +42,12 @@ Return only the requested structured JSON. Never assign evidence_status, evidenc
 confidence probabilities, graph edges, approval decisions, or other fields outside the schema.
 For findings use finding_status: compliant, risky, ambiguous, conflicting, or missing;
 and risk_level: critical, high, medium, or low (compliant normally uses low).
+Every evidence quotation must be copied verbatim from the provided clause text.
+Do not paraphrase, summarize or invent evidence. Use the correct clause ID and page.
+If exact supporting evidence is unavailable, do not provide a fabricated quotation.
+Separate potential missing protections from evidence-supported contractual findings.
+Copy text from contract_clauses[].text, not a policy rule or semantic retrieval summary.
+A quotation must stay within one supplied clause, not span separate clause IDs or pages.
 For contract-supported findings include a valid clause_id, its page_number, a nonblank EXACT
 verbatim substring from that one clause (preserve whitespace/newlines), an applicable policy_id,
 clause_category, explanation, and recommended_action. Copy policy_requirement exactly from
@@ -159,12 +165,12 @@ def generate_analysis(contract: Contract, playbook: Playbook, matches: list[Poli
         if exc.code == 404:
             raise fail("The configured Gemini model is unavailable for this account. Update GEMINI_MODEL.", 502, upstream_status=exc.code, category="model_unavailable") from None
         if exc.code in (408, 504):
-            raise fail("Gemini request timed out.", 504, upstream_status=exc.code, category="timeout") from None
+            raise fail("Gemini did not return an analysis before the request deadline. Your uploaded contract is preserved. Retry manually when ready, or use the separately labeled demo.", 504, upstream_status=exc.code, category="timeout") from None
         if exc.code is not None and exc.code >= 500:
             raise fail("Gemini service is temporarily unavailable.", 503, upstream_status=exc.code, category="provider_transient") from None
         raise fail(f"Gemini API rejected the analysis request (HTTP {exc.code}).", 502, upstream_status=exc.code, category="request_rejected") from None
     except httpx.TimeoutException:
-        raise fail("Gemini request timed out.", 504, category="timeout") from None
+        raise fail("Gemini did not return an analysis before the request deadline. Your uploaded contract is preserved. Retry manually when ready, or use the separately labeled demo.", 504, category="timeout") from None
     except httpx.RequestError:
         raise fail("Unable to connect to Gemini.", 503, category="connection") from None
     except ValidationError:

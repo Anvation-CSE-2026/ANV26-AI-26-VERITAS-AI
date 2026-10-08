@@ -14,6 +14,8 @@ ollama serve
 ~~~powershell
 # Terminal 2
 cd backend
+$env:GEMINI_TIMEOUT_SECONDS='180'
+$env:GEMINI_MAX_ATTEMPTS='1'
 .\.venv\Scripts\python.exe -m uvicorn app.main:app --host 127.0.0.1 --port 8000
 ~~~
 

@@ -32,6 +32,13 @@ export default function ErrorBanner({ error, onDismiss, onRetry, onLoadDemo }) {
               {error.message || 'An unexpected issue occurred while communicating with the backend.'}
             </p>
 
+            {error.errorCategory === 'unsupported_evidence' && (
+              <p className="mt-2 text-xs text-[#F2F5F0]">
+                Your uploaded contract is retained. The AI response could not be grounded in its source clauses.
+                Retry only when ready; a retry makes a new AI request. Unsupported findings were excluded.
+              </p>
+            )}
+
             {/* Verification Rejections List if present */}
             {error.verificationRejections && error.verificationRejections.length > 0 && (
               <div className="mt-3 p-3 rounded-lg bg-[#080B0A] border border-[#F87171]/30 text-xs font-mono">

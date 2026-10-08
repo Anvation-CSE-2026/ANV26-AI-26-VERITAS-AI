@@ -56,7 +56,7 @@ export default function AnalysisProgressModal({ isOpen, onCancel }) {
 
         {/* Footer */}
         <div className="mt-8 pt-4 border-t border-[rgba(197,245,213,0.08)] flex items-center justify-between text-xs font-mono text-[#8A9B91]">
-          <span>Waiting for server response — duration varies</span>
+          <span>Waiting for server response — this may take several minutes. Do not submit again.</span>
           {onCancel && (
             <button
               onClick={onCancel}

@@ -126,10 +126,12 @@ class EvidenceTests(unittest.TestCase):
                 self.assertEqual(len(obligations), 1)
                 self.assertEqual(rejected[0].reason, reason)
 
-    def test_changed_whitespace_and_source_offsets_are_not_fuzzily_repaired(self):
+    def test_whitespace_restores_original_slice_but_source_offsets_stay_strict(self):
         draft = self.draft.model_copy(deep=True)
         draft.findings[0].evidence_quote = draft.findings[0].evidence_quote.replace("\n", " ")
-        self.assertEqual(verify_analysis(draft, self.contract, self.playbook)[2][0].reason, "quote_not_in_original_clause")
+        verified = verify_analysis(draft, self.contract, self.playbook)
+        self.assertEqual(verified[2], [])
+        self.assertEqual(verified[0][0].evidence_quote, self.draft.findings[0].evidence_quote)
         contract = self.contract.model_copy(deep=True)
         clause = next(c for c in contract.clauses if c.clause_id == draft.findings[0].clause_id)
         clause.start_offset += 1

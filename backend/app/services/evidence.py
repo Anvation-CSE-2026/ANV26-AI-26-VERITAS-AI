@@ -1,4 +1,6 @@
 """Backend-owned provenance checks; quotations do not validate legal interpretations."""
+import re
+
 from app.models.contracts import (
     AnalysisDraft, Contract, ModelInterpretation, Playbook, RejectedRecord, SourceFacts,
     VerifiedFinding, VerifiedObligation,
@@ -13,6 +15,22 @@ class EvidenceError(RuntimeError):
         self.rejections = rejections or []
 
 
+def original_quote_slice(quote: str | None, clause_text: str) -> str | None:
+    """Only whitespace may differ; return literal source text, never a paraphrase.
+
+    No case folding, punctuation/Unicode substitutions, dehyphenation, token
+    deletion, cross-clause search or fuzzy matching is permitted.
+    """
+    if not quote or not quote.strip():
+        return None
+    if quote in clause_text:
+        return quote
+    tokens = re.findall(r"\S+", quote)
+    pattern = r"\s+".join(re.escape(token) for token in tokens)
+    match = re.search(pattern, clause_text)
+    return match.group(0) if match else None
+
+
 @timed("evidence_verification")
 def verify_analysis(draft: AnalysisDraft, contract: Contract, playbook: Playbook):
     emit("proposed", draft=draft, contract=contract)
@@ -20,6 +38,7 @@ def verify_analysis(draft: AnalysisDraft, contract: Contract, playbook: Playbook
     pages = {page.page_number: page.text for page in contract.pages}
     policies = {rule.policy_id: rule for rule in playbook.rules}
     findings, obligations, rejections = [], [], []
+    resolved_quotes = {}
 
     def source_error(item):
         clause = clauses.get(item.clause_id)
@@ -30,8 +49,10 @@ def verify_analysis(draft: AnalysisDraft, contract: Contract, playbook: Playbook
         original = pages.get(item.page_number, "")
         if original[clause.start_offset:clause.end_offset] != clause.text:
             return "source_offset_mismatch"
-        if not item.evidence_quote or not item.evidence_quote.strip() or item.evidence_quote not in clause.text or item.evidence_quote not in original:
+        quote = original_quote_slice(item.evidence_quote, clause.text)
+        if quote is None or quote not in original:
             return "quote_not_in_original_clause"
+        resolved_quotes[id(item)] = quote
         return None
 
     for index, item in enumerate(draft.findings):
@@ -42,6 +63,8 @@ def verify_analysis(draft: AnalysisDraft, contract: Contract, playbook: Playbook
                 reason = "missing_finding_has_source_references"
         else:
             reason = source_error(item)
+        if reason is None and not missing:
+            item = item.model_copy(update={"evidence_quote": resolved_quotes[id(item)]})
         policy = policies.get(item.policy_id)
         if reason is None and policy is None:
             reason = "unknown_policy_id"
@@ -83,6 +106,8 @@ def verify_analysis(draft: AnalysisDraft, contract: Contract, playbook: Playbook
         ))
     for index, item in enumerate(draft.obligations):
         reason = source_error(item)
+        if reason is None:
+            item = item.model_copy(update={"evidence_quote": resolved_quotes[id(item)]})
         for value, field in [(item.responsible_party, "party"), (item.deadline, "deadline")]:
             if reason is None and value is not None and not explicit_reference(value, item.evidence_quote):
                 reason = f"{field}_not_explicit_in_evidence"
@@ -96,5 +121,5 @@ def verify_analysis(draft: AnalysisDraft, contract: Contract, playbook: Playbook
             ))
     emit("verified", findings=findings, obligations=obligations, rejections=rejections)
     if rejections and not findings and not obligations:
-        raise EvidenceError("All generated records failed evidence verification; no analysis was saved.", rejections)
+        raise EvidenceError("The AI could not verify its generated evidence. No supported analysis was saved. Your uploaded contract is preserved; retry manually or use the separately labeled demo.", rejections)
     return findings, obligations, rejections
