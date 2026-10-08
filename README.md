@@ -8,6 +8,14 @@ The challenge is to develop an AI-powered contract intelligence platform that au
 
 Evidence-grounded contract analysis MVP: PDF extraction, local Ollama policy retrieval, structured Gemini findings, and deterministic evidence checks. The existing React landing page and health endpoint are preserved. Decision support, not legal advice.
 
+## Cloud deployment
+
+See [Render + Vercel deployment instructions](docs/CLOUD_DEPLOYMENT.md) for exact build/start commands,
+environment variables, persistent SQLite storage and the deployed PDF acceptance workflow.
+`EMBEDDING_PROVIDER=ollama` remains the local default; `EMBEDDING_PROVIDER=gemini` enables
+server-side `gemini-embedding-001` embeddings using the existing `GEMINI_API_KEY`.
+The hosted embedding path has offline coverage; deployment and real hosted PDF analysis remain unverified.
+
 ## Requirements
 
 Verified with Python 3.14.7, Node.js 24.19.0, npm 11.17.0 on Windows. Use Node 24 LTS and Python 3.14 to reproduce this environment. Health and the landing page require no AI service. Embedding requests require Ollama with qwen3-embedding:0.6b installed.
@@ -44,7 +52,7 @@ Open http://127.0.0.1:5173. API documentation: http://127.0.0.1:8000/docs. Healt
 
 ## Configuration and communication
 
-The frontend requests `/api/health`. Vite proxies `/api/*` to `BACKEND_URL` (default http://127.0.0.1:8000), removing `/api`. This is a development proxy, not a production deployment configuration. For a separately hosted frontend, set `VITE_API_BASE_URL` to the backend origin and configure its allowed origins. Vite environment changes require a server restart or production rebuild.
+The frontend requests `/health` and `/api/*`. Vite proxies these paths unchanged to `BACKEND_URL` (default http://127.0.0.1:8000). This is a development proxy, not a production deployment configuration. For a separately hosted frontend, set `VITE_API_BASE_URL` to the backend origin and configure its allowed origins. Vite environment changes require a server restart or production rebuild.
 
 Backend `CORS_ORIGINS` is a JSON array allowing only localhost and 127.0.0.1 on port 5173 by default. Browser credentials are disabled. Backend settings load `backend/.env` regardless of working directory. Keep `GEMINI_API_KEY` exclusively in backend configuration; never put secrets in `VITE_*` variables.
 

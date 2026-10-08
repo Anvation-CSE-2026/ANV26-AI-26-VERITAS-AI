@@ -1,4 +1,5 @@
 from pathlib import Path
+from typing import Literal
 
 from pydantic import AliasChoices, Field
 from pydantic_settings import BaseSettings, SettingsConfigDict
@@ -25,6 +26,10 @@ class Settings(BaseSettings):
     )
     ollama_connect_timeout: float = Field(default=5.0, gt=0)
     ollama_read_timeout: float = Field(default=120.0, gt=0)
+    embedding_provider: Literal["ollama", "gemini"] = "ollama"
+    gemini_embedding_model: str = "gemini-embedding-001"
+    gemini_embedding_dimensions: int = Field(default=768, ge=128, le=3072)
+    gemini_embedding_timeout_seconds: float = Field(default=60.0, gt=0)
 
     # Authentication & Security
     jwt_secret_key: str = Field(default="veritas-ai-secret-key-change-in-production-2026", repr=False)

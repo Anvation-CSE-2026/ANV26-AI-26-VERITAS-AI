@@ -15,6 +15,8 @@ from app.services.storage import save_analysis, save_failure
 from app.services.evidence import EvidenceError
 from app.services.gemini_analysis import GeminiError
 from app.services.ollama_embeddings import EmbeddingError, EmbeddingTimeout, EmbeddingUnavailable
+from app.services.embeddings import embedding_model
+from app.services.gemini_embeddings import HostedEmbeddingError
 from app.services.reasoning_boundaries import detect_document_instructions
 
 
@@ -40,7 +42,7 @@ def _run_analysis(contract: Contract, analysis_id: str, started: float, progress
     result = Analysis(
         analysis_id=analysis_id, contract_id=contract.contract_id,
         created_at=datetime.now(timezone.utc), status="partial" if rejections or contract.warnings or review_needed else "completed",
-        gemini_model=settings.gemini_model, embedding_model=settings.ollama_embedding_model,
+        gemini_model=settings.gemini_model, embedding_model=embedding_model(),
         playbook_id=playbook.playbook_id, playbook_version=playbook.version,
         gemini_attempts=draft._gemini_attempts, gemini_response_model=draft._gemini_model_version,
         processing_seconds=round(time.monotonic() - started, 4),
@@ -67,6 +69,8 @@ def analyze_contract(contract: Contract, user_id: str | None = None) -> Analysis
             progress["stage"], progress["attempts"] = exc.stage, exc.attempts
         elif isinstance(exc, EvidenceError):
             status, category, message = 502, "unsupported_evidence", str(exc)
+        elif isinstance(exc, HostedEmbeddingError):
+            status, category, message = exc.status_code, exc.category, str(exc)
         elif isinstance(exc, EmbeddingTimeout):
             status, category, message = 504, "embedding_timeout", "Ollama embedding request timed out."
         elif isinstance(exc, EmbeddingUnavailable):
