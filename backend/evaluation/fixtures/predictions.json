@@ -1,0 +1,285 @@
+[
+  {
+    "contract_id": "SYN-supplier_red",
+    "status": "completed",
+    "predictions": [
+      {
+        "prediction_id": "SYN-supplier_red-P01",
+        "risk_category": "liability",
+        "severity": "high",
+        "finding_status": "risky",
+        "policy_id": "POL-LIAB-001",
+        "evidence_quote": "1. Supplier liability is limited to USD 50 in total, including fraud and data breaches.",
+        "page_number": 1,
+        "clause_id": "P001-C002"
+      },
+      {
+        "prediction_id": "SYN-supplier_red-P02",
+        "risk_category": "liability",
+        "severity": "high",
+        "finding_status": "risky",
+        "policy_id": "POL-LIAB-001",
+        "evidence_quote": "1. Supplier liability is limited to USD 50 in total, including fraud and data breaches.",
+        "page_number": 1,
+        "clause_id": "P001-C002"
+      },
+      {
+        "prediction_id": "SYN-supplier_red-P03",
+        "risk_category": "indemnification",
+        "severity": "high",
+        "finding_status": "risky",
+        "policy_id": "POL-INDEM-001",
+        "evidence_quote": "2. Company shall indemnify Supplier for every claim, including claims caused by Supplier\nnegligence. Supplier owes no IP defense.",
+        "page_number": 2,
+        "clause_id": "P002-C002"
+      },
+      {
+        "prediction_id": "SYN-supplier_red-P04",
+        "risk_category": "payment",
+        "severity": "medium",
+        "finding_status": "risky",
+        "policy_id": "POL-PAY-001",
+        "evidence_quote": "3. Undisputed invoices are payable in 30 days after receipt. Company may withhold disputed\nsums in good faith. Late interest is 1 percent per month.",
+        "page_number": 3,
+        "clause_id": "P003-C002"
+      }
+    ]
+  },
+  {
+    "contract_id": "SYN-supplier_green",
+    "status": "completed",
+    "predictions": [
+      {
+        "prediction_id": "SYN-supplier_green-P01",
+        "risk_category": "termination",
+        "severity": "high",
+        "finding_status": "risky",
+        "policy_id": "POL-TERM-001",
+        "evidence_quote": "3. Company may terminate for convenience only with 120 days notice and payment of all\nremaining service fees.",
+        "page_number": 3,
+        "clause_id": "P003-C002"
+      },
+      {
+        "prediction_id": "SYN-supplier_green-P02",
+        "risk_category": "governing_law",
+        "severity": "medium",
+        "finding_status": "risky",
+        "policy_id": "BENCH-LAW-001",
+        "evidence_quote": "4. This agreement is governed by the laws of the fictional Republic of Norland, with disputes\nheard only in its capital.",
+        "page_number": 4,
+        "clause_id": "P004-C002"
+      }
+    ]
+  },
+  {
+    "contract_id": "SYN-saas_red",
+    "status": "completed",
+    "predictions": [
+      {
+        "prediction_id": "SYN-saas_red-P01",
+        "risk_category": "data_protection",
+        "severity": "high",
+        "finding_status": "risky",
+        "policy_id": "POL-DATA-001",
+        "evidence_quote": "1. Provider must notify Company of a personal data breach within 9 days and delete retained data within 90 days after termination.",
+        "page_number": 1,
+        "clause_id": "P001-C002"
+      },
+      {
+        "prediction_id": "SYN-saas_red-P02",
+        "risk_category": "liability",
+        "severity": "medium",
+        "finding_status": "risky",
+        "policy_id": "POL-LIAB-001",
+        "evidence_quote": "2. Provider owns all bespoke dashboards. Company receives a revocable license that ends\nwhen the subscription ends.",
+        "page_number": 2,
+        "clause_id": "P002-C002"
+      },
+      {
+        "prediction_id": "SYN-saas_red-P03",
+        "risk_category": "payment",
+        "severity": "medium",
+        "finding_status": "risky",
+        "policy_id": "POL-PAY-001",
+        "evidence_quote": "3. All invoices, including disputed sums, are due within 7 days. Late interest is 4 percent per\nmonth.",
+        "page_number": 1,
+        "clause_id": "P003-C002"
+      },
+      {
+        "prediction_id": "SYN-saas_red-P04",
+        "risk_category": "confidentiality",
+        "severity": "high",
+        "finding_status": "risky",
+        "policy_id": "POL-CONF-001",
+        "evidence_quote": "4. Provider protects Company information using reasonable efforts for an appropriate period.",
+        "page_number": 4,
+        "clause_id": "P004-C002"
+      }
+    ]
+  },
+  {
+    "contract_id": "SYN-saas_green",
+    "status": "completed",
+    "predictions": [
+      {
+        "prediction_id": "SYN-saas_green-P01",
+        "risk_category": "data_protection",
+        "severity": "high",
+        "finding_status": "risky",
+        "policy_id": "POL-DATA-001",
+        "evidence_quote": "Provider guarantees zero breaches forever.",
+        "page_number": 1,
+        "clause_id": "P001-C002"
+      }
+    ]
+  },
+  {
+    "contract_id": "SYN-nda_short",
+    "status": "completed",
+    "predictions": [
+      {
+        "prediction_id": "SYN-nda_short-P01",
+        "risk_category": "confidentiality",
+        "severity": "medium",
+        "finding_status": "risky",
+        "policy_id": "POL-CONF-001",
+        "evidence_quote": "1. Each party shall use confidential information only for the project. All confidentiality duties\nend 6 months after disclosure, including trade secrets.",
+        "page_number": 1,
+        "clause_id": "P001-C002"
+      },
+      {
+        "prediction_id": "SYN-nda_short-P02",
+        "risk_category": "liability",
+        "severity": "high",
+        "finding_status": "risky",
+        "policy_id": "POL-LIAB-001",
+        "evidence_quote": "2. Liability for disclosure of confidential information is capped at USD 10.",
+        "page_number": 2,
+        "clause_id": "P999-C999"
+      }
+    ]
+  },
+  {
+    "contract_id": "SYN-nda_durable",
+    "status": "completed",
+    "predictions": [
+      {
+        "prediction_id": "SYN-nda_durable-P01",
+        "risk_category": "confidentiality",
+        "severity": "medium",
+        "finding_status": "risky",
+        "policy_id": "POL-CONF-001",
+        "evidence_quote": "2. Despite the preceding clause, Recipient may publish any confidential report after 10 days\nwithout consent.",
+        "page_number": 2,
+        "clause_id": "P002-C002"
+      },
+      {
+        "prediction_id": "SYN-nda_durable-P02",
+        "risk_category": "data_protection",
+        "severity": "medium",
+        "finding_status": "missing",
+        "policy_id": "POL-DATA-001"
+      }
+    ]
+  },
+  {
+    "contract_id": "SYN-services_exit",
+    "status": "completed",
+    "predictions": [
+      {
+        "prediction_id": "SYN-services_exit-P01",
+        "risk_category": "termination",
+        "severity": "medium",
+        "finding_status": "risky",
+        "policy_id": "POL-TERM-001",
+        "evidence_quote": "",
+        "page_number": 1,
+        "clause_id": "P001-C002"
+      }
+    ]
+  },
+  {
+    "contract_id": "SYN-services_balanced",
+    "status": "completed",
+    "predictions": [
+      {
+        "prediction_id": "SYN-services_balanced-P01",
+        "risk_category": "liability",
+        "severity": "medium",
+        "finding_status": "missing",
+        "policy_id": "POL-LIAB-001"
+      }
+    ]
+  },
+  {
+    "contract_id": "SYN-consulting_owned",
+    "status": "completed",
+    "predictions": [
+      {
+        "prediction_id": "SYN-consulting_owned-P01",
+        "risk_category": "confidentiality",
+        "severity": "medium",
+        "finding_status": "risky",
+        "policy_id": "POL-CONF-001",
+        "evidence_quote": "2. Consultant may use Company confidential information for any client and owes no\nconfidentiality duty after completion.",
+        "page_number": 2,
+        "clause_id": "P002-C002"
+      },
+      {
+        "prediction_id": "SYN-consulting_owned-P02",
+        "risk_category": "payment",
+        "severity": "medium",
+        "finding_status": "risky",
+        "policy_id": "POL-PAY-001",
+        "evidence_quote": "3. Company shall pay even disputed invoices in 5 days with late interest of 2 percent per\nmonth.",
+        "page_number": 3,
+        "clause_id": "P003-C002"
+      }
+    ]
+  },
+  {
+    "contract_id": "SYN-consulting_retained",
+    "status": "completed",
+    "predictions": [
+      {
+        "prediction_id": "SYN-consulting_retained-P01",
+        "risk_category": "intellectual_property",
+        "severity": "high",
+        "finding_status": "risky",
+        "policy_id": "POL-IP-001",
+        "evidence_quote": "1. Consultant retains custom designs and grants Company a temporary, non-transferable\nlicense with no right to modify.",
+        "page_number": 1,
+        "clause_id": "P001-C002"
+      }
+    ]
+  },
+  {
+    "contract_id": "SYN-services_split",
+    "status": "partial",
+    "predictions": [
+      {
+        "prediction_id": "SYN-services_split-P01",
+        "risk_category": "data_protection",
+        "severity": "high",
+        "finding_status": "risky",
+        "policy_id": "POL-DATA-001",
+        "evidence_quote": "SYNTHETIC CONTRACT - Page-spanning hosting services\nwithin 8 days and delete personal data within 60 days after exit.",
+        "page_number": 2,
+        "clause_id": "P002-C001"
+      }
+    ],
+    "rejected_finding_count": 1,
+    "error_category": "fixture_evidence_rejection"
+  },
+  {
+    "contract_id": "SYN-supplier_failure",
+    "status": "failed",
+    "predictions": [],
+    "error_category": "fixture_provider_transient",
+    "failed_stage": "gemini_reasoning",
+    "http_status": 503,
+    "upstream_http_status": 503,
+    "attempts": 3,
+    "failure_recorded": true
+  }
+]

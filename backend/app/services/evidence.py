@@ -3,6 +3,7 @@ from app.models.contracts import (
     AnalysisDraft, Contract, ModelInterpretation, Playbook, RejectedRecord, SourceFacts,
     VerifiedFinding, VerifiedObligation,
 )
+from app.services.analysis_observability import emit, timed
 from app.services.reasoning_boundaries import deadline_type, explicit_reference
 
 
@@ -12,7 +13,9 @@ class EvidenceError(RuntimeError):
         self.rejections = rejections or []
 
 
+@timed("evidence_verification")
 def verify_analysis(draft: AnalysisDraft, contract: Contract, playbook: Playbook):
+    emit("proposed", draft=draft, contract=contract)
     clauses = {clause.clause_id: clause for clause in contract.clauses}
     pages = {page.page_number: page.text for page in contract.pages}
     policies = {rule.policy_id: rule for rule in playbook.rules}
@@ -91,6 +94,7 @@ def verify_analysis(draft: AnalysisDraft, contract: Contract, playbook: Playbook
                 **item.model_dump(), deadline_type=kind,
                 evidence_status="needs_review" if kind == "ambiguous" else "verified",
             ))
+    emit("verified", findings=findings, obligations=obligations, rejections=rejections)
     if rejections and not findings and not obligations:
         raise EvidenceError("All generated records failed evidence verification; no analysis was saved.", rejections)
     return findings, obligations, rejections

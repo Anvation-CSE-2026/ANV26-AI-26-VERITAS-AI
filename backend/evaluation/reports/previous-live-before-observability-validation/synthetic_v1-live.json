@@ -1,0 +1,461 @@
+{
+  "metadata": {
+    "evaluated_at_utc": "2026-10-08T15:57:58.106741+00:00",
+    "dataset_id": "synthetic_v1",
+    "dataset_version": "1.0.0",
+    "mode": "live",
+    "result_label": "LIVE MODEL EVALUATION",
+    "live_services_used": true,
+    "model_identifier": "gemini-3.5-flash",
+    "configured_models": {
+      "gemini": "gemini-3.5-flash",
+      "embedding": "qwen3-embedding:0.6b"
+    },
+    "configuration": {
+      "gemini_model": "gemini-3.5-flash",
+      "embedding_model": "qwen3-embedding:0.6b",
+      "gemini_max_attempts": 3,
+      "gemini_retry_base_seconds": 1.0,
+      "gemini_timeout_seconds": 90.0,
+      "ollama_connect_timeout": 5.0,
+      "ollama_read_timeout": 120.0,
+      "max_upload_bytes": 10485760,
+      "max_contract_pages": 30,
+      "max_contract_chars": 60000,
+      "max_contract_clauses": 100
+    },
+    "configuration_sha256": "f684b1c85869908bb31c1127a3f35089a71fea0d436991ff9fd8beee6bcfbe18",
+    "prompt_sha256": "a1052d408528a4a24e8c8469df04a76c2c69c2b0a969c1cd9712fd3e1cf42292",
+    "engine_source_hashes": {
+      "services/gemini_analysis.py": "9133630cc2ebbf620b3b5ec69728c81ffbcd2ac2825445f180a63e8e504a0fc7",
+      "services/contract_analysis.py": "01180dc90d942828e4f08c8e8285ce3b062d5c9f2045d7c4a49ddfbe9ed9092f",
+      "services/pdf_extraction.py": "1efab86ce4698815003674373204774aef00dd15fcd52c639c2e22114bed7583",
+      "services/evidence.py": "4c83d27cf281679b4aebaf2335c8d4d9faac18ee54f3a11b459d266d9cf7036b",
+      "services/policy_matching.py": "52ff78179c3ffd475f2cc6790353c24ef306abf9c593f9ec2e1e0058235d1f42",
+      "services/ollama_embeddings.py": "3a343b2949f2ff3aebe6eaffcde43fd9935d2e9f791f471cf3126481305225c6",
+      "services/reasoning_boundaries.py": "4efb81868c1eab00d496051f7fc3dbb5d0613171e815fe45fcc76e7ce027b5b7",
+      "services/playbook.py": "59e1da4247f4d55cf41fbe76fb42bb5ffc4adb8d061ba283fdb1e55b9667d5ad",
+      "models/contracts.py": "0fa83c5ab7cba763768f5e1f4a4a2459ee9114debe6e96420aa194f61a770ee6",
+      "resources/sample_playbook.json": "fac92ffe46ca95cf01d53a43b62da1d5ee99367546b8464224f4e4d3b151c0dd"
+    },
+    "dataset_manifest_sha256": "efcebdb26bbb55196b5369b1aff1b8b455df7d3a163561fc0288ea0603b78923",
+    "evaluator_version": "1.0.0",
+    "evaluator_source_hashes": {
+      "__init__.py": "b91888113d4813382e1cec0ffe3ae646130a493f9f767e3317db432ea5022f3f",
+      "build_fixtures.py": "5502e95a72fec2605e34619ad6749e80d59b2bef430fe19882dcd70705d823da",
+      "dataset_loader.py": "d01ba262d0dbd1f85dcdb36df991384121bb43f988f540def3e2f168dabfaec0",
+      "evaluator.py": "40c7f72d322273098e59b04d583a88d04e6d16958e1371f85693eabcb9240dd5",
+      "evidence_metrics.py": "81ef4e6744add57a44a8a0f475ffe3030e4c1aa2cda14ae570cded502c3ae10c",
+      "live_adapter.py": "c827376a735283072952362c664125acb8c9007fb6e99f7ec2cac5bdae91d478",
+      "offline_guard.py": "c340c19dc2259f668de2aadf6a6f53ab797950f4eb1a445340a698d7149981b7",
+      "risk_metrics.py": "afe82b000b2b8df7d121e42614aa116aae1c86a3e54f2dbd8da8bb659e16c7c8",
+      "run_offline_tests.py": "9fbfe64cb53f6b161c2c46c5e6ef7f63a111f4e8aeee3f2e747db379e94d4978",
+      "runner.py": "cb9478b61733617e355c16cb881c77e067fbea494f90c130fea8e771aff0175b",
+      "schema.py": "4d366606c901cc8befca43776c10f2ff3605d90e1b4aec6ca709030d15b0cb2d"
+    },
+    "production_unsupported_categories": [
+      "governing_law"
+    ],
+    "measurement_notes": [
+      "Gold labels are synthetic author judgments pending manual review, not legally validated.",
+      "Detection uses source-target matching; literal evidence and legal interpretation are separate.",
+      "Failed analyses retain all annotated risks as false negatives.",
+      "Governing law is a benchmark-only category; the production schema/playbook lacks it.",
+      "Live quote metrics cover returned findings; rejected raw quotes are not exposed by the engine.",
+      "Token usage and costs are N/A because the current analysis result does not expose usage.",
+      "Fixture processing latency is N/A; runner overhead is not model latency."
+    ],
+    "runner_seconds": 49.01018669997575,
+    "selected_contract_count": 1
+  },
+  "summary": {
+    "dataset_size": 1,
+    "annotation_count": 4,
+    "annotated_risks": 3,
+    "missing_clause_annotations": 1,
+    "non_risk_annotations": 1,
+    "ambiguous_annotations": 0,
+    "reviewer_status_counts": {
+      "pending_manual_review": 4
+    },
+    "detection": {
+      "tp": 2,
+      "fp": 3,
+      "fn": 1,
+      "precision": 0.4,
+      "recall": 0.6666666666666666,
+      "f1": 0.5
+    },
+    "supported_evidence_detection": {
+      "tp": 2,
+      "fp": 3,
+      "fn": 1,
+      "precision": 0.4,
+      "recall": 0.6666666666666666,
+      "f1": 0.5
+    },
+    "per_category": {
+      "liability": {
+        "tp": 1,
+        "fp": 0,
+        "fn": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      "indemnification": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 1,
+        "precision": null,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      "termination": {
+        "tp": 1,
+        "fp": 0,
+        "fn": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      "payment": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 0,
+        "precision": null,
+        "recall": null,
+        "f1": null
+      },
+      "confidentiality": {
+        "tp": 0,
+        "fp": 1,
+        "fn": 0,
+        "precision": 0.0,
+        "recall": null,
+        "f1": 0.0
+      },
+      "data_protection": {
+        "tp": 0,
+        "fp": 1,
+        "fn": 0,
+        "precision": 0.0,
+        "recall": null,
+        "f1": 0.0
+      },
+      "intellectual_property": {
+        "tp": 0,
+        "fp": 1,
+        "fn": 0,
+        "precision": 0.0,
+        "recall": null,
+        "f1": 0.0
+      },
+      "governing_law": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 0,
+        "precision": null,
+        "recall": null,
+        "f1": null
+      }
+    },
+    "classification_micro": {
+      "tp": 2,
+      "fp": 3,
+      "fn": 1,
+      "precision": 0.4,
+      "recall": 0.6666666666666666,
+      "f1": 0.5
+    },
+    "micro_f1": 0.5,
+    "macro_f1": 0.3333333333333333,
+    "macro_categories_with_defined_f1": 6,
+    "category_accuracy_on_matched_risks": 1.0,
+    "severity_accuracy_on_matched_risks": 0.5,
+    "category_confusion": [
+      {
+        "gold": "liability",
+        "predicted": "liability",
+        "count": 1
+      },
+      {
+        "gold": "termination",
+        "predicted": "termination",
+        "count": 1
+      }
+    ],
+    "severity_confusion": [
+      {
+        "gold": "high",
+        "predicted": "critical",
+        "count": 1
+      },
+      {
+        "gold": "medium",
+        "predicted": "medium",
+        "count": 1
+      }
+    ],
+    "evidence": {
+      "returned_findings": 5,
+      "quote_eligible_findings": 1,
+      "omission_candidates": 4,
+      "exact_quote_match_rate": 1.0,
+      "normalized_quote_match_rate": 1.0,
+      "correct_page_citation_rate": 1.0,
+      "normalized_correct_page_rate": 1.0,
+      "unsupported_evidence_count": 2,
+      "rejected_finding_count": 2,
+      "evidence_verification_failure_rate": 0.2857142857142857,
+      "unsupported_evidence_rate": 0.2857142857142857,
+      "rejected_quotes_not_available": 2
+    },
+    "evidence_error_breakdown": {},
+    "reliability": {
+      "completed": 0,
+      "partial": 1,
+      "failed": 0,
+      "failure_rate": 0.0,
+      "error_breakdown": {},
+      "rejected_obligations": 2
+    },
+    "average_processing_seconds": 48.605386700015515,
+    "latency_available_analyses": 1,
+    "input_tokens": null,
+    "output_tokens": null,
+    "estimated_cost_usd": null,
+    "unmatched_predictions": [
+      {
+        "contract_id": "SYN-supplier_red",
+        "prediction_id": "SYN-supplier_red-LIVE-003"
+      },
+      {
+        "contract_id": "SYN-supplier_red",
+        "prediction_id": "SYN-supplier_red-LIVE-004"
+      },
+      {
+        "contract_id": "SYN-supplier_red",
+        "prediction_id": "SYN-supplier_red-LIVE-005"
+      }
+    ],
+    "missed_gold_annotations": [
+      {
+        "contract_id": "SYN-supplier_red",
+        "finding_id": "SYN-supplier_red-G02"
+      }
+    ],
+    "ambiguous_predictions_excluded": 0,
+    "cases": [
+      {
+        "contract_id": "SYN-supplier_red",
+        "status": "partial",
+        "risk": {
+          "detection": {
+            "tp": 2,
+            "fp": 3,
+            "fn": 1,
+            "precision": 0.4,
+            "recall": 0.6666666666666666,
+            "f1": 0.5
+          },
+          "per_category": {
+            "liability": {
+              "tp": 1,
+              "fp": 0,
+              "fn": 0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0
+            },
+            "indemnification": {
+              "tp": 0,
+              "fp": 0,
+              "fn": 1,
+              "precision": null,
+              "recall": 0.0,
+              "f1": 0.0
+            },
+            "termination": {
+              "tp": 1,
+              "fp": 0,
+              "fn": 0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0
+            },
+            "payment": {
+              "tp": 0,
+              "fp": 0,
+              "fn": 0,
+              "precision": null,
+              "recall": null,
+              "f1": null
+            },
+            "confidentiality": {
+              "tp": 0,
+              "fp": 1,
+              "fn": 0,
+              "precision": 0.0,
+              "recall": null,
+              "f1": 0.0
+            },
+            "data_protection": {
+              "tp": 0,
+              "fp": 1,
+              "fn": 0,
+              "precision": 0.0,
+              "recall": null,
+              "f1": 0.0
+            },
+            "intellectual_property": {
+              "tp": 0,
+              "fp": 1,
+              "fn": 0,
+              "precision": 0.0,
+              "recall": null,
+              "f1": 0.0
+            },
+            "governing_law": {
+              "tp": 0,
+              "fp": 0,
+              "fn": 0,
+              "precision": null,
+              "recall": null,
+              "f1": null
+            }
+          },
+          "matches": [
+            {
+              "prediction_id": "SYN-supplier_red-LIVE-001",
+              "finding_id": "SYN-supplier_red-G01",
+              "category_correct": true,
+              "severity_correct": false,
+              "omission": false
+            },
+            {
+              "prediction_id": "SYN-supplier_red-LIVE-002",
+              "finding_id": "SYN-supplier_red-G04",
+              "category_correct": true,
+              "severity_correct": true,
+              "omission": true
+            }
+          ],
+          "unmatched_predictions": [
+            "SYN-supplier_red-LIVE-003",
+            "SYN-supplier_red-LIVE-004",
+            "SYN-supplier_red-LIVE-005"
+          ],
+          "missed_gold": [
+            "SYN-supplier_red-G02"
+          ],
+          "ambiguous_predictions_excluded": [],
+          "ambiguous_gold_count": 0,
+          "non_risk_gold_count": 1,
+          "non_risk_false_positives": [],
+          "inactive_prediction_count": 0,
+          "category_confusion": [
+            {
+              "gold": "liability",
+              "predicted": "liability",
+              "count": 1
+            },
+            {
+              "gold": "termination",
+              "predicted": "termination",
+              "count": 1
+            }
+          ],
+          "severity_confusion": [
+            {
+              "gold": "high",
+              "predicted": "critical",
+              "count": 1
+            },
+            {
+              "gold": "medium",
+              "predicted": "medium",
+              "count": 1
+            }
+          ]
+        },
+        "supported_evidence_detection": {
+          "tp": 2,
+          "fp": 3,
+          "fn": 1,
+          "precision": 0.4,
+          "recall": 0.6666666666666666,
+          "f1": 0.5
+        },
+        "evidence": [
+          {
+            "prediction_id": "SYN-supplier_red-LIVE-001",
+            "quote_eligible": true,
+            "exact_match": true,
+            "normalized_match": true,
+            "correct_page": true,
+            "normalized_correct_page": true,
+            "supported": true,
+            "reasons": [],
+            "omission_not_confirmed": false
+          },
+          {
+            "prediction_id": "SYN-supplier_red-LIVE-002",
+            "quote_eligible": false,
+            "exact_match": null,
+            "normalized_match": null,
+            "correct_page": null,
+            "normalized_correct_page": null,
+            "supported": true,
+            "reasons": [],
+            "omission_not_confirmed": true
+          },
+          {
+            "prediction_id": "SYN-supplier_red-LIVE-003",
+            "quote_eligible": false,
+            "exact_match": null,
+            "normalized_match": null,
+            "correct_page": null,
+            "normalized_correct_page": null,
+            "supported": true,
+            "reasons": [],
+            "omission_not_confirmed": true
+          },
+          {
+            "prediction_id": "SYN-supplier_red-LIVE-004",
+            "quote_eligible": false,
+            "exact_match": null,
+            "normalized_match": null,
+            "correct_page": null,
+            "normalized_correct_page": null,
+            "supported": true,
+            "reasons": [],
+            "omission_not_confirmed": true
+          },
+          {
+            "prediction_id": "SYN-supplier_red-LIVE-005",
+            "quote_eligible": false,
+            "exact_match": null,
+            "normalized_match": null,
+            "correct_page": null,
+            "normalized_correct_page": null,
+            "supported": true,
+            "reasons": [],
+            "omission_not_confirmed": true
+          }
+        ],
+        "processing_seconds": 48.605386700015515,
+        "analysis_id": "a1aaa7af-7bfc-432c-abc1-abbd4d474f9d",
+        "error_category": null,
+        "failed_stage": null,
+        "http_status": null,
+        "upstream_http_status": null,
+        "attempts": 1,
+        "failure_recorded": null,
+        "response_model": "gemini-3.5-flash",
+        "rejected_finding_count": 2,
+        "rejected_obligation_count": 2
+      }
+    ]
+  }
+}

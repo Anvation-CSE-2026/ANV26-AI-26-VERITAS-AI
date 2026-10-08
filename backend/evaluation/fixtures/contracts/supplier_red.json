@@ -1,0 +1,63 @@
+{
+  "contract_id": "SYN-supplier_red",
+  "filename": "supplier_red.pdf",
+  "pages": [
+    {
+      "page_number": 1,
+      "text": "SYNTHETIC CONTRACT - Supplier equipment agreement\n1. Supplier liability is limited to USD 50 in total, including fraud and data breaches."
+    },
+    {
+      "page_number": 2,
+      "text": "SYNTHETIC CONTRACT - Supplier equipment agreement\n2. Company shall indemnify Supplier for every claim, including claims caused by Supplier\nnegligence. Supplier owes no IP defense."
+    },
+    {
+      "page_number": 3,
+      "text": "SYNTHETIC CONTRACT - Supplier equipment agreement\n3. Undisputed invoices are payable in 30 days after receipt. Company may withhold disputed\nsums in good faith. Late interest is 1 percent per month."
+    }
+  ],
+  "clauses": [
+    {
+      "clause_id": "P001-C001",
+      "page_number": 1,
+      "text": "SYNTHETIC CONTRACT - Supplier equipment agreement",
+      "start_offset": 0,
+      "end_offset": 49
+    },
+    {
+      "clause_id": "P001-C002",
+      "page_number": 1,
+      "text": "1. Supplier liability is limited to USD 50 in total, including fraud and data breaches.",
+      "start_offset": 50,
+      "end_offset": 137
+    },
+    {
+      "clause_id": "P002-C001",
+      "page_number": 2,
+      "text": "SYNTHETIC CONTRACT - Supplier equipment agreement",
+      "start_offset": 0,
+      "end_offset": 49
+    },
+    {
+      "clause_id": "P002-C002",
+      "page_number": 2,
+      "text": "2. Company shall indemnify Supplier for every claim, including claims caused by Supplier\nnegligence. Supplier owes no IP defense.",
+      "start_offset": 50,
+      "end_offset": 179
+    },
+    {
+      "clause_id": "P003-C001",
+      "page_number": 3,
+      "text": "SYNTHETIC CONTRACT - Supplier equipment agreement",
+      "start_offset": 0,
+      "end_offset": 49
+    },
+    {
+      "clause_id": "P003-C002",
+      "page_number": 3,
+      "text": "3. Undisputed invoices are payable in 30 days after receipt. Company may withhold disputed\nsums in good faith. Late interest is 1 percent per month.",
+      "start_offset": 50,
+      "end_offset": 198
+    }
+  ],
+  "warnings": []
+}

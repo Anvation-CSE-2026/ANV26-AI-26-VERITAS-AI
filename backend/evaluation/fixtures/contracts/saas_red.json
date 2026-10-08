@@ -1,0 +1,81 @@
+{
+  "contract_id": "SYN-saas_red",
+  "filename": "saas_red.pdf",
+  "pages": [
+    {
+      "page_number": 1,
+      "text": "SYNTHETIC CONTRACT - SaaS analytics subscription\n1. Provider must notify Company of a personal data breach within 9 days and delete retained\ndata within 90 days after termination."
+    },
+    {
+      "page_number": 2,
+      "text": "SYNTHETIC CONTRACT - SaaS analytics subscription\n2. Provider owns all bespoke dashboards. Company receives a revocable license that ends\nwhen the subscription ends."
+    },
+    {
+      "page_number": 3,
+      "text": "SYNTHETIC CONTRACT - SaaS analytics subscription\n3. All invoices, including disputed sums, are due within 7 days. Late interest is 4 percent per\nmonth."
+    },
+    {
+      "page_number": 4,
+      "text": "SYNTHETIC CONTRACT - SaaS analytics subscription\n4. Provider protects Company information using reasonable efforts for an appropriate period."
+    }
+  ],
+  "clauses": [
+    {
+      "clause_id": "P001-C001",
+      "page_number": 1,
+      "text": "SYNTHETIC CONTRACT - SaaS analytics subscription",
+      "start_offset": 0,
+      "end_offset": 48
+    },
+    {
+      "clause_id": "P001-C002",
+      "page_number": 1,
+      "text": "1. Provider must notify Company of a personal data breach within 9 days and delete retained\ndata within 90 days after termination.",
+      "start_offset": 49,
+      "end_offset": 179
+    },
+    {
+      "clause_id": "P002-C001",
+      "page_number": 2,
+      "text": "SYNTHETIC CONTRACT - SaaS analytics subscription",
+      "start_offset": 0,
+      "end_offset": 48
+    },
+    {
+      "clause_id": "P002-C002",
+      "page_number": 2,
+      "text": "2. Provider owns all bespoke dashboards. Company receives a revocable license that ends\nwhen the subscription ends.",
+      "start_offset": 49,
+      "end_offset": 164
+    },
+    {
+      "clause_id": "P003-C001",
+      "page_number": 3,
+      "text": "SYNTHETIC CONTRACT - SaaS analytics subscription",
+      "start_offset": 0,
+      "end_offset": 48
+    },
+    {
+      "clause_id": "P003-C002",
+      "page_number": 3,
+      "text": "3. All invoices, including disputed sums, are due within 7 days. Late interest is 4 percent per\nmonth.",
+      "start_offset": 49,
+      "end_offset": 151
+    },
+    {
+      "clause_id": "P004-C001",
+      "page_number": 4,
+      "text": "SYNTHETIC CONTRACT - SaaS analytics subscription",
+      "start_offset": 0,
+      "end_offset": 48
+    },
+    {
+      "clause_id": "P004-C002",
+      "page_number": 4,
+      "text": "4. Provider protects Company information using reasonable efforts for an appropriate period.",
+      "start_offset": 49,
+      "end_offset": 141
+    }
+  ],
+  "warnings": []
+}

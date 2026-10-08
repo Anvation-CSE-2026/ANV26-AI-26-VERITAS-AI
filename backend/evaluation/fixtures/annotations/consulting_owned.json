@@ -1,0 +1,65 @@
+[
+  {
+    "contract_id": "SYN-consulting_owned",
+    "finding_id": "SYN-consulting_owned-G01",
+    "risk_category": "intellectual_property",
+    "expected_severity": "low",
+    "expected_clause_text": "1. Company owns all custom designs upon creation. Consultant retains the pre-existing toolkit\nnamed in Schedule B.",
+    "expected_page_number": 1,
+    "explanation": "Bespoke ownership is explicit.",
+    "risk_present": false,
+    "annotation_state": "non_risk",
+    "annotation_confidence": "high",
+    "reviewer_status": "pending_manual_review",
+    "policy_id": "POL-IP-001",
+    "evidence_spans": [
+      {
+        "clause_id": "P001-C002",
+        "page_number": 1,
+        "quote": "1. Company owns all custom designs upon creation. Consultant retains the pre-existing toolkit\nnamed in Schedule B."
+      }
+    ]
+  },
+  {
+    "contract_id": "SYN-consulting_owned",
+    "finding_id": "SYN-consulting_owned-G02",
+    "risk_category": "confidentiality",
+    "expected_severity": "medium",
+    "expected_clause_text": "2. Consultant may use Company confidential information for any client and owes no\nconfidentiality duty after completion.",
+    "expected_page_number": 2,
+    "explanation": "Purpose and survival protections are absent.",
+    "risk_present": true,
+    "annotation_state": "risk",
+    "annotation_confidence": "high",
+    "reviewer_status": "pending_manual_review",
+    "policy_id": "POL-CONF-001",
+    "evidence_spans": [
+      {
+        "clause_id": "P002-C002",
+        "page_number": 2,
+        "quote": "2. Consultant may use Company confidential information for any client and owes no\nconfidentiality duty after completion."
+      }
+    ]
+  },
+  {
+    "contract_id": "SYN-consulting_owned",
+    "finding_id": "SYN-consulting_owned-G03",
+    "risk_category": "payment",
+    "expected_severity": "medium",
+    "expected_clause_text": "3. Company shall pay even disputed invoices in 5 days with late interest of 2 percent per\nmonth.",
+    "expected_page_number": 3,
+    "explanation": "Departs from all three payment expectations.",
+    "risk_present": true,
+    "annotation_state": "risk",
+    "annotation_confidence": "high",
+    "reviewer_status": "pending_manual_review",
+    "policy_id": "POL-PAY-001",
+    "evidence_spans": [
+      {
+        "clause_id": "P003-C002",
+        "page_number": 3,
+        "quote": "3. Company shall pay even disputed invoices in 5 days with late interest of 2 percent per\nmonth."
+      }
+    ]
+  }
+]

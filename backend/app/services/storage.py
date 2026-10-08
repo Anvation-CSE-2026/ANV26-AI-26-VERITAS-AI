@@ -7,6 +7,7 @@ from datetime import datetime, timezone
 from uuid import uuid4
 
 from app.config import settings
+from app.services.analysis_observability import timed
 from app.models.auth import UserRecord
 from app.models.contracts import Analysis, AnalysisFailure, Contract
 
@@ -323,6 +324,7 @@ def record_analysis_usage(user_id: str, analysis_id: str, billing_period: str) -
 # CONTRACT & ANALYSIS STORAGE WITH ACCOUNT-LEVEL ISOLATION
 # ==========================================================
 
+@timed("persistence_contract")
 def save_contract(contract: Contract, pdf_bytes: bytes, user_id: str | None = None) -> None:
     with connection() as conn:
         conn.execute(
@@ -344,6 +346,7 @@ def get_contract(contract_id: str, user_id: str | None = None) -> Contract | Non
     return Contract.model_validate_json(row[0]) if row else None
 
 
+@timed("persistence_analysis")
 def save_analysis(analysis: Analysis, user_id: str | None = None) -> None:
     with connection() as conn:
         conn.execute(
@@ -352,6 +355,7 @@ def save_analysis(analysis: Analysis, user_id: str | None = None) -> None:
         )
 
 
+@timed("persistence_retrieval")
 def get_analysis(analysis_id: str, user_id: str | None = None) -> Analysis | None:
     with connection() as conn:
         if user_id is not None:
@@ -373,6 +377,7 @@ def get_user_analyses_history(user_id: str, limit: int = 30) -> list[Analysis]:
     return [Analysis.model_validate_json(row[0]) for row in rows]
 
 
+@timed("persistence_failure")
 def save_failure(failure: AnalysisFailure, user_id: str | None = None) -> None:
     with connection() as conn:
         conn.execute(
@@ -381,6 +386,7 @@ def save_failure(failure: AnalysisFailure, user_id: str | None = None) -> None:
         )
 
 
+@timed("persistence_failure_retrieval")
 def get_failure(analysis_id: str, user_id: str | None = None) -> AnalysisFailure | None:
     with connection() as conn:
         if user_id is not None:

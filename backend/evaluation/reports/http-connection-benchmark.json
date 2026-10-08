@@ -1,0 +1,629 @@
+{
+  "status": "completed",
+  "iterations": 5,
+  "requests_per_iteration": 3,
+  "runs": [
+    {
+      "iteration": 1,
+      "variant": "fresh",
+      "client_creation_seconds": [
+        0.008144200022798032,
+        0.00643910001963377,
+        0.006610099982935935
+      ],
+      "requests": [
+        {
+          "request_seconds": 2.0577264999737963,
+          "connect_tcp_count": 1,
+          "connect_tcp_seconds": 2.0287136000115424,
+          "http_status": 200,
+          "provider_total_duration_ns": 26841600,
+          "provider_load_duration_ns": 9726600,
+          "cookies_received": 0
+        },
+        {
+          "request_seconds": 2.102220899949316,
+          "connect_tcp_count": 1,
+          "connect_tcp_seconds": 2.0192642000038177,
+          "http_status": 200,
+          "provider_total_duration_ns": 82545800,
+          "provider_load_duration_ns": 10347000,
+          "cookies_received": 0
+        },
+        {
+          "request_seconds": 2.210510900011286,
+          "connect_tcp_count": 1,
+          "connect_tcp_seconds": 2.055089899979066,
+          "http_status": 200,
+          "provider_total_duration_ns": 153698400,
+          "provider_load_duration_ns": 8908100,
+          "cookies_received": 0
+        }
+      ],
+      "close_seconds": [
+        6.890000076964498e-05,
+        8.019997039809823e-05,
+        5.7100027333945036e-05
+      ],
+      "warmup": {
+        "request_seconds": 2.047810300020501,
+        "connect_tcp_count": 1,
+        "connect_tcp_seconds": 2.015639499993995,
+        "http_status": 200,
+        "provider_total_duration_ns": 31267300,
+        "provider_load_duration_ns": 9668600,
+        "cookies_received": 0
+      },
+      "measured_total_seconds": 6.393240599951241,
+      "setup_inclusive_seconds": 6.393240599951241
+    },
+    {
+      "iteration": 1,
+      "variant": "pooled",
+      "client_creation_seconds": [
+        0.006094899959862232
+      ],
+      "requests": [
+        {
+          "request_seconds": 0.0789006999693811,
+          "connect_tcp_count": 0,
+          "connect_tcp_seconds": 0,
+          "http_status": 200,
+          "provider_total_duration_ns": 76990400,
+          "provider_load_duration_ns": 8443100,
+          "cookies_received": 0
+        },
+        {
+          "request_seconds": 0.056682499998714775,
+          "connect_tcp_count": 0,
+          "connect_tcp_seconds": 0,
+          "http_status": 200,
+          "provider_total_duration_ns": 55920300,
+          "provider_load_duration_ns": 8334200,
+          "cookies_received": 0
+        },
+        {
+          "request_seconds": 0.02466860000276938,
+          "connect_tcp_count": 0,
+          "connect_tcp_seconds": 0,
+          "http_status": 200,
+          "provider_total_duration_ns": 23494300,
+          "provider_load_duration_ns": 8719500,
+          "cookies_received": 0
+        }
+      ],
+      "close_seconds": [
+        4.910002462565899e-05
+      ],
+      "warmup": {
+        "request_seconds": 2.0924379999632947,
+        "connect_tcp_count": 1,
+        "connect_tcp_seconds": 2.0104983000201173,
+        "http_status": 200,
+        "provider_total_duration_ns": 80507200,
+        "provider_load_duration_ns": 9520700,
+        "cookies_received": 0
+      },
+      "measured_total_seconds": 0.1614625000511296,
+      "setup_inclusive_seconds": 0.16755740001099184
+    },
+    {
+      "iteration": 2,
+      "variant": "pooled",
+      "client_creation_seconds": [
+        0.008414700045250356
+      ],
+      "requests": [
+        {
+          "request_seconds": 0.08118329994613305,
+          "connect_tcp_count": 0,
+          "connect_tcp_seconds": 0,
+          "http_status": 200,
+          "provider_total_duration_ns": 79576100,
+          "provider_load_duration_ns": 8589000,
+          "cookies_received": 0
+        },
+        {
+          "request_seconds": 0.07696750003378838,
+          "connect_tcp_count": 0,
+          "connect_tcp_seconds": 0,
+          "http_status": 200,
+          "provider_total_duration_ns": 75799500,
+          "provider_load_duration_ns": 10615800,
+          "cookies_received": 0
+        },
+        {
+          "request_seconds": 0.07553550001466647,
+          "connect_tcp_count": 0,
+          "connect_tcp_seconds": 0,
+          "http_status": 200,
+          "provider_total_duration_ns": 74405100,
+          "provider_load_duration_ns": 10117100,
+          "cookies_received": 0
+        }
+      ],
+      "close_seconds": [
+        8.410000009462237e-05
+      ],
+      "warmup": {
+        "request_seconds": 2.0954960000235587,
+        "connect_tcp_count": 1,
+        "connect_tcp_seconds": 2.018365999974776,
+        "http_status": 200,
+        "provider_total_duration_ns": 75826100,
+        "provider_load_duration_ns": 8226800,
+        "cookies_received": 0
+      },
+      "measured_total_seconds": 0.2355404999689199,
+      "setup_inclusive_seconds": 0.24395520001417026
+    },
+    {
+      "iteration": 2,
+      "variant": "fresh",
+      "client_creation_seconds": [
+        0.00643020001007244,
+        0.005795900011435151,
+        0.005989000026602298
+      ],
+      "requests": [
+        {
+          "request_seconds": 2.180761900031939,
+          "connect_tcp_count": 1,
+          "connect_tcp_seconds": 2.0195112000219524,
+          "http_status": 200,
+          "provider_total_duration_ns": 160185800,
+          "provider_load_duration_ns": 9688000,
+          "cookies_received": 0
+        },
+        {
+          "request_seconds": 2.149019100004807,
+          "connect_tcp_count": 1,
+          "connect_tcp_seconds": 2.0379611999960616,
+          "http_status": 200,
+          "provider_total_duration_ns": 106583600,
+          "provider_load_duration_ns": 9849700,
+          "cookies_received": 0
+        },
+        {
+          "request_seconds": 2.174243799992837,
+          "connect_tcp_count": 1,
+          "connect_tcp_seconds": 2.036751199979335,
+          "http_status": 200,
+          "provider_total_duration_ns": 135914900,
+          "provider_load_duration_ns": 8708600,
+          "cookies_received": 0
+        }
+      ],
+      "close_seconds": [
+        5.4299947805702686e-05,
+        6.549997488036752e-05,
+        6.590003613382578e-05
+      ],
+      "warmup": {
+        "request_seconds": 2.1181181999854743,
+        "connect_tcp_count": 1,
+        "connect_tcp_seconds": 2.039259499986656,
+        "http_status": 200,
+        "provider_total_duration_ns": 77122600,
+        "provider_load_duration_ns": 9063500,
+        "cookies_received": 0
+      },
+      "measured_total_seconds": 6.523999899975024,
+      "setup_inclusive_seconds": 6.523999899975024
+    },
+    {
+      "iteration": 3,
+      "variant": "fresh",
+      "client_creation_seconds": [
+        0.005662899988237768,
+        0.0058759999810718,
+        0.01119499997003004
+      ],
+      "requests": [
+        {
+          "request_seconds": 2.196540000033565,
+          "connect_tcp_count": 1,
+          "connect_tcp_seconds": 2.026450000004843,
+          "http_status": 200,
+          "provider_total_duration_ns": 165812700,
+          "provider_load_duration_ns": 11264500,
+          "cookies_received": 0
+        },
+        {
+          "request_seconds": 2.084454800002277,
+          "connect_tcp_count": 1,
+          "connect_tcp_seconds": 2.0445796999847516,
+          "http_status": 200,
+          "provider_total_duration_ns": 38259800,
+          "provider_load_duration_ns": 10295300,
+          "cookies_received": 0
+        },
+        {
+          "request_seconds": 2.1482427999726497,
+          "connect_tcp_count": 1,
+          "connect_tcp_seconds": 2.059702800004743,
+          "http_status": 200,
+          "provider_total_duration_ns": 87067000,
+          "provider_load_duration_ns": 8953500,
+          "cookies_received": 0
+        }
+      ],
+      "close_seconds": [
+        6.910000229254365e-05,
+        6.38000201433897e-05,
+        5.0499977078288794e-05
+      ],
+      "warmup": {
+        "request_seconds": 2.177144000015687,
+        "connect_tcp_count": 1,
+        "connect_tcp_seconds": 2.0216306000365876,
+        "http_status": 200,
+        "provider_total_duration_ns": 154390200,
+        "provider_load_duration_ns": 9712700,
+        "cookies_received": 0
+      },
+      "measured_total_seconds": 6.453616900020279,
+      "setup_inclusive_seconds": 6.453616900020279
+    },
+    {
+      "iteration": 3,
+      "variant": "pooled",
+      "client_creation_seconds": [
+        0.007614400004968047
+      ],
+      "requests": [
+        {
+          "request_seconds": 0.11632620001910254,
+          "connect_tcp_count": 0,
+          "connect_tcp_seconds": 0,
+          "http_status": 200,
+          "provider_total_duration_ns": 105001800,
+          "provider_load_duration_ns": 8405900,
+          "cookies_received": 0
+        },
+        {
+          "request_seconds": 0.025827899982687086,
+          "connect_tcp_count": 0,
+          "connect_tcp_seconds": 0,
+          "http_status": 200,
+          "provider_total_duration_ns": 24836800,
+          "provider_load_duration_ns": 9679200,
+          "cookies_received": 0
+        },
+        {
+          "request_seconds": 0.028860999969765544,
+          "connect_tcp_count": 0,
+          "connect_tcp_seconds": 0,
+          "http_status": 200,
+          "provider_total_duration_ns": 27905500,
+          "provider_load_duration_ns": 9339100,
+          "cookies_received": 0
+        }
+      ],
+      "close_seconds": [
+        4.369998350739479e-05
+      ],
+      "warmup": {
+        "request_seconds": 2.218945700034965,
+        "connect_tcp_count": 1,
+        "connect_tcp_seconds": 2.054663199989591,
+        "http_status": 200,
+        "provider_total_duration_ns": 162483400,
+        "provider_load_duration_ns": 9658200,
+        "cookies_received": 0
+      },
+      "measured_total_seconds": 0.17251930001657456,
+      "setup_inclusive_seconds": 0.1801337000215426
+    },
+    {
+      "iteration": 4,
+      "variant": "pooled",
+      "client_creation_seconds": [
+        0.007136199972592294
+      ],
+      "requests": [
+        {
+          "request_seconds": 0.0385408999864012,
+          "connect_tcp_count": 0,
+          "connect_tcp_seconds": 0,
+          "http_status": 200,
+          "provider_total_duration_ns": 37680800,
+          "provider_load_duration_ns": 11427400,
+          "cookies_received": 0
+        },
+        {
+          "request_seconds": 0.03853200003504753,
+          "connect_tcp_count": 0,
+          "connect_tcp_seconds": 0,
+          "http_status": 200,
+          "provider_total_duration_ns": 37401000,
+          "provider_load_duration_ns": 8853200,
+          "cookies_received": 0
+        },
+        {
+          "request_seconds": 0.03690860001370311,
+          "connect_tcp_count": 0,
+          "connect_tcp_seconds": 0,
+          "http_status": 200,
+          "provider_total_duration_ns": 35605900,
+          "provider_load_duration_ns": 10838500,
+          "cookies_received": 0
+        }
+      ],
+      "close_seconds": [
+        4.75000124424696e-05
+      ],
+      "warmup": {
+        "request_seconds": 2.0593221000162885,
+        "connect_tcp_count": 1,
+        "connect_tcp_seconds": 2.0228117000078782,
+        "http_status": 200,
+        "provider_total_duration_ns": 34425600,
+        "provider_load_duration_ns": 8473900,
+        "cookies_received": 0
+      },
+      "measured_total_seconds": 0.1153586000436917,
+      "setup_inclusive_seconds": 0.12249480001628399
+    },
+    {
+      "iteration": 4,
+      "variant": "fresh",
+      "client_creation_seconds": [
+        0.006202400021720678,
+        0.006530600017867982,
+        0.006411999987903982
+      ],
+      "requests": [
+        {
+          "request_seconds": 2.131745599966962,
+          "connect_tcp_count": 1,
+          "connect_tcp_seconds": 2.0233582999790087,
+          "http_status": 200,
+          "provider_total_duration_ns": 106771300,
+          "provider_load_duration_ns": 9322900,
+          "cookies_received": 0
+        },
+        {
+          "request_seconds": 2.163375200005248,
+          "connect_tcp_count": 1,
+          "connect_tcp_seconds": 2.0222877000342123,
+          "http_status": 200,
+          "provider_total_duration_ns": 139191000,
+          "provider_load_duration_ns": 9179100,
+          "cookies_received": 0
+        },
+        {
+          "request_seconds": 2.191242599976249,
+          "connect_tcp_count": 1,
+          "connect_tcp_seconds": 2.0290380000369623,
+          "http_status": 200,
+          "provider_total_duration_ns": 161170000,
+          "provider_load_duration_ns": 10288500,
+          "cookies_received": 0
+        }
+      ],
+      "close_seconds": [
+        6.480002775788307e-05,
+        8.140003774315119e-05,
+        6.480002775788307e-05
+      ],
+      "warmup": {
+        "request_seconds": 2.0535437000216916,
+        "connect_tcp_count": 1,
+        "connect_tcp_seconds": 2.0266575000132434,
+        "http_status": 200,
+        "provider_total_duration_ns": 25814200,
+        "provider_load_duration_ns": 8869600,
+        "cookies_received": 0
+      },
+      "measured_total_seconds": 6.507568400003947,
+      "setup_inclusive_seconds": 6.507568400003947
+    },
+    {
+      "iteration": 5,
+      "variant": "fresh",
+      "client_creation_seconds": [
+        0.0063798000337556005,
+        0.006138099997770041,
+        0.005744999973103404
+      ],
+      "requests": [
+        {
+          "request_seconds": 2.131341100030113,
+          "connect_tcp_count": 1,
+          "connect_tcp_seconds": 2.0499852999928407,
+          "http_status": 200,
+          "provider_total_duration_ns": 79166500,
+          "provider_load_duration_ns": 9708500,
+          "cookies_received": 0
+        },
+        {
+          "request_seconds": 2.11650170001667,
+          "connect_tcp_count": 1,
+          "connect_tcp_seconds": 2.036218299996108,
+          "http_status": 200,
+          "provider_total_duration_ns": 78497100,
+          "provider_load_duration_ns": 10147700,
+          "cookies_received": 0
+        },
+        {
+          "request_seconds": 2.126748199982103,
+          "connect_tcp_count": 1,
+          "connect_tcp_seconds": 2.0392702000099234,
+          "http_status": 200,
+          "provider_total_duration_ns": 86322400,
+          "provider_load_duration_ns": 9486500,
+          "cookies_received": 0
+        }
+      ],
+      "close_seconds": [
+        8.41999426484108e-05,
+        4.9400026910007e-05,
+        6.819999543949962e-05
+      ],
+      "warmup": {
+        "request_seconds": 2.1693956999806687,
+        "connect_tcp_count": 1,
+        "connect_tcp_seconds": 2.013115799985826,
+        "http_status": 200,
+        "provider_total_duration_ns": 154595600,
+        "provider_load_duration_ns": 9807500,
+        "cookies_received": 0
+      },
+      "measured_total_seconds": 6.394862099958118,
+      "setup_inclusive_seconds": 6.394862099958118
+    },
+    {
+      "iteration": 5,
+      "variant": "pooled",
+      "client_creation_seconds": [
+        0.005945099983364344
+      ],
+      "requests": [
+        {
+          "request_seconds": 0.02593100001104176,
+          "connect_tcp_count": 0,
+          "connect_tcp_seconds": 0,
+          "http_status": 200,
+          "provider_total_duration_ns": 24368400,
+          "provider_load_duration_ns": 9715600,
+          "cookies_received": 0
+        },
+        {
+          "request_seconds": 0.0301014999859035,
+          "connect_tcp_count": 0,
+          "connect_tcp_seconds": 0,
+          "http_status": 200,
+          "provider_total_duration_ns": 28217200,
+          "provider_load_duration_ns": 13302600,
+          "cookies_received": 0
+        },
+        {
+          "request_seconds": 0.02633239998249337,
+          "connect_tcp_count": 0,
+          "connect_tcp_seconds": 0,
+          "http_status": 200,
+          "provider_total_duration_ns": 24205900,
+          "provider_load_duration_ns": 10140200,
+          "cookies_received": 0
+        }
+      ],
+      "close_seconds": [
+        5.329999839887023e-05
+      ],
+      "warmup": {
+        "request_seconds": 2.1921577000175603,
+        "connect_tcp_count": 1,
+        "connect_tcp_seconds": 2.0392968999803998,
+        "http_status": 200,
+        "provider_total_duration_ns": 151166200,
+        "provider_load_duration_ns": 9747400,
+        "cookies_received": 0
+      },
+      "measured_total_seconds": 0.0838520000106655,
+      "setup_inclusive_seconds": 0.08979709999402985
+    }
+  ],
+  "errors": [],
+  "gemini_calls": 0,
+  "environment": {
+    "platform": "Windows-11-10.0.26200-SP0",
+    "python": "3.14.7",
+    "httpx": "0.28.1",
+    "ollama": "0.40.1",
+    "model": "qwen3-embedding:0.6b",
+    "digest": "ac6da0dfba84a81fdbfbaf330198c33cd77c4cdfc53e8bc50eb581914a15621d",
+    "dimensions": 1024,
+    "url": "http://localhost:11434",
+    "connect_timeout": 5.0,
+    "read_timeout": 120.0,
+    "trust_env": false,
+    "truncate": false,
+    "retries": 0,
+    "input_sha256": "f05421c40ffe4a67bd29e298d14115438d10029a0820e0bb5372fa189fdc0eea"
+  },
+  "summary": {
+    "fresh": {
+      "median_total_seconds": 6.453616900020279,
+      "median_setup_inclusive_seconds": 6.453616900020279,
+      "minimum_total_seconds": 6.393240599951241,
+      "maximum_total_seconds": 6.523999899975024,
+      "sample_stdev_seconds": 0.06114846706904778,
+      "median_client_creation_seconds": 0.0063798000337556005,
+      "median_request_seconds": 2.1482427999726497,
+      "measured_connections": 15,
+      "measured_requests": 15
+    },
+    "pooled": {
+      "median_total_seconds": 0.1614625000511296,
+      "median_setup_inclusive_seconds": 0.16755740001099184,
+      "minimum_total_seconds": 0.0838520000106655,
+      "maximum_total_seconds": 0.2355404999689199,
+      "sample_stdev_seconds": 0.058010958231935805,
+      "median_client_creation_seconds": 0.007136199972592294,
+      "median_request_seconds": 0.03853200003504753,
+      "measured_connections": 0,
+      "measured_requests": 15
+    }
+  },
+  "improvement_percent": 97.40366677156703,
+  "correctness": {
+    "max_absolute_vector_difference": 0.0,
+    "tolerance": 1e-06,
+    "all_dimensions_1024": true,
+    "all_http_status_200": true,
+    "no_cookies_received": true,
+    "distinct_client_per_iteration": true
+  },
+  "offline_error_mapping_checks": [
+    {
+      "lifecycle": "fresh",
+      "error": "read_timeout",
+      "mapped_exception": "EmbeddingTimeout",
+      "subsequent_distinct_input_succeeded": true,
+      "timeout_configuration_preserved": true,
+      "no_auth_or_cookie_state": true
+    },
+    {
+      "lifecycle": "fresh",
+      "error": "connection",
+      "mapped_exception": "EmbeddingUnavailable",
+      "subsequent_distinct_input_succeeded": true,
+      "timeout_configuration_preserved": true,
+      "no_auth_or_cookie_state": true
+    },
+    {
+      "lifecycle": "fresh",
+      "error": "http_status",
+      "mapped_exception": "EmbeddingError",
+      "subsequent_distinct_input_succeeded": true,
+      "timeout_configuration_preserved": true,
+      "no_auth_or_cookie_state": true
+    },
+    {
+      "lifecycle": "pooled",
+      "error": "read_timeout",
+      "mapped_exception": "EmbeddingTimeout",
+      "subsequent_distinct_input_succeeded": true,
+      "timeout_configuration_preserved": true,
+      "no_auth_or_cookie_state": true
+    },
+    {
+      "lifecycle": "pooled",
+      "error": "connection",
+      "mapped_exception": "EmbeddingUnavailable",
+      "subsequent_distinct_input_succeeded": true,
+      "timeout_configuration_preserved": true,
+      "no_auth_or_cookie_state": true
+    },
+    {
+      "lifecycle": "pooled",
+      "error": "http_status",
+      "mapped_exception": "EmbeddingError",
+      "subsequent_distinct_input_succeeded": true,
+      "timeout_configuration_preserved": true,
+      "no_auth_or_cookie_state": true
+    }
+  ],
+  "production_sqlite_unchanged": true
+}

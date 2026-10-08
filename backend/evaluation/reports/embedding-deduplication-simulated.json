@@ -1,0 +1,114 @@
+{
+  "label": "SIMULATED MOCK TIMING \u2014 NOT REAL OLLAMA PERFORMANCE",
+  "contract_id": "SYN-supplier_red",
+  "dimension": 1024,
+  "simulated_request_delay_seconds": 0.02,
+  "repeats_per_variant": 5,
+  "network_blocked": true,
+  "live_services_used": false,
+  "equivalent_rankings_and_scores": true,
+  "samples": {
+    "cold": {
+      "before": [
+        {
+          "seconds": 0.2836206999490969,
+          "embedding_calls": 13
+        },
+        {
+          "seconds": 0.2856807999778539,
+          "embedding_calls": 13
+        },
+        {
+          "seconds": 0.2837477999855764,
+          "embedding_calls": 13
+        },
+        {
+          "seconds": 0.2812731000012718,
+          "embedding_calls": 13
+        },
+        {
+          "seconds": 0.282599099969957,
+          "embedding_calls": 13
+        }
+      ],
+      "after": [
+        {
+          "seconds": 0.24347149999812245,
+          "embedding_calls": 11
+        },
+        {
+          "seconds": 0.24391479999758303,
+          "embedding_calls": 11
+        },
+        {
+          "seconds": 0.2400393999996595,
+          "embedding_calls": 11
+        },
+        {
+          "seconds": 0.24199440004304051,
+          "embedding_calls": 11
+        },
+        {
+          "seconds": 0.2461969000287354,
+          "embedding_calls": 11
+        }
+      ]
+    },
+    "warm": {
+      "before": [
+        {
+          "seconds": 0.14814990002196282,
+          "embedding_calls": 6
+        },
+        {
+          "seconds": 0.14945179998176172,
+          "embedding_calls": 6
+        },
+        {
+          "seconds": 0.14670370001113042,
+          "embedding_calls": 6
+        },
+        {
+          "seconds": 0.15002539998386055,
+          "embedding_calls": 6
+        },
+        {
+          "seconds": 0.14983750000828877,
+          "embedding_calls": 6
+        }
+      ],
+      "after": [
+        {
+          "seconds": 0.10705279995454475,
+          "embedding_calls": 4
+        },
+        {
+          "seconds": 0.10802440001862124,
+          "embedding_calls": 4
+        },
+        {
+          "seconds": 0.10825310001382604,
+          "embedding_calls": 4
+        },
+        {
+          "seconds": 0.10829300002660602,
+          "embedding_calls": 4
+        },
+        {
+          "seconds": 0.11112790001789108,
+          "embedding_calls": 4
+        }
+      ]
+    }
+  },
+  "median_seconds": {
+    "cold": {
+      "before": 0.2836206999490969,
+      "after": 0.24347149999812245
+    },
+    "warm": {
+      "before": 0.14945179998176172,
+      "after": 0.10825310001382604
+    }
+  }
+}

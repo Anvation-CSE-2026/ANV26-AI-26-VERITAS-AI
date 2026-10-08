@@ -1,9 +1,14 @@
 """Local embeddings for retrieval and clause/policy comparison; no chat calls."""
 import math
+from contextlib import contextmanager
+from contextvars import ContextVar
+from functools import wraps
+from threading import get_ident
 
 import httpx
 
 from app.config import settings
+from app.services.analysis_observability import timed
 
 
 class EmbeddingError(RuntimeError):
@@ -18,13 +23,63 @@ class EmbeddingTimeout(EmbeddingError):
     pass
 
 
+_client_scope = ContextVar("ollama_retrieval_client", default=None)
+
+
+def _client_key():
+    return (settings.ollama_base_url, settings.ollama_embedding_model,
+            settings.ollama_connect_timeout, settings.ollama_read_timeout, get_ident())
+
+
+def _new_client():
+    return httpx.Client(timeout=httpx.Timeout(settings.ollama_read_timeout,
+                        connect=settings.ollama_connect_timeout), trust_env=False)
+
+
+@contextmanager
+def embedding_client_scope():
+    """A new synchronous client for one retrieval; never borrow a parent scope."""
+    try:
+        with _new_client() as client:
+            token = _client_scope.set((_client_key(), client))
+            try:
+                yield
+            finally:
+                _client_scope.reset(token)
+    except httpx.TimeoutException as exc:
+        raise EmbeddingTimeout("Ollama embedding request timed out.") from exc
+    except httpx.RequestError as exc:
+        raise EmbeddingUnavailable("Unable to connect to the Ollama embedding service.") from exc
+
+
+def with_embedding_client(function):
+    @wraps(function)
+    def wrapped(*args, **kwargs):
+        with embedding_client_scope():
+            return function(*args, **kwargs)
+    return wrapped
+
+
+@contextmanager
+def _request_client():
+    scoped = _client_scope.get()
+    if scoped is not None and scoped[0] == _client_key():
+        client = scoped[1]
+        # Fresh clients previously never sent cookies from another embedding response.
+        client.cookies.clear()
+        yield client
+    else:
+        with _new_client() as client:
+            yield client
+
+
+@timed("embedding_request")
 def embed_text(text: str) -> list[float]:
     """Embed one nonblank text using Ollama's /api/embed endpoint."""
     if not isinstance(text, str) or not text.strip():
         raise ValueError("Text must be a nonblank string.")
-    timeout = httpx.Timeout(settings.ollama_read_timeout, connect=settings.ollama_connect_timeout)
     try:
-        with httpx.Client(timeout=timeout, trust_env=False) as client:
+        with _request_client() as client:
             response = client.post(
                 settings.ollama_base_url.rstrip("/") + "/api/embed",
                 json={"model": settings.ollama_embedding_model, "input": text, "truncate": False},

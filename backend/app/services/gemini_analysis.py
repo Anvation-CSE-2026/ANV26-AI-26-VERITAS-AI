@@ -9,6 +9,7 @@ from google.genai import errors, types
 from pydantic import ValidationError
 
 from app.config import settings
+from app.services.analysis_observability import emit, stage, timed
 from app.models.contracts import AnalysisDraft, Contract, Playbook, PolicyMatch
 
 
@@ -100,6 +101,7 @@ def generate_with_retries(client, **kwargs):
         time.sleep(min(settings.gemini_retry_base_seconds * (2 ** attempt), 10.0))
 
 
+@timed("gemini_generation")
 def generate_analysis(contract: Contract, playbook: Playbook, matches: list[PolicyMatch]) -> AnalysisDraft:
     _attempt_count.set(0)
 
@@ -136,11 +138,13 @@ def generate_analysis(contract: Contract, playbook: Playbook, matches: list[Poli
                     automatic_function_calling=types.AutomaticFunctionCallingConfig(disable=True),
                 ),
             )
+        emit("usage", response=response)
         if not response.text:
             raise fail("Gemini returned no structured analysis.", category="empty_output", stage="structured_output_validation")
         if settings.gemini_api_key in response.text:
             raise fail("Gemini returned prohibited private content; analysis was rejected.", category="protected_credentials", stage="structured_output_validation")
-        draft = AnalysisDraft.model_validate_json(response.text)
+        with stage("structured_response_parsing"):
+            draft = AnalysisDraft.model_validate_json(response.text)
         draft._gemini_attempts = _attempt_count.get()
         draft._gemini_model_version = getattr(response, "model_version", None)
         return draft
@@ -164,6 +168,7 @@ def generate_analysis(contract: Contract, playbook: Playbook, matches: list[Poli
     except httpx.RequestError:
         raise fail("Unable to connect to Gemini.", 503, category="connection") from None
     except ValidationError:
+        emit("structured_failure")
         raise fail("Gemini returned invalid structured analysis.", 502, category="invalid_structured_output", stage="structured_output_validation") from None
     except Exception:
         raise fail("Gemini analysis failed.", 502) from None

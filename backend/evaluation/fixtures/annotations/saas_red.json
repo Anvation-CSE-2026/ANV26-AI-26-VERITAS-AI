@@ -1,0 +1,86 @@
+[
+  {
+    "contract_id": "SYN-saas_red",
+    "finding_id": "SYN-saas_red-G01",
+    "risk_category": "data_protection",
+    "expected_severity": "high",
+    "expected_clause_text": "1. Provider must notify Company of a personal data breach within 9 days and delete retained\ndata within 90 days after termination.",
+    "expected_page_number": 1,
+    "explanation": "Exceeds the 48-hour notification and 30-day deletion limits.",
+    "risk_present": true,
+    "annotation_state": "risk",
+    "annotation_confidence": "high",
+    "reviewer_status": "pending_manual_review",
+    "policy_id": "POL-DATA-001",
+    "evidence_spans": [
+      {
+        "clause_id": "P001-C002",
+        "page_number": 1,
+        "quote": "1. Provider must notify Company of a personal data breach within 9 days and delete retained\ndata within 90 days after termination."
+      }
+    ]
+  },
+  {
+    "contract_id": "SYN-saas_red",
+    "finding_id": "SYN-saas_red-G02",
+    "risk_category": "intellectual_property",
+    "expected_severity": "high",
+    "expected_clause_text": "2. Provider owns all bespoke dashboards. Company receives a revocable license that ends\nwhen the subscription ends.",
+    "expected_page_number": 2,
+    "explanation": "Fails ownership or durable modification-license requirements.",
+    "risk_present": true,
+    "annotation_state": "risk",
+    "annotation_confidence": "high",
+    "reviewer_status": "pending_manual_review",
+    "policy_id": "POL-IP-001",
+    "evidence_spans": [
+      {
+        "clause_id": "P002-C002",
+        "page_number": 2,
+        "quote": "2. Provider owns all bespoke dashboards. Company receives a revocable license that ends\nwhen the subscription ends."
+      }
+    ]
+  },
+  {
+    "contract_id": "SYN-saas_red",
+    "finding_id": "SYN-saas_red-G03",
+    "risk_category": "payment",
+    "expected_severity": "medium",
+    "expected_clause_text": "3. All invoices, including disputed sums, are due within 7 days. Late interest is 4 percent per\nmonth.",
+    "expected_page_number": 3,
+    "explanation": "Short payment term, disputed payment and excessive interest conflict with policy.",
+    "risk_present": true,
+    "annotation_state": "risk",
+    "annotation_confidence": "high",
+    "reviewer_status": "pending_manual_review",
+    "policy_id": "POL-PAY-001",
+    "evidence_spans": [
+      {
+        "clause_id": "P003-C002",
+        "page_number": 3,
+        "quote": "3. All invoices, including disputed sums, are due within 7 days. Late interest is 4 percent per\nmonth."
+      }
+    ]
+  },
+  {
+    "contract_id": "SYN-saas_red",
+    "finding_id": "SYN-saas_red-G04",
+    "risk_category": "confidentiality",
+    "expected_severity": null,
+    "expected_clause_text": "4. Provider protects Company information using reasonable efforts for an appropriate period.",
+    "expected_page_number": 4,
+    "explanation": "Duration and reciprocal scope are undefined; context is insufficient.",
+    "risk_present": null,
+    "annotation_state": "ambiguous",
+    "annotation_confidence": "medium",
+    "reviewer_status": "pending_manual_review",
+    "policy_id": "POL-CONF-001",
+    "evidence_spans": [
+      {
+        "clause_id": "P004-C002",
+        "page_number": 4,
+        "quote": "4. Provider protects Company information using reasonable efforts for an appropriate period."
+      }
+    ]
+  }
+]

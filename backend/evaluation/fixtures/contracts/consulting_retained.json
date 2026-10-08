@@ -1,0 +1,63 @@
+{
+  "contract_id": "SYN-consulting_retained",
+  "filename": "consulting_retained.pdf",
+  "pages": [
+    {
+      "page_number": 1,
+      "text": "SYNTHETIC CONTRACT - Engineering consulting engagement\n1. Consultant retains custom designs and grants Company a temporary, non-transferable\nlicense with no right to modify."
+    },
+    {
+      "page_number": 2,
+      "text": "SYNTHETIC CONTRACT - Engineering consulting engagement\n2. Both parties use information only for the engagement, preserve secrecy for 3 years after\ntermination, and protect trade secrets while secret."
+    },
+    {
+      "page_number": 3,
+      "text": "SYNTHETIC CONTRACT - Engineering consulting engagement\n3. Company may end the engagement on reasonable notice subject to fair compensation."
+    }
+  ],
+  "clauses": [
+    {
+      "clause_id": "P001-C001",
+      "page_number": 1,
+      "text": "SYNTHETIC CONTRACT - Engineering consulting engagement",
+      "start_offset": 0,
+      "end_offset": 54
+    },
+    {
+      "clause_id": "P001-C002",
+      "page_number": 1,
+      "text": "1. Consultant retains custom designs and grants Company a temporary, non-transferable\nlicense with no right to modify.",
+      "start_offset": 55,
+      "end_offset": 173
+    },
+    {
+      "clause_id": "P002-C001",
+      "page_number": 2,
+      "text": "SYNTHETIC CONTRACT - Engineering consulting engagement",
+      "start_offset": 0,
+      "end_offset": 54
+    },
+    {
+      "clause_id": "P002-C002",
+      "page_number": 2,
+      "text": "2. Both parties use information only for the engagement, preserve secrecy for 3 years after\ntermination, and protect trade secrets while secret.",
+      "start_offset": 55,
+      "end_offset": 199
+    },
+    {
+      "clause_id": "P003-C001",
+      "page_number": 3,
+      "text": "SYNTHETIC CONTRACT - Engineering consulting engagement",
+      "start_offset": 0,
+      "end_offset": 54
+    },
+    {
+      "clause_id": "P003-C002",
+      "page_number": 3,
+      "text": "3. Company may end the engagement on reasonable notice subject to fair compensation.",
+      "start_offset": 55,
+      "end_offset": 139
+    }
+  ],
+  "warnings": []
+}

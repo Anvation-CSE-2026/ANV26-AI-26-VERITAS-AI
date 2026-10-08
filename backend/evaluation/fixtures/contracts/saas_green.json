@@ -1,0 +1,81 @@
+{
+  "contract_id": "SYN-saas_green",
+  "filename": "saas_green.pdf",
+  "pages": [
+    {
+      "page_number": 1,
+      "text": "SYNTHETIC CONTRACT - SaaS records subscription\n1. Provider applies access controls and encryption, notifies Company of a breach within 48\nhours of discovery, and returns or deletes data within 30 days of termination."
+    },
+    {
+      "page_number": 2,
+      "text": "SYNTHETIC CONTRACT - SaaS records subscription\n2. Company owns bespoke deliverables. Provider retains only pre-existing modules listed in\nSchedule A."
+    },
+    {
+      "page_number": 3,
+      "text": "SYNTHETIC CONTRACT - SaaS records subscription\n3. Company pays undisputed invoices in 45 days after receipt and may withhold disputed\nsums in good faith. Late interest is 0.5 percent monthly."
+    },
+    {
+      "page_number": 4,
+      "text": "SYNTHETIC CONTRACT - SaaS records subscription\n4. The law of England and Wales governs this agreement; courts in London hear disputes."
+    }
+  ],
+  "clauses": [
+    {
+      "clause_id": "P001-C001",
+      "page_number": 1,
+      "text": "SYNTHETIC CONTRACT - SaaS records subscription",
+      "start_offset": 0,
+      "end_offset": 46
+    },
+    {
+      "clause_id": "P001-C002",
+      "page_number": 1,
+      "text": "1. Provider applies access controls and encryption, notifies Company of a breach within 48\nhours of discovery, and returns or deletes data within 30 days of termination.",
+      "start_offset": 47,
+      "end_offset": 216
+    },
+    {
+      "clause_id": "P002-C001",
+      "page_number": 2,
+      "text": "SYNTHETIC CONTRACT - SaaS records subscription",
+      "start_offset": 0,
+      "end_offset": 46
+    },
+    {
+      "clause_id": "P002-C002",
+      "page_number": 2,
+      "text": "2. Company owns bespoke deliverables. Provider retains only pre-existing modules listed in\nSchedule A.",
+      "start_offset": 47,
+      "end_offset": 149
+    },
+    {
+      "clause_id": "P003-C001",
+      "page_number": 3,
+      "text": "SYNTHETIC CONTRACT - SaaS records subscription",
+      "start_offset": 0,
+      "end_offset": 46
+    },
+    {
+      "clause_id": "P003-C002",
+      "page_number": 3,
+      "text": "3. Company pays undisputed invoices in 45 days after receipt and may withhold disputed\nsums in good faith. Late interest is 0.5 percent monthly.",
+      "start_offset": 47,
+      "end_offset": 191
+    },
+    {
+      "clause_id": "P004-C001",
+      "page_number": 4,
+      "text": "SYNTHETIC CONTRACT - SaaS records subscription",
+      "start_offset": 0,
+      "end_offset": 46
+    },
+    {
+      "clause_id": "P004-C002",
+      "page_number": 4,
+      "text": "4. The law of England and Wales governs this agreement; courts in London hear disputes.",
+      "start_offset": 47,
+      "end_offset": 134
+    }
+  ],
+  "warnings": []
+}

@@ -1,0 +1,81 @@
+{
+  "contract_id": "SYN-supplier_green",
+  "filename": "supplier_green.pdf",
+  "pages": [
+    {
+      "page_number": 1,
+      "text": "SYNTHETIC CONTRACT - Supplier maintenance agreement\n1. Liability is capped at fees paid or payable in the preceding 12 months. Fraud, willful\nmisconduct, confidentiality and data protection breaches are excluded from the cap."
+    },
+    {
+      "page_number": 2,
+      "text": "SYNTHETIC CONTRACT - Supplier maintenance agreement\n2. Supplier will defend and indemnify Company against third-party IP infringement claims\narising from supplied goods. Company gives no unlimited indemnity for Supplier misconduct."
+    },
+    {
+      "page_number": 3,
+      "text": "SYNTHETIC CONTRACT - Supplier maintenance agreement\n3. Company may terminate for convenience only with 120 days notice and payment of all\nremaining service fees."
+    },
+    {
+      "page_number": 4,
+      "text": "SYNTHETIC CONTRACT - Supplier maintenance agreement\n4. This agreement is governed by the laws of the fictional Republic of Norland, with disputes\nheard only in its capital."
+    }
+  ],
+  "clauses": [
+    {
+      "clause_id": "P001-C001",
+      "page_number": 1,
+      "text": "SYNTHETIC CONTRACT - Supplier maintenance agreement",
+      "start_offset": 0,
+      "end_offset": 51
+    },
+    {
+      "clause_id": "P001-C002",
+      "page_number": 1,
+      "text": "1. Liability is capped at fees paid or payable in the preceding 12 months. Fraud, willful\nmisconduct, confidentiality and data protection breaches are excluded from the cap.",
+      "start_offset": 52,
+      "end_offset": 225
+    },
+    {
+      "clause_id": "P002-C001",
+      "page_number": 2,
+      "text": "SYNTHETIC CONTRACT - Supplier maintenance agreement",
+      "start_offset": 0,
+      "end_offset": 51
+    },
+    {
+      "clause_id": "P002-C002",
+      "page_number": 2,
+      "text": "2. Supplier will defend and indemnify Company against third-party IP infringement claims\narising from supplied goods. Company gives no unlimited indemnity for Supplier misconduct.",
+      "start_offset": 52,
+      "end_offset": 231
+    },
+    {
+      "clause_id": "P003-C001",
+      "page_number": 3,
+      "text": "SYNTHETIC CONTRACT - Supplier maintenance agreement",
+      "start_offset": 0,
+      "end_offset": 51
+    },
+    {
+      "clause_id": "P003-C002",
+      "page_number": 3,
+      "text": "3. Company may terminate for convenience only with 120 days notice and payment of all\nremaining service fees.",
+      "start_offset": 52,
+      "end_offset": 161
+    },
+    {
+      "clause_id": "P004-C001",
+      "page_number": 4,
+      "text": "SYNTHETIC CONTRACT - Supplier maintenance agreement",
+      "start_offset": 0,
+      "end_offset": 51
+    },
+    {
+      "clause_id": "P004-C002",
+      "page_number": 4,
+      "text": "4. This agreement is governed by the laws of the fictional Republic of Norland, with disputes\nheard only in its capital.",
+      "start_offset": 52,
+      "end_offset": 172
+    }
+  ],
+  "warnings": []
+}

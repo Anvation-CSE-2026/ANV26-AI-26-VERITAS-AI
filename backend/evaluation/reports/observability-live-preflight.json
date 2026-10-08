@@ -1,0 +1,17 @@
+{
+  "ollama_reachable": true,
+  "ollama_version": "0.40.1",
+  "embedding_model": "qwen3-embedding:0.6b",
+  "embedding_dimensions": 1024,
+  "gemini_configuration_present": true,
+  "gemini_model": "gemini-3.5-flash",
+  "synthetic_contract_count": 12,
+  "selected_contract": "SYN-supplier_red",
+  "trace_directory_private": true,
+  "trace_gitignored": true,
+  "production_sqlite_baseline": {
+    "C:\\Users\\Saksham\\OneDrive\\Desktop\\VERITAS-AI\\data\\contracts\\veritas.sqlite3": "f4107cf200a302e092b166e80fbd8298105eb6e177cb85063b0f1a7affd27992",
+    "C:\\Users\\Saksham\\OneDrive\\Desktop\\VERITAS-AI\\data\\contracts\\veritas.sqlite3-wal": null,
+    "C:\\Users\\Saksham\\OneDrive\\Desktop\\VERITAS-AI\\data\\contracts\\veritas.sqlite3-shm": null
+  }
+}

@@ -1,0 +1,81 @@
+{
+  "contract_id": "SYN-supplier_failure",
+  "filename": "supplier_failure.pdf",
+  "pages": [
+    {
+      "page_number": 1,
+      "text": "SYNTHETIC CONTRACT - Synthetic logistics agreement\n1. Carrier liability, including fraud and data incidents, is capped at USD 25."
+    },
+    {
+      "page_number": 2,
+      "text": "SYNTHETIC CONTRACT - Synthetic logistics agreement\n2. Carrier will notify Company of a data breach within 12 days."
+    },
+    {
+      "page_number": 3,
+      "text": "SYNTHETIC CONTRACT - Synthetic logistics agreement\n3. Company must give 100 days notice and pay a termination penalty of USD 5000."
+    },
+    {
+      "page_number": 4,
+      "text": "SYNTHETIC CONTRACT - Synthetic logistics agreement\n4. The laws and exclusive courts of the fictional Kingdom of Eridia govern."
+    }
+  ],
+  "clauses": [
+    {
+      "clause_id": "P001-C001",
+      "page_number": 1,
+      "text": "SYNTHETIC CONTRACT - Synthetic logistics agreement",
+      "start_offset": 0,
+      "end_offset": 50
+    },
+    {
+      "clause_id": "P001-C002",
+      "page_number": 1,
+      "text": "1. Carrier liability, including fraud and data incidents, is capped at USD 25.",
+      "start_offset": 51,
+      "end_offset": 129
+    },
+    {
+      "clause_id": "P002-C001",
+      "page_number": 2,
+      "text": "SYNTHETIC CONTRACT - Synthetic logistics agreement",
+      "start_offset": 0,
+      "end_offset": 50
+    },
+    {
+      "clause_id": "P002-C002",
+      "page_number": 2,
+      "text": "2. Carrier will notify Company of a data breach within 12 days.",
+      "start_offset": 51,
+      "end_offset": 114
+    },
+    {
+      "clause_id": "P003-C001",
+      "page_number": 3,
+      "text": "SYNTHETIC CONTRACT - Synthetic logistics agreement",
+      "start_offset": 0,
+      "end_offset": 50
+    },
+    {
+      "clause_id": "P003-C002",
+      "page_number": 3,
+      "text": "3. Company must give 100 days notice and pay a termination penalty of USD 5000.",
+      "start_offset": 51,
+      "end_offset": 130
+    },
+    {
+      "clause_id": "P004-C001",
+      "page_number": 4,
+      "text": "SYNTHETIC CONTRACT - Synthetic logistics agreement",
+      "start_offset": 0,
+      "end_offset": 50
+    },
+    {
+      "clause_id": "P004-C002",
+      "page_number": 4,
+      "text": "4. The laws and exclusive courts of the fictional Kingdom of Eridia govern.",
+      "start_offset": 51,
+      "end_offset": 126
+    }
+  ],
+  "warnings": []
+}

@@ -1,0 +1,80 @@
+[
+  {
+    "contract_id": "SYN-supplier_red",
+    "finding_id": "SYN-supplier_red-G01",
+    "risk_category": "liability",
+    "expected_severity": "high",
+    "expected_clause_text": "1. Supplier liability is limited to USD 50 in total, including fraud and data breaches.",
+    "expected_page_number": 1,
+    "explanation": "A nominal cap with no carve-outs conflicts with the fee-based cap policy.",
+    "risk_present": true,
+    "annotation_state": "risk",
+    "annotation_confidence": "high",
+    "reviewer_status": "pending_manual_review",
+    "policy_id": "POL-LIAB-001",
+    "evidence_spans": [
+      {
+        "clause_id": "P001-C002",
+        "page_number": 1,
+        "quote": "1. Supplier liability is limited to USD 50 in total, including fraud and data breaches."
+      }
+    ]
+  },
+  {
+    "contract_id": "SYN-supplier_red",
+    "finding_id": "SYN-supplier_red-G02",
+    "risk_category": "indemnification",
+    "expected_severity": "high",
+    "expected_clause_text": "2. Company shall indemnify Supplier for every claim, including claims caused by Supplier\nnegligence. Supplier owes no IP defense.",
+    "expected_page_number": 2,
+    "explanation": "Allocates supplier misconduct to Company and omits supplier IP defense.",
+    "risk_present": true,
+    "annotation_state": "risk",
+    "annotation_confidence": "high",
+    "reviewer_status": "pending_manual_review",
+    "policy_id": "POL-INDEM-001",
+    "evidence_spans": [
+      {
+        "clause_id": "P002-C002",
+        "page_number": 2,
+        "quote": "2. Company shall indemnify Supplier for every claim, including claims caused by Supplier\nnegligence. Supplier owes no IP defense."
+      }
+    ]
+  },
+  {
+    "contract_id": "SYN-supplier_red",
+    "finding_id": "SYN-supplier_red-G03",
+    "risk_category": "payment",
+    "expected_severity": "low",
+    "expected_clause_text": "3. Undisputed invoices are payable in 30 days after receipt. Company may withhold disputed\nsums in good faith. Late interest is 1 percent per month.",
+    "expected_page_number": 3,
+    "explanation": "Satisfies the stated invoice, dispute and interest assumptions.",
+    "risk_present": false,
+    "annotation_state": "non_risk",
+    "annotation_confidence": "high",
+    "reviewer_status": "pending_manual_review",
+    "policy_id": "POL-PAY-001",
+    "evidence_spans": [
+      {
+        "clause_id": "P003-C002",
+        "page_number": 3,
+        "quote": "3. Undisputed invoices are payable in 30 days after receipt. Company may withhold disputed\nsums in good faith. Late interest is 1 percent per month."
+      }
+    ]
+  },
+  {
+    "contract_id": "SYN-supplier_red",
+    "finding_id": "SYN-supplier_red-G04",
+    "risk_category": "termination",
+    "expected_severity": "medium",
+    "expected_clause_text": null,
+    "expected_page_number": null,
+    "explanation": "No termination provision appears in this short synthetic agreement; absence requires full-document review.",
+    "risk_present": true,
+    "annotation_state": "missing",
+    "annotation_confidence": "medium",
+    "reviewer_status": "pending_manual_review",
+    "policy_id": "POL-TERM-001",
+    "evidence_spans": []
+  }
+]

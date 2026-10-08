@@ -1,0 +1,63 @@
+{
+  "contract_id": "SYN-services_exit",
+  "filename": "services_exit.pdf",
+  "pages": [
+    {
+      "page_number": 1,
+      "text": "SYNTHETIC CONTRACT - Facilities services agreement\n1. Supplier may terminate immediately for any Company breach, without a cure period.\nCompany has no convenience termination right."
+    },
+    {
+      "page_number": 2,
+      "text": "SYNTHETIC CONTRACT - Facilities services agreement\n2. Company shall defend Supplier from claims caused solely by Supplier misconduct, without\na financial limit."
+    },
+    {
+      "page_number": 3,
+      "text": "SYNTHETIC CONTRACT - Facilities services agreement\n3. Company owes undisputed invoices in 30 days after receipt, may withhold disputed sums\nin good faith, and owes no late interest."
+    }
+  ],
+  "clauses": [
+    {
+      "clause_id": "P001-C001",
+      "page_number": 1,
+      "text": "SYNTHETIC CONTRACT - Facilities services agreement",
+      "start_offset": 0,
+      "end_offset": 50
+    },
+    {
+      "clause_id": "P001-C002",
+      "page_number": 1,
+      "text": "1. Supplier may terminate immediately for any Company breach, without a cure period.\nCompany has no convenience termination right.",
+      "start_offset": 51,
+      "end_offset": 181
+    },
+    {
+      "clause_id": "P002-C001",
+      "page_number": 2,
+      "text": "SYNTHETIC CONTRACT - Facilities services agreement",
+      "start_offset": 0,
+      "end_offset": 50
+    },
+    {
+      "clause_id": "P002-C002",
+      "page_number": 2,
+      "text": "2. Company shall defend Supplier from claims caused solely by Supplier misconduct, without\na financial limit.",
+      "start_offset": 51,
+      "end_offset": 160
+    },
+    {
+      "clause_id": "P003-C001",
+      "page_number": 3,
+      "text": "SYNTHETIC CONTRACT - Facilities services agreement",
+      "start_offset": 0,
+      "end_offset": 50
+    },
+    {
+      "clause_id": "P003-C002",
+      "page_number": 3,
+      "text": "3. Company owes undisputed invoices in 30 days after receipt, may withhold disputed sums\nin good faith, and owes no late interest.",
+      "start_offset": 51,
+      "end_offset": 181
+    }
+  ],
+  "warnings": []
+}

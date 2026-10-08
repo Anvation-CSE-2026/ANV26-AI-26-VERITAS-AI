@@ -1,0 +1,45 @@
+{
+  "contract_id": "SYN-nda_durable",
+  "filename": "nda_durable.pdf",
+  "pages": [
+    {
+      "page_number": 1,
+      "text": "SYNTHETIC CONTRACT - Mutual research NDA\n1. Both parties use disclosed information only for this research. Duties survive for 4 years\nafter termination and trade secrets remain protected while secret."
+    },
+    {
+      "page_number": 2,
+      "text": "SYNTHETIC CONTRACT - Mutual research NDA\n2. Despite the preceding clause, Recipient may publish any confidential report after 10 days\nwithout consent."
+    }
+  ],
+  "clauses": [
+    {
+      "clause_id": "P001-C001",
+      "page_number": 1,
+      "text": "SYNTHETIC CONTRACT - Mutual research NDA",
+      "start_offset": 0,
+      "end_offset": 40
+    },
+    {
+      "clause_id": "P001-C002",
+      "page_number": 1,
+      "text": "1. Both parties use disclosed information only for this research. Duties survive for 4 years\nafter termination and trade secrets remain protected while secret.",
+      "start_offset": 41,
+      "end_offset": 200
+    },
+    {
+      "clause_id": "P002-C001",
+      "page_number": 2,
+      "text": "SYNTHETIC CONTRACT - Mutual research NDA",
+      "start_offset": 0,
+      "end_offset": 40
+    },
+    {
+      "clause_id": "P002-C002",
+      "page_number": 2,
+      "text": "2. Despite the preceding clause, Recipient may publish any confidential report after 10 days\nwithout consent.",
+      "start_offset": 41,
+      "end_offset": 150
+    }
+  ],
+  "warnings": []
+}

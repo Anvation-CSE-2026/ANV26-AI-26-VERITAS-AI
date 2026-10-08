@@ -1,0 +1,86 @@
+[
+  {
+    "contract_id": "SYN-saas_green",
+    "finding_id": "SYN-saas_green-G01",
+    "risk_category": "data_protection",
+    "expected_severity": "low",
+    "expected_clause_text": "1. Provider applies access controls and encryption, notifies Company of a breach within 48\nhours of discovery, and returns or deletes data within 30 days of termination.",
+    "expected_page_number": 1,
+    "explanation": "Meets the illustrative notification, security and deletion rule.",
+    "risk_present": false,
+    "annotation_state": "non_risk",
+    "annotation_confidence": "high",
+    "reviewer_status": "pending_manual_review",
+    "policy_id": "POL-DATA-001",
+    "evidence_spans": [
+      {
+        "clause_id": "P001-C002",
+        "page_number": 1,
+        "quote": "1. Provider applies access controls and encryption, notifies Company of a breach within 48\nhours of discovery, and returns or deletes data within 30 days of termination."
+      }
+    ]
+  },
+  {
+    "contract_id": "SYN-saas_green",
+    "finding_id": "SYN-saas_green-G02",
+    "risk_category": "intellectual_property",
+    "expected_severity": "low",
+    "expected_clause_text": "2. Company owns bespoke deliverables. Provider retains only pre-existing modules listed in\nSchedule A.",
+    "expected_page_number": 2,
+    "explanation": "Provides bespoke ownership and identifies retained pre-existing material.",
+    "risk_present": false,
+    "annotation_state": "non_risk",
+    "annotation_confidence": "high",
+    "reviewer_status": "pending_manual_review",
+    "policy_id": "POL-IP-001",
+    "evidence_spans": [
+      {
+        "clause_id": "P002-C002",
+        "page_number": 2,
+        "quote": "2. Company owns bespoke deliverables. Provider retains only pre-existing modules listed in\nSchedule A."
+      }
+    ]
+  },
+  {
+    "contract_id": "SYN-saas_green",
+    "finding_id": "SYN-saas_green-G03",
+    "risk_category": "payment",
+    "expected_severity": "low",
+    "expected_clause_text": "3. Company pays undisputed invoices in 45 days after receipt and may withhold disputed\nsums in good faith. Late interest is 0.5 percent monthly.",
+    "expected_page_number": 3,
+    "explanation": "Within the company payment rule.",
+    "risk_present": false,
+    "annotation_state": "non_risk",
+    "annotation_confidence": "high",
+    "reviewer_status": "pending_manual_review",
+    "policy_id": "POL-PAY-001",
+    "evidence_spans": [
+      {
+        "clause_id": "P003-C002",
+        "page_number": 3,
+        "quote": "3. Company pays undisputed invoices in 45 days after receipt and may withhold disputed\nsums in good faith. Late interest is 0.5 percent monthly."
+      }
+    ]
+  },
+  {
+    "contract_id": "SYN-saas_green",
+    "finding_id": "SYN-saas_green-G04",
+    "risk_category": "governing_law",
+    "expected_severity": "low",
+    "expected_clause_text": "4. The law of England and Wales governs this agreement; courts in London hear disputes.",
+    "expected_page_number": 4,
+    "explanation": "Meets benchmark-only illustrative jurisdiction assumption.",
+    "risk_present": false,
+    "annotation_state": "non_risk",
+    "annotation_confidence": "high",
+    "reviewer_status": "pending_manual_review",
+    "policy_id": "BENCH-LAW-001",
+    "evidence_spans": [
+      {
+        "clause_id": "P004-C002",
+        "page_number": 4,
+        "quote": "4. The law of England and Wales governs this agreement; courts in London hear disputes."
+      }
+    ]
+  }
+]

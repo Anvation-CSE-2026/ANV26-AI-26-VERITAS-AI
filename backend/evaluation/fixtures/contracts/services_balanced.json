@@ -1,0 +1,63 @@
+{
+  "contract_id": "SYN-services_balanced",
+  "filename": "services_balanced.pdf",
+  "pages": [
+    {
+      "page_number": 1,
+      "text": "SYNTHETIC CONTRACT - Technical support services\n1. Either party may terminate for material breach after a 20-day cure period. Company may\nterminate for convenience on 30 days notice without penalty."
+    },
+    {
+      "page_number": 2,
+      "text": "SYNTHETIC CONTRACT - Technical support services\n2. Supplier defends and indemnifies Company for third-party IP claims. Company does not\nindemnify Supplier for Supplier misconduct."
+    },
+    {
+      "page_number": 3,
+      "text": "SYNTHETIC CONTRACT - Technical support services\n3. Applicable law and forum will be selected by mutual agreement following a dispute."
+    }
+  ],
+  "clauses": [
+    {
+      "clause_id": "P001-C001",
+      "page_number": 1,
+      "text": "SYNTHETIC CONTRACT - Technical support services",
+      "start_offset": 0,
+      "end_offset": 47
+    },
+    {
+      "clause_id": "P001-C002",
+      "page_number": 1,
+      "text": "1. Either party may terminate for material breach after a 20-day cure period. Company may\nterminate for convenience on 30 days notice without penalty.",
+      "start_offset": 48,
+      "end_offset": 198
+    },
+    {
+      "clause_id": "P002-C001",
+      "page_number": 2,
+      "text": "SYNTHETIC CONTRACT - Technical support services",
+      "start_offset": 0,
+      "end_offset": 47
+    },
+    {
+      "clause_id": "P002-C002",
+      "page_number": 2,
+      "text": "2. Supplier defends and indemnifies Company for third-party IP claims. Company does not\nindemnify Supplier for Supplier misconduct.",
+      "start_offset": 48,
+      "end_offset": 179
+    },
+    {
+      "clause_id": "P003-C001",
+      "page_number": 3,
+      "text": "SYNTHETIC CONTRACT - Technical support services",
+      "start_offset": 0,
+      "end_offset": 47
+    },
+    {
+      "clause_id": "P003-C002",
+      "page_number": 3,
+      "text": "3. Applicable law and forum will be selected by mutual agreement following a dispute.",
+      "start_offset": 48,
+      "end_offset": 133
+    }
+  ],
+  "warnings": []
+}

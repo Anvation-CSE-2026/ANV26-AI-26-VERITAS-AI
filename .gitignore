@@ -15,3 +15,7 @@ data/contracts/*
 !data/contracts/.gitkeep
 data/playbooks/*
 !data/playbooks/.gitkeep
+
+# Private synthetic benchmark traces; curate separate fixtures explicitly.
+backend/evaluation/private_traces/
+**/benchmark-traces/

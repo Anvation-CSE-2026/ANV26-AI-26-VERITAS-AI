@@ -1,0 +1,63 @@
+{
+  "contract_id": "SYN-consulting_owned",
+  "filename": "consulting_owned.pdf",
+  "pages": [
+    {
+      "page_number": 1,
+      "text": "SYNTHETIC CONTRACT - Design consulting engagement\n1. Company owns all custom designs upon creation. Consultant retains the pre-existing toolkit\nnamed in Schedule B."
+    },
+    {
+      "page_number": 2,
+      "text": "SYNTHETIC CONTRACT - Design consulting engagement\n2. Consultant may use Company confidential information for any client and owes no\nconfidentiality duty after completion."
+    },
+    {
+      "page_number": 3,
+      "text": "SYNTHETIC CONTRACT - Design consulting engagement\n3. Company shall pay even disputed invoices in 5 days with late interest of 2 percent per\nmonth."
+    }
+  ],
+  "clauses": [
+    {
+      "clause_id": "P001-C001",
+      "page_number": 1,
+      "text": "SYNTHETIC CONTRACT - Design consulting engagement",
+      "start_offset": 0,
+      "end_offset": 49
+    },
+    {
+      "clause_id": "P001-C002",
+      "page_number": 1,
+      "text": "1. Company owns all custom designs upon creation. Consultant retains the pre-existing toolkit\nnamed in Schedule B.",
+      "start_offset": 50,
+      "end_offset": 164
+    },
+    {
+      "clause_id": "P002-C001",
+      "page_number": 2,
+      "text": "SYNTHETIC CONTRACT - Design consulting engagement",
+      "start_offset": 0,
+      "end_offset": 49
+    },
+    {
+      "clause_id": "P002-C002",
+      "page_number": 2,
+      "text": "2. Consultant may use Company confidential information for any client and owes no\nconfidentiality duty after completion.",
+      "start_offset": 50,
+      "end_offset": 170
+    },
+    {
+      "clause_id": "P003-C001",
+      "page_number": 3,
+      "text": "SYNTHETIC CONTRACT - Design consulting engagement",
+      "start_offset": 0,
+      "end_offset": 49
+    },
+    {
+      "clause_id": "P003-C002",
+      "page_number": 3,
+      "text": "3. Company shall pay even disputed invoices in 5 days with late interest of 2 percent per\nmonth.",
+      "start_offset": 50,
+      "end_offset": 146
+    }
+  ],
+  "warnings": []
+}

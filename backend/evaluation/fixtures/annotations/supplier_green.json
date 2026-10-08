@@ -1,0 +1,86 @@
+[
+  {
+    "contract_id": "SYN-supplier_green",
+    "finding_id": "SYN-supplier_green-G01",
+    "risk_category": "liability",
+    "expected_severity": "low",
+    "expected_clause_text": "1. Liability is capped at fees paid or payable in the preceding 12 months. Fraud, willful\nmisconduct, confidentiality and data protection breaches are excluded from the cap.",
+    "expected_page_number": 1,
+    "explanation": "Satisfies the sample liability rule.",
+    "risk_present": false,
+    "annotation_state": "non_risk",
+    "annotation_confidence": "high",
+    "reviewer_status": "pending_manual_review",
+    "policy_id": "POL-LIAB-001",
+    "evidence_spans": [
+      {
+        "clause_id": "P001-C002",
+        "page_number": 1,
+        "quote": "1. Liability is capped at fees paid or payable in the preceding 12 months. Fraud, willful\nmisconduct, confidentiality and data protection breaches are excluded from the cap."
+      }
+    ]
+  },
+  {
+    "contract_id": "SYN-supplier_green",
+    "finding_id": "SYN-supplier_green-G02",
+    "risk_category": "indemnification",
+    "expected_severity": "low",
+    "expected_clause_text": "2. Supplier will defend and indemnify Company against third-party IP infringement claims\narising from supplied goods. Company gives no unlimited indemnity for Supplier misconduct.",
+    "expected_page_number": 2,
+    "explanation": "Meets the supplier IP-defense expectation.",
+    "risk_present": false,
+    "annotation_state": "non_risk",
+    "annotation_confidence": "high",
+    "reviewer_status": "pending_manual_review",
+    "policy_id": "POL-INDEM-001",
+    "evidence_spans": [
+      {
+        "clause_id": "P002-C002",
+        "page_number": 2,
+        "quote": "2. Supplier will defend and indemnify Company against third-party IP infringement claims\narising from supplied goods. Company gives no unlimited indemnity for Supplier misconduct."
+      }
+    ]
+  },
+  {
+    "contract_id": "SYN-supplier_green",
+    "finding_id": "SYN-supplier_green-G03",
+    "risk_category": "termination",
+    "expected_severity": "medium",
+    "expected_clause_text": "3. Company may terminate for convenience only with 120 days notice and payment of all\nremaining service fees.",
+    "expected_page_number": 3,
+    "explanation": "Notice and exit fee depart from the company rule.",
+    "risk_present": true,
+    "annotation_state": "risk",
+    "annotation_confidence": "high",
+    "reviewer_status": "pending_manual_review",
+    "policy_id": "POL-TERM-001",
+    "evidence_spans": [
+      {
+        "clause_id": "P003-C002",
+        "page_number": 3,
+        "quote": "3. Company may terminate for convenience only with 120 days notice and payment of all\nremaining service fees."
+      }
+    ]
+  },
+  {
+    "contract_id": "SYN-supplier_green",
+    "finding_id": "SYN-supplier_green-G04",
+    "risk_category": "governing_law",
+    "expected_severity": "medium",
+    "expected_clause_text": "4. This agreement is governed by the laws of the fictional Republic of Norland, with disputes\nheard only in its capital.",
+    "expected_page_number": 4,
+    "explanation": "Benchmark-only assumption prefers England and Wales; foreign venue needs review.",
+    "risk_present": true,
+    "annotation_state": "risk",
+    "annotation_confidence": "high",
+    "reviewer_status": "pending_manual_review",
+    "policy_id": "BENCH-LAW-001",
+    "evidence_spans": [
+      {
+        "clause_id": "P004-C002",
+        "page_number": 4,
+        "quote": "4. This agreement is governed by the laws of the fictional Republic of Norland, with disputes\nheard only in its capital."
+      }
+    ]
+  }
+]

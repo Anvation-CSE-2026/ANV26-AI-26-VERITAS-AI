@@ -1,0 +1,2720 @@
+{
+  "started_at_utc": "2026-10-08T18:45:27.351030+00:00",
+  "live_ollama": true,
+  "gemini_calls": 0,
+  "billing_calls": 0,
+  "authentication_calls": 0,
+  "runs": [
+    {
+      "variant": "original",
+      "policy_cache": "cold",
+      "iteration": 1,
+      "total_retrieval_seconds": 24.021707899984904,
+      "embedding_request_count": 11,
+      "embedding_request_seconds": [
+        2.245626899995841,
+        2.1710030999965966,
+        2.2152921000379138,
+        2.2153778999927454,
+        2.2796743999933824,
+        2.1325057999929413,
+        2.2116209999658167,
+        2.1498785000294447,
+        2.124478599987924,
+        2.1292437000083737,
+        2.1331708000507206
+      ],
+      "provider_requests": [
+        {
+          "http_status": 200,
+          "provider_metadata": {
+            "total_duration": 168819000,
+            "load_duration": 8357900,
+            "prompt_eval_count": 44
+          }
+        },
+        {
+          "http_status": 200,
+          "provider_metadata": {
+            "total_duration": 110868000,
+            "load_duration": 11735700,
+            "prompt_eval_count": 41
+          }
+        },
+        {
+          "http_status": 200,
+          "provider_metadata": {
+            "total_duration": 180662800,
+            "load_duration": 8993900,
+            "prompt_eval_count": 42
+          }
+        },
+        {
+          "http_status": 200,
+          "provider_metadata": {
+            "total_duration": 161816300,
+            "load_duration": 8997200,
+            "prompt_eval_count": 39
+          }
+        },
+        {
+          "http_status": 200,
+          "provider_metadata": {
+            "total_duration": 223591600,
+            "load_duration": 9512700,
+            "prompt_eval_count": 44
+          }
+        },
+        {
+          "http_status": 200,
+          "provider_metadata": {
+            "total_duration": 107560300,
+            "load_duration": 9848900,
+            "prompt_eval_count": 44
+          }
+        },
+        {
+          "http_status": 200,
+          "provider_metadata": {
+            "total_duration": 187387200,
+            "load_duration": 11189700,
+            "prompt_eval_count": 45
+          }
+        },
+        {
+          "http_status": 200,
+          "provider_metadata": {
+            "total_duration": 115094600,
+            "load_duration": 9178400,
+            "prompt_eval_count": 11
+          }
+        },
+        {
+          "http_status": 200,
+          "provider_metadata": {
+            "total_duration": 89687900,
+            "load_duration": 9073600,
+            "prompt_eval_count": 21
+          }
+        },
+        {
+          "http_status": 200,
+          "provider_metadata": {
+            "total_duration": 91084800,
+            "load_duration": 8804700,
+            "prompt_eval_count": 28
+          }
+        },
+        {
+          "http_status": 200,
+          "provider_metadata": {
+            "total_duration": 103026200,
+            "load_duration": 8979700,
+            "prompt_eval_count": 37
+          }
+        }
+      ],
+      "policy_cache_preparation_calls_excluded": 0,
+      "model_resident_before": [
+        {
+          "name": "qwen3-embedding:0.6b",
+          "size_vram": 2370652077,
+          "expires_at": "2026-10-09T00:21:09.0613868+05:30"
+        }
+      ],
+      "model_resident_after": [
+        {
+          "name": "qwen3-embedding:0.6b",
+          "size_vram": 2370652077,
+          "expires_at": "2026-10-09T00:21:37.1422356+05:30"
+        }
+      ],
+      "results": [
+        {
+          "clause_id": "P001-C001",
+          "policy_id": "POL-IP-001",
+          "similarity": 0.5232829803658038
+        },
+        {
+          "clause_id": "P001-C001",
+          "policy_id": "POL-LIAB-001",
+          "similarity": 0.48659592022052767
+        },
+        {
+          "clause_id": "P001-C001",
+          "policy_id": "POL-INDEM-001",
+          "similarity": 0.45901746807132626
+        },
+        {
+          "clause_id": "P001-C002",
+          "policy_id": "POL-LIAB-001",
+          "similarity": 0.769574147480143
+        },
+        {
+          "clause_id": "P001-C002",
+          "policy_id": "POL-INDEM-001",
+          "similarity": 0.5111553550960476
+        },
+        {
+          "clause_id": "P001-C002",
+          "policy_id": "POL-DATA-001",
+          "similarity": 0.5081492078197498
+        },
+        {
+          "clause_id": "P002-C001",
+          "policy_id": "POL-IP-001",
+          "similarity": 0.5232829803658038
+        },
+        {
+          "clause_id": "P002-C001",
+          "policy_id": "POL-LIAB-001",
+          "similarity": 0.48659592022052767
+        },
+        {
+          "clause_id": "P002-C001",
+          "policy_id": "POL-INDEM-001",
+          "similarity": 0.45901746807132626
+        },
+        {
+          "clause_id": "P002-C002",
+          "policy_id": "POL-INDEM-001",
+          "similarity": 0.7931038818587112
+        },
+        {
+          "clause_id": "P002-C002",
+          "policy_id": "POL-IP-001",
+          "similarity": 0.5254955484249291
+        },
+        {
+          "clause_id": "P002-C002",
+          "policy_id": "POL-LIAB-001",
+          "similarity": 0.5134505994374283
+        },
+        {
+          "clause_id": "P003-C001",
+          "policy_id": "POL-IP-001",
+          "similarity": 0.5232829803658038
+        },
+        {
+          "clause_id": "P003-C001",
+          "policy_id": "POL-LIAB-001",
+          "similarity": 0.48659592022052767
+        },
+        {
+          "clause_id": "P003-C001",
+          "policy_id": "POL-INDEM-001",
+          "similarity": 0.45901746807132626
+        },
+        {
+          "clause_id": "P003-C002",
+          "policy_id": "POL-PAY-001",
+          "similarity": 0.921870846739159
+        },
+        {
+          "clause_id": "P003-C002",
+          "policy_id": "POL-TERM-001",
+          "similarity": 0.44110068510414935
+        },
+        {
+          "clause_id": "P003-C002",
+          "policy_id": "POL-INDEM-001",
+          "similarity": 0.37302442838100397
+        }
+      ]
+    },
+    {
+      "variant": "optimized",
+      "policy_cache": "cold",
+      "iteration": 1,
+      "total_retrieval_seconds": 2.601818200026173,
+      "embedding_request_count": 11,
+      "embedding_request_seconds": [
+        2.1701715999515727,
+        0.10544579999987036,
+        0.0343830999918282,
+        0.04880799999227747,
+        0.033957500010728836,
+        0.03660579997813329,
+        0.032274500001221895,
+        0.03003379999427125,
+        0.027327199990395457,
+        0.031129400013014674,
+        0.031269799976143986
+      ],
+      "provider_requests": [
+        {
+          "http_status": 200,
+          "provider_metadata": {
+            "total_duration": 132743500,
+            "load_duration": 8896200,
+            "prompt_eval_count": 44
+          }
+        },
+        {
+          "http_status": 200,
+          "provider_metadata": {
+            "total_duration": 103417000,
+            "load_duration": 9114500,
+            "prompt_eval_count": 41
+          }
+        },
+        {
+          "http_status": 200,
+          "provider_metadata": {
+            "total_duration": 32133400,
+            "load_duration": 8950400,
+            "prompt_eval_count": 42
+          }
+        },
+        {
+          "http_status": 200,
+          "provider_metadata": {
+            "total_duration": 47345600,
+            "load_duration": 20329500,
+            "prompt_eval_count": 39
+          }
+        },
+        {
+          "http_status": 200,
+          "provider_metadata": {
+            "total_duration": 32334100,
+            "load_duration": 9909700,
+            "prompt_eval_count": 44
+          }
+        },
+        {
+          "http_status": 200,
+          "provider_metadata": {
+            "total_duration": 35744600,
+            "load_duration": 11827300,
+            "prompt_eval_count": 44
+          }
+        },
+        {
+          "http_status": 200,
+          "provider_metadata": {
+            "total_duration": 30969000,
+            "load_duration": 8910500,
+            "prompt_eval_count": 45
+          }
+        },
+        {
+          "http_status": 200,
+          "provider_metadata": {
+            "total_duration": 28255100,
+            "load_duration": 12827700,
+            "prompt_eval_count": 11
+          }
+        },
+        {
+          "http_status": 200,
+          "provider_metadata": {
+            "total_duration": 27266800,
+            "load_duration": 9987300,
+            "prompt_eval_count": 21
+          }
+        },
+        {
+          "http_status": 200,
+          "provider_metadata": {
+            "total_duration": 30021400,
+            "load_duration": 10973100,
+            "prompt_eval_count": 28
+          }
+        },
+        {
+          "http_status": 200,
+          "provider_metadata": {
+            "total_duration": 29297500,
+            "load_duration": 9763900,
+            "prompt_eval_count": 37
+          }
+        }
+      ],
+      "policy_cache_preparation_calls_excluded": 0,
+      "model_resident_before": [
+        {
+          "name": "qwen3-embedding:0.6b",
+          "size_vram": 2370652077,
+          "expires_at": "2026-10-09T00:21:37.1422356+05:30"
+        }
+      ],
+      "model_resident_after": [
+        {
+          "name": "qwen3-embedding:0.6b",
+          "size_vram": 2370652077,
+          "expires_at": "2026-10-09T00:21:43.8119287+05:30"
+        }
+      ],
+      "results": [
+        {
+          "clause_id": "P001-C001",
+          "policy_id": "POL-IP-001",
+          "similarity": 0.5232829803658038
+        },
+        {
+          "clause_id": "P001-C001",
+          "policy_id": "POL-LIAB-001",
+          "similarity": 0.48659592022052767
+        },
+        {
+          "clause_id": "P001-C001",
+          "policy_id": "POL-INDEM-001",
+          "similarity": 0.45901746807132626
+        },
+        {
+          "clause_id": "P001-C002",
+          "policy_id": "POL-LIAB-001",
+          "similarity": 0.769574147480143
+        },
+        {
+          "clause_id": "P001-C002",
+          "policy_id": "POL-INDEM-001",
+          "similarity": 0.5111553550960476
+        },
+        {
+          "clause_id": "P001-C002",
+          "policy_id": "POL-DATA-001",
+          "similarity": 0.5081492078197498
+        },
+        {
+          "clause_id": "P002-C001",
+          "policy_id": "POL-IP-001",
+          "similarity": 0.5232829803658038
+        },
+        {
+          "clause_id": "P002-C001",
+          "policy_id": "POL-LIAB-001",
+          "similarity": 0.48659592022052767
+        },
+        {
+          "clause_id": "P002-C001",
+          "policy_id": "POL-INDEM-001",
+          "similarity": 0.45901746807132626
+        },
+        {
+          "clause_id": "P002-C002",
+          "policy_id": "POL-INDEM-001",
+          "similarity": 0.7931038818587112
+        },
+        {
+          "clause_id": "P002-C002",
+          "policy_id": "POL-IP-001",
+          "similarity": 0.5254955484249291
+        },
+        {
+          "clause_id": "P002-C002",
+          "policy_id": "POL-LIAB-001",
+          "similarity": 0.5134505994374283
+        },
+        {
+          "clause_id": "P003-C001",
+          "policy_id": "POL-IP-001",
+          "similarity": 0.5232829803658038
+        },
+        {
+          "clause_id": "P003-C001",
+          "policy_id": "POL-LIAB-001",
+          "similarity": 0.48659592022052767
+        },
+        {
+          "clause_id": "P003-C001",
+          "policy_id": "POL-INDEM-001",
+          "similarity": 0.45901746807132626
+        },
+        {
+          "clause_id": "P003-C002",
+          "policy_id": "POL-PAY-001",
+          "similarity": 0.921870846739159
+        },
+        {
+          "clause_id": "P003-C002",
+          "policy_id": "POL-TERM-001",
+          "similarity": 0.44110068510414935
+        },
+        {
+          "clause_id": "P003-C002",
+          "policy_id": "POL-INDEM-001",
+          "similarity": 0.37302442838100397
+        }
+      ]
+    },
+    {
+      "variant": "optimized",
+      "policy_cache": "cold",
+      "iteration": 2,
+      "total_retrieval_seconds": 2.6649173999903724,
+      "embedding_request_count": 11,
+      "embedding_request_seconds": [
+        2.1507765000569634,
+        0.10467139998218045,
+        0.10306940000737086,
+        0.05592050001723692,
+        0.03305020002881065,
+        0.03415049996692687,
+        0.03291389998048544,
+        0.029549500031862408,
+        0.0324178000446409,
+        0.03131120000034571,
+        0.034542699984740466
+      ],
+      "provider_requests": [
+        {
+          "http_status": 200,
+          "provider_metadata": {
+            "total_duration": 106953400,
+            "load_duration": 9027300,
+            "prompt_eval_count": 44
+          }
+        },
+        {
+          "http_status": 200,
+          "provider_metadata": {
+            "total_duration": 102401800,
+            "load_duration": 9106000,
+            "prompt_eval_count": 41
+          }
+        },
+        {
+          "http_status": 200,
+          "provider_metadata": {
+            "total_duration": 100562400,
+            "load_duration": 8201900,
+            "prompt_eval_count": 42
+          }
+        },
+        {
+          "http_status": 200,
+          "provider_metadata": {
+            "total_duration": 54717900,
+            "load_duration": 9451400,
+            "prompt_eval_count": 39
+          }
+        },
+        {
+          "http_status": 200,
+          "provider_metadata": {
+            "total_duration": 30997300,
+            "load_duration": 8618600,
+            "prompt_eval_count": 44
+          }
+        },
+        {
+          "http_status": 200,
+          "provider_metadata": {
+            "total_duration": 32292500,
+            "load_duration": 10266600,
+            "prompt_eval_count": 44
+          }
+        },
+        {
+          "http_status": 200,
+          "provider_metadata": {
+            "total_duration": 31362300,
+            "load_duration": 8401800,
+            "prompt_eval_count": 45
+          }
+        },
+        {
+          "http_status": 200,
+          "provider_metadata": {
+            "total_duration": 25080100,
+            "load_duration": 10625100,
+            "prompt_eval_count": 11
+          }
+        },
+        {
+          "http_status": 200,
+          "provider_metadata": {
+            "total_duration": 32146700,
+            "load_duration": 13504000,
+            "prompt_eval_count": 21
+          }
+        },
+        {
+          "http_status": 200,
+          "provider_metadata": {
+            "total_duration": 29511200,
+            "load_duration": 10474800,
+            "prompt_eval_count": 28
+          }
+        },
+        {
+          "http_status": 200,
+          "provider_metadata": {
+            "total_duration": 32846800,
+            "load_duration": 10827700,
+            "prompt_eval_count": 37
+          }
+        }
+      ],
+      "policy_cache_preparation_calls_excluded": 0,
+      "model_resident_before": [
+        {
+          "name": "qwen3-embedding:0.6b",
+          "size_vram": 2370652077,
+          "expires_at": "2026-10-09T00:21:43.8119287+05:30"
+        }
+      ],
+      "model_resident_after": [
+        {
+          "name": "qwen3-embedding:0.6b",
+          "size_vram": 2370652077,
+          "expires_at": "2026-10-09T00:21:50.5687706+05:30"
+        }
+      ],
+      "results": [
+        {
+          "clause_id": "P001-C001",
+          "policy_id": "POL-IP-001",
+          "similarity": 0.5232829803658038
+        },
+        {
+          "clause_id": "P001-C001",
+          "policy_id": "POL-LIAB-001",
+          "similarity": 0.48659592022052767
+        },
+        {
+          "clause_id": "P001-C001",
+          "policy_id": "POL-INDEM-001",
+          "similarity": 0.45901746807132626
+        },
+        {
+          "clause_id": "P001-C002",
+          "policy_id": "POL-LIAB-001",
+          "similarity": 0.769574147480143
+        },
+        {
+          "clause_id": "P001-C002",
+          "policy_id": "POL-INDEM-001",
+          "similarity": 0.5111553550960476
+        },
+        {
+          "clause_id": "P001-C002",
+          "policy_id": "POL-DATA-001",
+          "similarity": 0.5081492078197498
+        },
+        {
+          "clause_id": "P002-C001",
+          "policy_id": "POL-IP-001",
+          "similarity": 0.5232829803658038
+        },
+        {
+          "clause_id": "P002-C001",
+          "policy_id": "POL-LIAB-001",
+          "similarity": 0.48659592022052767
+        },
+        {
+          "clause_id": "P002-C001",
+          "policy_id": "POL-INDEM-001",
+          "similarity": 0.45901746807132626
+        },
+        {
+          "clause_id": "P002-C002",
+          "policy_id": "POL-INDEM-001",
+          "similarity": 0.7931038818587112
+        },
+        {
+          "clause_id": "P002-C002",
+          "policy_id": "POL-IP-001",
+          "similarity": 0.5254955484249291
+        },
+        {
+          "clause_id": "P002-C002",
+          "policy_id": "POL-LIAB-001",
+          "similarity": 0.5134505994374283
+        },
+        {
+          "clause_id": "P003-C001",
+          "policy_id": "POL-IP-001",
+          "similarity": 0.5232829803658038
+        },
+        {
+          "clause_id": "P003-C001",
+          "policy_id": "POL-LIAB-001",
+          "similarity": 0.48659592022052767
+        },
+        {
+          "clause_id": "P003-C001",
+          "policy_id": "POL-INDEM-001",
+          "similarity": 0.45901746807132626
+        },
+        {
+          "clause_id": "P003-C002",
+          "policy_id": "POL-PAY-001",
+          "similarity": 0.921870846739159
+        },
+        {
+          "clause_id": "P003-C002",
+          "policy_id": "POL-TERM-001",
+          "similarity": 0.44110068510414935
+        },
+        {
+          "clause_id": "P003-C002",
+          "policy_id": "POL-INDEM-001",
+          "similarity": 0.37302442838100397
+        }
+      ]
+    },
+    {
+      "variant": "original",
+      "policy_cache": "cold",
+      "iteration": 2,
+      "total_retrieval_seconds": 24.009863500017673,
+      "embedding_request_count": 11,
+      "embedding_request_seconds": [
+        2.160503599967342,
+        2.136601700040046,
+        2.145665099960752,
+        2.2100404999800958,
+        2.2029683000291698,
+        2.2302974000340328,
+        2.198455700010527,
+        2.1673843000316992,
+        2.1859035000088625,
+        2.1020713999751024,
+        2.256131900008768
+      ],
+      "provider_requests": [
+        {
+          "http_status": 200,
+          "provider_metadata": {
+            "total_duration": 111121800,
+            "load_duration": 9310000,
+            "prompt_eval_count": 44
+          }
+        },
+        {
+          "http_status": 200,
+          "provider_metadata": {
+            "total_duration": 107597500,
+            "load_duration": 9813700,
+            "prompt_eval_count": 41
+          }
+        },
+        {
+          "http_status": 200,
+          "provider_metadata": {
+            "total_duration": 108560200,
+            "load_duration": 9030800,
+            "prompt_eval_count": 42
+          }
+        },
+        {
+          "http_status": 200,
+          "provider_metadata": {
+            "total_duration": 179876300,
+            "load_duration": 8996800,
+            "prompt_eval_count": 39
+          }
+        },
+        {
+          "http_status": 200,
+          "provider_metadata": {
+            "total_duration": 171012800,
+            "load_duration": 75743000,
+            "prompt_eval_count": 44
+          }
+        },
+        {
+          "http_status": 200,
+          "provider_metadata": {
+            "total_duration": 160759700,
+            "load_duration": 10167800,
+            "prompt_eval_count": 44
+          }
+        },
+        {
+          "http_status": 200,
+          "provider_metadata": {
+            "total_duration": 158409700,
+            "load_duration": 8358500,
+            "prompt_eval_count": 45
+          }
+        },
+        {
+          "http_status": 200,
+          "provider_metadata": {
+            "total_duration": 131437600,
+            "load_duration": 9526100,
+            "prompt_eval_count": 11
+          }
+        },
+        {
+          "http_status": 200,
+          "provider_metadata": {
+            "total_duration": 153263300,
+            "load_duration": 10040800,
+            "prompt_eval_count": 21
+          }
+        },
+        {
+          "http_status": 200,
+          "provider_metadata": {
+            "total_duration": 86964400,
+            "load_duration": 9409400,
+            "prompt_eval_count": 28
+          }
+        },
+        {
+          "http_status": 200,
+          "provider_metadata": {
+            "total_duration": 220096100,
+            "load_duration": 10493300,
+            "prompt_eval_count": 37
+          }
+        }
+      ],
+      "policy_cache_preparation_calls_excluded": 0,
+      "model_resident_before": [
+        {
+          "name": "qwen3-embedding:0.6b",
+          "size_vram": 2370652077,
+          "expires_at": "2026-10-09T00:21:50.5687706+05:30"
+        }
+      ],
+      "model_resident_after": [
+        {
+          "name": "qwen3-embedding:0.6b",
+          "size_vram": 2370652077,
+          "expires_at": "2026-10-09T00:22:18.6776852+05:30"
+        }
+      ],
+      "results": [
+        {
+          "clause_id": "P001-C001",
+          "policy_id": "POL-IP-001",
+          "similarity": 0.5232829803658038
+        },
+        {
+          "clause_id": "P001-C001",
+          "policy_id": "POL-LIAB-001",
+          "similarity": 0.48659592022052767
+        },
+        {
+          "clause_id": "P001-C001",
+          "policy_id": "POL-INDEM-001",
+          "similarity": 0.45901746807132626
+        },
+        {
+          "clause_id": "P001-C002",
+          "policy_id": "POL-LIAB-001",
+          "similarity": 0.769574147480143
+        },
+        {
+          "clause_id": "P001-C002",
+          "policy_id": "POL-INDEM-001",
+          "similarity": 0.5111553550960476
+        },
+        {
+          "clause_id": "P001-C002",
+          "policy_id": "POL-DATA-001",
+          "similarity": 0.5081492078197498
+        },
+        {
+          "clause_id": "P002-C001",
+          "policy_id": "POL-IP-001",
+          "similarity": 0.5232829803658038
+        },
+        {
+          "clause_id": "P002-C001",
+          "policy_id": "POL-LIAB-001",
+          "similarity": 0.48659592022052767
+        },
+        {
+          "clause_id": "P002-C001",
+          "policy_id": "POL-INDEM-001",
+          "similarity": 0.45901746807132626
+        },
+        {
+          "clause_id": "P002-C002",
+          "policy_id": "POL-INDEM-001",
+          "similarity": 0.7931038818587112
+        },
+        {
+          "clause_id": "P002-C002",
+          "policy_id": "POL-IP-001",
+          "similarity": 0.5254955484249291
+        },
+        {
+          "clause_id": "P002-C002",
+          "policy_id": "POL-LIAB-001",
+          "similarity": 0.5134505994374283
+        },
+        {
+          "clause_id": "P003-C001",
+          "policy_id": "POL-IP-001",
+          "similarity": 0.5232829803658038
+        },
+        {
+          "clause_id": "P003-C001",
+          "policy_id": "POL-LIAB-001",
+          "similarity": 0.48659592022052767
+        },
+        {
+          "clause_id": "P003-C001",
+          "policy_id": "POL-INDEM-001",
+          "similarity": 0.45901746807132626
+        },
+        {
+          "clause_id": "P003-C002",
+          "policy_id": "POL-PAY-001",
+          "similarity": 0.921870846739159
+        },
+        {
+          "clause_id": "P003-C002",
+          "policy_id": "POL-TERM-001",
+          "similarity": 0.44110068510414935
+        },
+        {
+          "clause_id": "P003-C002",
+          "policy_id": "POL-INDEM-001",
+          "similarity": 0.37302442838100397
+        }
+      ]
+    },
+    {
+      "variant": "original",
+      "policy_cache": "cold",
+      "iteration": 3,
+      "total_retrieval_seconds": 23.794259499991313,
+      "embedding_request_count": 11,
+      "embedding_request_seconds": [
+        2.162206300010439,
+        2.131758700008504,
+        2.1618735000374727,
+        2.151339000032749,
+        2.148526499979198,
+        2.2222069000126794,
+        2.161716600006912,
+        2.1945834000362083,
+        2.1063276000204496,
+        2.201979300007224,
+        2.1370945000089705
+      ],
+      "provider_requests": [
+        {
+          "http_status": 200,
+          "provider_metadata": {
+            "total_duration": 120931800,
+            "load_duration": 12871000,
+            "prompt_eval_count": 44
+          }
+        },
+        {
+          "http_status": 200,
+          "provider_metadata": {
+            "total_duration": 105490300,
+            "load_duration": 10986000,
+            "prompt_eval_count": 41
+          }
+        },
+        {
+          "http_status": 200,
+          "provider_metadata": {
+            "total_duration": 115619500,
+            "load_duration": 8627900,
+            "prompt_eval_count": 42
+          }
+        },
+        {
+          "http_status": 200,
+          "provider_metadata": {
+            "total_duration": 111605600,
+            "load_duration": 9300500,
+            "prompt_eval_count": 39
+          }
+        },
+        {
+          "http_status": 200,
+          "provider_metadata": {
+            "total_duration": 116598000,
+            "load_duration": 10008700,
+            "prompt_eval_count": 44
+          }
+        },
+        {
+          "http_status": 200,
+          "provider_metadata": {
+            "total_duration": 184800400,
+            "load_duration": 10673200,
+            "prompt_eval_count": 44
+          }
+        },
+        {
+          "http_status": 200,
+          "provider_metadata": {
+            "total_duration": 110192600,
+            "load_duration": 10812100,
+            "prompt_eval_count": 45
+          }
+        },
+        {
+          "http_status": 200,
+          "provider_metadata": {
+            "total_duration": 139713300,
+            "load_duration": 9026900,
+            "prompt_eval_count": 11
+          }
+        },
+        {
+          "http_status": 200,
+          "provider_metadata": {
+            "total_duration": 81725900,
+            "load_duration": 10460000,
+            "prompt_eval_count": 21
+          }
+        },
+        {
+          "http_status": 200,
+          "provider_metadata": {
+            "total_duration": 178724400,
+            "load_duration": 9861400,
+            "prompt_eval_count": 28
+          }
+        },
+        {
+          "http_status": 200,
+          "provider_metadata": {
+            "total_duration": 97503400,
+            "load_duration": 9622600,
+            "prompt_eval_count": 37
+          }
+        }
+      ],
+      "policy_cache_preparation_calls_excluded": 0,
+      "model_resident_before": [
+        {
+          "name": "qwen3-embedding:0.6b",
+          "size_vram": 2370652077,
+          "expires_at": "2026-10-09T00:22:18.6776852+05:30"
+        }
+      ],
+      "model_resident_after": [
+        {
+          "name": "qwen3-embedding:0.6b",
+          "size_vram": 2370652077,
+          "expires_at": "2026-10-09T00:22:46.5230516+05:30"
+        }
+      ],
+      "results": [
+        {
+          "clause_id": "P001-C001",
+          "policy_id": "POL-IP-001",
+          "similarity": 0.5232829803658038
+        },
+        {
+          "clause_id": "P001-C001",
+          "policy_id": "POL-LIAB-001",
+          "similarity": 0.48659592022052767
+        },
+        {
+          "clause_id": "P001-C001",
+          "policy_id": "POL-INDEM-001",
+          "similarity": 0.45901746807132626
+        },
+        {
+          "clause_id": "P001-C002",
+          "policy_id": "POL-LIAB-001",
+          "similarity": 0.769574147480143
+        },
+        {
+          "clause_id": "P001-C002",
+          "policy_id": "POL-INDEM-001",
+          "similarity": 0.5111553550960476
+        },
+        {
+          "clause_id": "P001-C002",
+          "policy_id": "POL-DATA-001",
+          "similarity": 0.5081492078197498
+        },
+        {
+          "clause_id": "P002-C001",
+          "policy_id": "POL-IP-001",
+          "similarity": 0.5232829803658038
+        },
+        {
+          "clause_id": "P002-C001",
+          "policy_id": "POL-LIAB-001",
+          "similarity": 0.48659592022052767
+        },
+        {
+          "clause_id": "P002-C001",
+          "policy_id": "POL-INDEM-001",
+          "similarity": 0.45901746807132626
+        },
+        {
+          "clause_id": "P002-C002",
+          "policy_id": "POL-INDEM-001",
+          "similarity": 0.7931038818587112
+        },
+        {
+          "clause_id": "P002-C002",
+          "policy_id": "POL-IP-001",
+          "similarity": 0.5254955484249291
+        },
+        {
+          "clause_id": "P002-C002",
+          "policy_id": "POL-LIAB-001",
+          "similarity": 0.5134505994374283
+        },
+        {
+          "clause_id": "P003-C001",
+          "policy_id": "POL-IP-001",
+          "similarity": 0.5232829803658038
+        },
+        {
+          "clause_id": "P003-C001",
+          "policy_id": "POL-LIAB-001",
+          "similarity": 0.48659592022052767
+        },
+        {
+          "clause_id": "P003-C001",
+          "policy_id": "POL-INDEM-001",
+          "similarity": 0.45901746807132626
+        },
+        {
+          "clause_id": "P003-C002",
+          "policy_id": "POL-PAY-001",
+          "similarity": 0.921870846739159
+        },
+        {
+          "clause_id": "P003-C002",
+          "policy_id": "POL-TERM-001",
+          "similarity": 0.44110068510414935
+        },
+        {
+          "clause_id": "P003-C002",
+          "policy_id": "POL-INDEM-001",
+          "similarity": 0.37302442838100397
+        }
+      ]
+    },
+    {
+      "variant": "optimized",
+      "policy_cache": "cold",
+      "iteration": 3,
+      "total_retrieval_seconds": 2.585545199981425,
+      "embedding_request_count": 11,
+      "embedding_request_seconds": [
+        2.1550277000060305,
+        0.10927150002680719,
+        0.035025999997742474,
+        0.03409500000998378,
+        0.034080399957019836,
+        0.03901339997537434,
+        0.03378649998921901,
+        0.0290899999672547,
+        0.028045100043527782,
+        0.03338959999382496,
+        0.032077500014565885
+      ],
+      "provider_requests": [
+        {
+          "http_status": 200,
+          "provider_metadata": {
+            "total_duration": 121392800,
+            "load_duration": 7826500,
+            "prompt_eval_count": 44
+          }
+        },
+        {
+          "http_status": 200,
+          "provider_metadata": {
+            "total_duration": 88955400,
+            "load_duration": 9229700,
+            "prompt_eval_count": 41
+          }
+        },
+        {
+          "http_status": 200,
+          "provider_metadata": {
+            "total_duration": 32605800,
+            "load_duration": 10097600,
+            "prompt_eval_count": 42
+          }
+        },
+        {
+          "http_status": 200,
+          "provider_metadata": {
+            "total_duration": 34579800,
+            "load_duration": 11027700,
+            "prompt_eval_count": 39
+          }
+        },
+        {
+          "http_status": 200,
+          "provider_metadata": {
+            "total_duration": 32896500,
+            "load_duration": 8058200,
+            "prompt_eval_count": 44
+          }
+        },
+        {
+          "http_status": 200,
+          "provider_metadata": {
+            "total_duration": 37011500,
+            "load_duration": 11955600,
+            "prompt_eval_count": 44
+          }
+        },
+        {
+          "http_status": 200,
+          "provider_metadata": {
+            "total_duration": 31715300,
+            "load_duration": 8821300,
+            "prompt_eval_count": 45
+          }
+        },
+        {
+          "http_status": 200,
+          "provider_metadata": {
+            "total_duration": 24433700,
+            "load_duration": 11184900,
+            "prompt_eval_count": 11
+          }
+        },
+        {
+          "http_status": 200,
+          "provider_metadata": {
+            "total_duration": 27010900,
+            "load_duration": 8294100,
+            "prompt_eval_count": 21
+          }
+        },
+        {
+          "http_status": 200,
+          "provider_metadata": {
+            "total_duration": 31699900,
+            "load_duration": 12068300,
+            "prompt_eval_count": 28
+          }
+        },
+        {
+          "http_status": 200,
+          "provider_metadata": {
+            "total_duration": 30678900,
+            "load_duration": 8892900,
+            "prompt_eval_count": 37
+          }
+        }
+      ],
+      "policy_cache_preparation_calls_excluded": 0,
+      "model_resident_before": [
+        {
+          "name": "qwen3-embedding:0.6b",
+          "size_vram": 2370652077,
+          "expires_at": "2026-10-09T00:22:46.5230516+05:30"
+        }
+      ],
+      "model_resident_after": [
+        {
+          "name": "qwen3-embedding:0.6b",
+          "size_vram": 2370652077,
+          "expires_at": "2026-10-09T00:22:53.2088504+05:30"
+        }
+      ],
+      "results": [
+        {
+          "clause_id": "P001-C001",
+          "policy_id": "POL-IP-001",
+          "similarity": 0.5232829803658038
+        },
+        {
+          "clause_id": "P001-C001",
+          "policy_id": "POL-LIAB-001",
+          "similarity": 0.48659592022052767
+        },
+        {
+          "clause_id": "P001-C001",
+          "policy_id": "POL-INDEM-001",
+          "similarity": 0.45901746807132626
+        },
+        {
+          "clause_id": "P001-C002",
+          "policy_id": "POL-LIAB-001",
+          "similarity": 0.769574147480143
+        },
+        {
+          "clause_id": "P001-C002",
+          "policy_id": "POL-INDEM-001",
+          "similarity": 0.5111553550960476
+        },
+        {
+          "clause_id": "P001-C002",
+          "policy_id": "POL-DATA-001",
+          "similarity": 0.5081492078197498
+        },
+        {
+          "clause_id": "P002-C001",
+          "policy_id": "POL-IP-001",
+          "similarity": 0.5232829803658038
+        },
+        {
+          "clause_id": "P002-C001",
+          "policy_id": "POL-LIAB-001",
+          "similarity": 0.48659592022052767
+        },
+        {
+          "clause_id": "P002-C001",
+          "policy_id": "POL-INDEM-001",
+          "similarity": 0.45901746807132626
+        },
+        {
+          "clause_id": "P002-C002",
+          "policy_id": "POL-INDEM-001",
+          "similarity": 0.7931038818587112
+        },
+        {
+          "clause_id": "P002-C002",
+          "policy_id": "POL-IP-001",
+          "similarity": 0.5254955484249291
+        },
+        {
+          "clause_id": "P002-C002",
+          "policy_id": "POL-LIAB-001",
+          "similarity": 0.5134505994374283
+        },
+        {
+          "clause_id": "P003-C001",
+          "policy_id": "POL-IP-001",
+          "similarity": 0.5232829803658038
+        },
+        {
+          "clause_id": "P003-C001",
+          "policy_id": "POL-LIAB-001",
+          "similarity": 0.48659592022052767
+        },
+        {
+          "clause_id": "P003-C001",
+          "policy_id": "POL-INDEM-001",
+          "similarity": 0.45901746807132626
+        },
+        {
+          "clause_id": "P003-C002",
+          "policy_id": "POL-PAY-001",
+          "similarity": 0.921870846739159
+        },
+        {
+          "clause_id": "P003-C002",
+          "policy_id": "POL-TERM-001",
+          "similarity": 0.44110068510414935
+        },
+        {
+          "clause_id": "P003-C002",
+          "policy_id": "POL-INDEM-001",
+          "similarity": 0.37302442838100397
+        }
+      ]
+    },
+    {
+      "variant": "original",
+      "policy_cache": "warm",
+      "iteration": 1,
+      "total_retrieval_seconds": 8.591029700008221,
+      "embedding_request_count": 4,
+      "embedding_request_seconds": [
+        2.096944799995981,
+        2.2003685000236146,
+        2.115139300003648,
+        2.164904600009322
+      ],
+      "provider_requests": [
+        {
+          "http_status": 200,
+          "provider_metadata": {
+            "total_duration": 70270500,
+            "load_duration": 8756000,
+            "prompt_eval_count": 11
+          }
+        },
+        {
+          "http_status": 200,
+          "provider_metadata": {
+            "total_duration": 161623300,
+            "load_duration": 8798200,
+            "prompt_eval_count": 21
+          }
+        },
+        {
+          "http_status": 200,
+          "provider_metadata": {
+            "total_duration": 86134900,
+            "load_duration": 9067300,
+            "prompt_eval_count": 28
+          }
+        },
+        {
+          "http_status": 200,
+          "provider_metadata": {
+            "total_duration": 145860600,
+            "load_duration": 10183000,
+            "prompt_eval_count": 37
+          }
+        }
+      ],
+      "policy_cache_preparation_calls_excluded": 7,
+      "model_resident_before": [
+        {
+          "name": "qwen3-embedding:0.6b",
+          "size_vram": 2370652077,
+          "expires_at": "2026-10-09T00:22:57.5233132+05:30"
+        }
+      ],
+      "model_resident_after": [
+        {
+          "name": "qwen3-embedding:0.6b",
+          "size_vram": 2370652077,
+          "expires_at": "2026-10-09T00:23:08.1471878+05:30"
+        }
+      ],
+      "results": [
+        {
+          "clause_id": "P001-C001",
+          "policy_id": "POL-IP-001",
+          "similarity": 0.5232829803658038
+        },
+        {
+          "clause_id": "P001-C001",
+          "policy_id": "POL-LIAB-001",
+          "similarity": 0.48659592022052767
+        },
+        {
+          "clause_id": "P001-C001",
+          "policy_id": "POL-INDEM-001",
+          "similarity": 0.45901746807132626
+        },
+        {
+          "clause_id": "P001-C002",
+          "policy_id": "POL-LIAB-001",
+          "similarity": 0.769574147480143
+        },
+        {
+          "clause_id": "P001-C002",
+          "policy_id": "POL-INDEM-001",
+          "similarity": 0.5111553550960476
+        },
+        {
+          "clause_id": "P001-C002",
+          "policy_id": "POL-DATA-001",
+          "similarity": 0.5081492078197498
+        },
+        {
+          "clause_id": "P002-C001",
+          "policy_id": "POL-IP-001",
+          "similarity": 0.5232829803658038
+        },
+        {
+          "clause_id": "P002-C001",
+          "policy_id": "POL-LIAB-001",
+          "similarity": 0.48659592022052767
+        },
+        {
+          "clause_id": "P002-C001",
+          "policy_id": "POL-INDEM-001",
+          "similarity": 0.45901746807132626
+        },
+        {
+          "clause_id": "P002-C002",
+          "policy_id": "POL-INDEM-001",
+          "similarity": 0.7931038818587112
+        },
+        {
+          "clause_id": "P002-C002",
+          "policy_id": "POL-IP-001",
+          "similarity": 0.5254955484249291
+        },
+        {
+          "clause_id": "P002-C002",
+          "policy_id": "POL-LIAB-001",
+          "similarity": 0.5134505994374283
+        },
+        {
+          "clause_id": "P003-C001",
+          "policy_id": "POL-IP-001",
+          "similarity": 0.5232829803658038
+        },
+        {
+          "clause_id": "P003-C001",
+          "policy_id": "POL-LIAB-001",
+          "similarity": 0.48659592022052767
+        },
+        {
+          "clause_id": "P003-C001",
+          "policy_id": "POL-INDEM-001",
+          "similarity": 0.45901746807132626
+        },
+        {
+          "clause_id": "P003-C002",
+          "policy_id": "POL-PAY-001",
+          "similarity": 0.921870846739159
+        },
+        {
+          "clause_id": "P003-C002",
+          "policy_id": "POL-TERM-001",
+          "similarity": 0.44110068510414935
+        },
+        {
+          "clause_id": "P003-C002",
+          "policy_id": "POL-INDEM-001",
+          "similarity": 0.37302442838100397
+        }
+      ]
+    },
+    {
+      "variant": "optimized",
+      "policy_cache": "warm",
+      "iteration": 1,
+      "total_retrieval_seconds": 2.403496399987489,
+      "embedding_request_count": 4,
+      "embedding_request_seconds": [
+        2.128090699960012,
+        0.0926327999914065,
+        0.0953643000102602,
+        0.0654981000116095
+      ],
+      "provider_requests": [
+        {
+          "http_status": 200,
+          "provider_metadata": {
+            "total_duration": 84275700,
+            "load_duration": 9901800,
+            "prompt_eval_count": 11
+          }
+        },
+        {
+          "http_status": 200,
+          "provider_metadata": {
+            "total_duration": 90233600,
+            "load_duration": 8161600,
+            "prompt_eval_count": 21
+          }
+        },
+        {
+          "http_status": 200,
+          "provider_metadata": {
+            "total_duration": 93191700,
+            "load_duration": 10417300,
+            "prompt_eval_count": 28
+          }
+        },
+        {
+          "http_status": 200,
+          "provider_metadata": {
+            "total_duration": 63678100,
+            "load_duration": 9002900,
+            "prompt_eval_count": 37
+          }
+        }
+      ],
+      "policy_cache_preparation_calls_excluded": 7,
+      "model_resident_before": [
+        {
+          "name": "qwen3-embedding:0.6b",
+          "size_vram": 2370652077,
+          "expires_at": "2026-10-09T00:23:12.6559307+05:30"
+        }
+      ],
+      "model_resident_after": [
+        {
+          "name": "qwen3-embedding:0.6b",
+          "size_vram": 2370652077,
+          "expires_at": "2026-10-09T00:23:17.0966944+05:30"
+        }
+      ],
+      "results": [
+        {
+          "clause_id": "P001-C001",
+          "policy_id": "POL-IP-001",
+          "similarity": 0.5232829803658038
+        },
+        {
+          "clause_id": "P001-C001",
+          "policy_id": "POL-LIAB-001",
+          "similarity": 0.48659592022052767
+        },
+        {
+          "clause_id": "P001-C001",
+          "policy_id": "POL-INDEM-001",
+          "similarity": 0.45901746807132626
+        },
+        {
+          "clause_id": "P001-C002",
+          "policy_id": "POL-LIAB-001",
+          "similarity": 0.769574147480143
+        },
+        {
+          "clause_id": "P001-C002",
+          "policy_id": "POL-INDEM-001",
+          "similarity": 0.5111553550960476
+        },
+        {
+          "clause_id": "P001-C002",
+          "policy_id": "POL-DATA-001",
+          "similarity": 0.5081492078197498
+        },
+        {
+          "clause_id": "P002-C001",
+          "policy_id": "POL-IP-001",
+          "similarity": 0.5232829803658038
+        },
+        {
+          "clause_id": "P002-C001",
+          "policy_id": "POL-LIAB-001",
+          "similarity": 0.48659592022052767
+        },
+        {
+          "clause_id": "P002-C001",
+          "policy_id": "POL-INDEM-001",
+          "similarity": 0.45901746807132626
+        },
+        {
+          "clause_id": "P002-C002",
+          "policy_id": "POL-INDEM-001",
+          "similarity": 0.7931038818587112
+        },
+        {
+          "clause_id": "P002-C002",
+          "policy_id": "POL-IP-001",
+          "similarity": 0.5254955484249291
+        },
+        {
+          "clause_id": "P002-C002",
+          "policy_id": "POL-LIAB-001",
+          "similarity": 0.5134505994374283
+        },
+        {
+          "clause_id": "P003-C001",
+          "policy_id": "POL-IP-001",
+          "similarity": 0.5232829803658038
+        },
+        {
+          "clause_id": "P003-C001",
+          "policy_id": "POL-LIAB-001",
+          "similarity": 0.48659592022052767
+        },
+        {
+          "clause_id": "P003-C001",
+          "policy_id": "POL-INDEM-001",
+          "similarity": 0.45901746807132626
+        },
+        {
+          "clause_id": "P003-C002",
+          "policy_id": "POL-PAY-001",
+          "similarity": 0.921870846739159
+        },
+        {
+          "clause_id": "P003-C002",
+          "policy_id": "POL-TERM-001",
+          "similarity": 0.44110068510414935
+        },
+        {
+          "clause_id": "P003-C002",
+          "policy_id": "POL-INDEM-001",
+          "similarity": 0.37302442838100397
+        }
+      ]
+    },
+    {
+      "variant": "optimized",
+      "policy_cache": "warm",
+      "iteration": 2,
+      "total_retrieval_seconds": 2.41608619998442,
+      "embedding_request_count": 4,
+      "embedding_request_seconds": [
+        2.1054864000179805,
+        0.10390210000332445,
+        0.0904605999821797,
+        0.0957108000293374
+      ],
+      "provider_requests": [
+        {
+          "http_status": 200,
+          "provider_metadata": {
+            "total_duration": 77435300,
+            "load_duration": 9115500,
+            "prompt_eval_count": 11
+          }
+        },
+        {
+          "http_status": 200,
+          "provider_metadata": {
+            "total_duration": 92130300,
+            "load_duration": 9916300,
+            "prompt_eval_count": 21
+          }
+        },
+        {
+          "http_status": 200,
+          "provider_metadata": {
+            "total_duration": 88674700,
+            "load_duration": 9811400,
+            "prompt_eval_count": 28
+          }
+        },
+        {
+          "http_status": 200,
+          "provider_metadata": {
+            "total_duration": 93561800,
+            "load_duration": 9092200,
+            "prompt_eval_count": 37
+          }
+        }
+      ],
+      "policy_cache_preparation_calls_excluded": 7,
+      "model_resident_before": [
+        {
+          "name": "qwen3-embedding:0.6b",
+          "size_vram": 2370652077,
+          "expires_at": "2026-10-09T00:23:21.6145529+05:30"
+        }
+      ],
+      "model_resident_after": [
+        {
+          "name": "qwen3-embedding:0.6b",
+          "size_vram": 2370652077,
+          "expires_at": "2026-10-09T00:23:26.0745244+05:30"
+        }
+      ],
+      "results": [
+        {
+          "clause_id": "P001-C001",
+          "policy_id": "POL-IP-001",
+          "similarity": 0.5232829803658038
+        },
+        {
+          "clause_id": "P001-C001",
+          "policy_id": "POL-LIAB-001",
+          "similarity": 0.48659592022052767
+        },
+        {
+          "clause_id": "P001-C001",
+          "policy_id": "POL-INDEM-001",
+          "similarity": 0.45901746807132626
+        },
+        {
+          "clause_id": "P001-C002",
+          "policy_id": "POL-LIAB-001",
+          "similarity": 0.769574147480143
+        },
+        {
+          "clause_id": "P001-C002",
+          "policy_id": "POL-INDEM-001",
+          "similarity": 0.5111553550960476
+        },
+        {
+          "clause_id": "P001-C002",
+          "policy_id": "POL-DATA-001",
+          "similarity": 0.5081492078197498
+        },
+        {
+          "clause_id": "P002-C001",
+          "policy_id": "POL-IP-001",
+          "similarity": 0.5232829803658038
+        },
+        {
+          "clause_id": "P002-C001",
+          "policy_id": "POL-LIAB-001",
+          "similarity": 0.48659592022052767
+        },
+        {
+          "clause_id": "P002-C001",
+          "policy_id": "POL-INDEM-001",
+          "similarity": 0.45901746807132626
+        },
+        {
+          "clause_id": "P002-C002",
+          "policy_id": "POL-INDEM-001",
+          "similarity": 0.7931038818587112
+        },
+        {
+          "clause_id": "P002-C002",
+          "policy_id": "POL-IP-001",
+          "similarity": 0.5254955484249291
+        },
+        {
+          "clause_id": "P002-C002",
+          "policy_id": "POL-LIAB-001",
+          "similarity": 0.5134505994374283
+        },
+        {
+          "clause_id": "P003-C001",
+          "policy_id": "POL-IP-001",
+          "similarity": 0.5232829803658038
+        },
+        {
+          "clause_id": "P003-C001",
+          "policy_id": "POL-LIAB-001",
+          "similarity": 0.48659592022052767
+        },
+        {
+          "clause_id": "P003-C001",
+          "policy_id": "POL-INDEM-001",
+          "similarity": 0.45901746807132626
+        },
+        {
+          "clause_id": "P003-C002",
+          "policy_id": "POL-PAY-001",
+          "similarity": 0.921870846739159
+        },
+        {
+          "clause_id": "P003-C002",
+          "policy_id": "POL-TERM-001",
+          "similarity": 0.44110068510414935
+        },
+        {
+          "clause_id": "P003-C002",
+          "policy_id": "POL-INDEM-001",
+          "similarity": 0.37302442838100397
+        }
+      ]
+    },
+    {
+      "variant": "original",
+      "policy_cache": "warm",
+      "iteration": 2,
+      "total_retrieval_seconds": 8.60661729995627,
+      "embedding_request_count": 4,
+      "embedding_request_seconds": [
+        2.112082800013013,
+        2.1290083999629132,
+        2.214101599995047,
+        2.1375066000036895
+      ],
+      "provider_requests": [
+        {
+          "http_status": 200,
+          "provider_metadata": {
+            "total_duration": 77335100,
+            "load_duration": 9602400,
+            "prompt_eval_count": 11
+          }
+        },
+        {
+          "http_status": 200,
+          "provider_metadata": {
+            "total_duration": 84701700,
+            "load_duration": 11788200,
+            "prompt_eval_count": 21
+          }
+        },
+        {
+          "http_status": 200,
+          "provider_metadata": {
+            "total_duration": 176891800,
+            "load_duration": 9035400,
+            "prompt_eval_count": 28
+          }
+        },
+        {
+          "http_status": 200,
+          "provider_metadata": {
+            "total_duration": 104082600,
+            "load_duration": 10658700,
+            "prompt_eval_count": 37
+          }
+        }
+      ],
+      "policy_cache_preparation_calls_excluded": 7,
+      "model_resident_before": [
+        {
+          "name": "qwen3-embedding:0.6b",
+          "size_vram": 2370652077,
+          "expires_at": "2026-10-09T00:23:30.5887176+05:30"
+        }
+      ],
+      "model_resident_after": [
+        {
+          "name": "qwen3-embedding:0.6b",
+          "size_vram": 2370652077,
+          "expires_at": "2026-10-09T00:23:41.2154222+05:30"
+        }
+      ],
+      "results": [
+        {
+          "clause_id": "P001-C001",
+          "policy_id": "POL-IP-001",
+          "similarity": 0.5232829803658038
+        },
+        {
+          "clause_id": "P001-C001",
+          "policy_id": "POL-LIAB-001",
+          "similarity": 0.48659592022052767
+        },
+        {
+          "clause_id": "P001-C001",
+          "policy_id": "POL-INDEM-001",
+          "similarity": 0.45901746807132626
+        },
+        {
+          "clause_id": "P001-C002",
+          "policy_id": "POL-LIAB-001",
+          "similarity": 0.769574147480143
+        },
+        {
+          "clause_id": "P001-C002",
+          "policy_id": "POL-INDEM-001",
+          "similarity": 0.5111553550960476
+        },
+        {
+          "clause_id": "P001-C002",
+          "policy_id": "POL-DATA-001",
+          "similarity": 0.5081492078197498
+        },
+        {
+          "clause_id": "P002-C001",
+          "policy_id": "POL-IP-001",
+          "similarity": 0.5232829803658038
+        },
+        {
+          "clause_id": "P002-C001",
+          "policy_id": "POL-LIAB-001",
+          "similarity": 0.48659592022052767
+        },
+        {
+          "clause_id": "P002-C001",
+          "policy_id": "POL-INDEM-001",
+          "similarity": 0.45901746807132626
+        },
+        {
+          "clause_id": "P002-C002",
+          "policy_id": "POL-INDEM-001",
+          "similarity": 0.7931038818587112
+        },
+        {
+          "clause_id": "P002-C002",
+          "policy_id": "POL-IP-001",
+          "similarity": 0.5254955484249291
+        },
+        {
+          "clause_id": "P002-C002",
+          "policy_id": "POL-LIAB-001",
+          "similarity": 0.5134505994374283
+        },
+        {
+          "clause_id": "P003-C001",
+          "policy_id": "POL-IP-001",
+          "similarity": 0.5232829803658038
+        },
+        {
+          "clause_id": "P003-C001",
+          "policy_id": "POL-LIAB-001",
+          "similarity": 0.48659592022052767
+        },
+        {
+          "clause_id": "P003-C001",
+          "policy_id": "POL-INDEM-001",
+          "similarity": 0.45901746807132626
+        },
+        {
+          "clause_id": "P003-C002",
+          "policy_id": "POL-PAY-001",
+          "similarity": 0.921870846739159
+        },
+        {
+          "clause_id": "P003-C002",
+          "policy_id": "POL-TERM-001",
+          "similarity": 0.44110068510414935
+        },
+        {
+          "clause_id": "P003-C002",
+          "policy_id": "POL-INDEM-001",
+          "similarity": 0.37302442838100397
+        }
+      ]
+    },
+    {
+      "variant": "original",
+      "policy_cache": "warm",
+      "iteration": 3,
+      "total_retrieval_seconds": 8.718232699960936,
+      "embedding_request_count": 4,
+      "embedding_request_seconds": [
+        2.1172173999948427,
+        2.216615700046532,
+        2.114701199985575,
+        2.256213100044988
+      ],
+      "provider_requests": [
+        {
+          "http_status": 200,
+          "provider_metadata": {
+            "total_duration": 81779200,
+            "load_duration": 10454000,
+            "prompt_eval_count": 11
+          }
+        },
+        {
+          "http_status": 200,
+          "provider_metadata": {
+            "total_duration": 167903800,
+            "load_duration": 10182800,
+            "prompt_eval_count": 21
+          }
+        },
+        {
+          "http_status": 200,
+          "provider_metadata": {
+            "total_duration": 86992900,
+            "load_duration": 9538200,
+            "prompt_eval_count": 28
+          }
+        },
+        {
+          "http_status": 200,
+          "provider_metadata": {
+            "total_duration": 203813400,
+            "load_duration": 9173800,
+            "prompt_eval_count": 37
+          }
+        }
+      ],
+      "policy_cache_preparation_calls_excluded": 7,
+      "model_resident_before": [
+        {
+          "name": "qwen3-embedding:0.6b",
+          "size_vram": 2370652077,
+          "expires_at": "2026-10-09T00:23:45.6718605+05:30"
+        }
+      ],
+      "model_resident_after": [
+        {
+          "name": "qwen3-embedding:0.6b",
+          "size_vram": 2370652077,
+          "expires_at": "2026-10-09T00:23:56.4391715+05:30"
+        }
+      ],
+      "results": [
+        {
+          "clause_id": "P001-C001",
+          "policy_id": "POL-IP-001",
+          "similarity": 0.5232829803658038
+        },
+        {
+          "clause_id": "P001-C001",
+          "policy_id": "POL-LIAB-001",
+          "similarity": 0.48659592022052767
+        },
+        {
+          "clause_id": "P001-C001",
+          "policy_id": "POL-INDEM-001",
+          "similarity": 0.45901746807132626
+        },
+        {
+          "clause_id": "P001-C002",
+          "policy_id": "POL-LIAB-001",
+          "similarity": 0.769574147480143
+        },
+        {
+          "clause_id": "P001-C002",
+          "policy_id": "POL-INDEM-001",
+          "similarity": 0.5111553550960476
+        },
+        {
+          "clause_id": "P001-C002",
+          "policy_id": "POL-DATA-001",
+          "similarity": 0.5081492078197498
+        },
+        {
+          "clause_id": "P002-C001",
+          "policy_id": "POL-IP-001",
+          "similarity": 0.5232829803658038
+        },
+        {
+          "clause_id": "P002-C001",
+          "policy_id": "POL-LIAB-001",
+          "similarity": 0.48659592022052767
+        },
+        {
+          "clause_id": "P002-C001",
+          "policy_id": "POL-INDEM-001",
+          "similarity": 0.45901746807132626
+        },
+        {
+          "clause_id": "P002-C002",
+          "policy_id": "POL-INDEM-001",
+          "similarity": 0.7931038818587112
+        },
+        {
+          "clause_id": "P002-C002",
+          "policy_id": "POL-IP-001",
+          "similarity": 0.5254955484249291
+        },
+        {
+          "clause_id": "P002-C002",
+          "policy_id": "POL-LIAB-001",
+          "similarity": 0.5134505994374283
+        },
+        {
+          "clause_id": "P003-C001",
+          "policy_id": "POL-IP-001",
+          "similarity": 0.5232829803658038
+        },
+        {
+          "clause_id": "P003-C001",
+          "policy_id": "POL-LIAB-001",
+          "similarity": 0.48659592022052767
+        },
+        {
+          "clause_id": "P003-C001",
+          "policy_id": "POL-INDEM-001",
+          "similarity": 0.45901746807132626
+        },
+        {
+          "clause_id": "P003-C002",
+          "policy_id": "POL-PAY-001",
+          "similarity": 0.921870846739159
+        },
+        {
+          "clause_id": "P003-C002",
+          "policy_id": "POL-TERM-001",
+          "similarity": 0.44110068510414935
+        },
+        {
+          "clause_id": "P003-C002",
+          "policy_id": "POL-INDEM-001",
+          "similarity": 0.37302442838100397
+        }
+      ]
+    },
+    {
+      "variant": "optimized",
+      "policy_cache": "warm",
+      "iteration": 3,
+      "total_retrieval_seconds": 2.327778799983207,
+      "embedding_request_count": 4,
+      "embedding_request_seconds": [
+        2.1003561000106856,
+        0.08467419998487458,
+        0.08837289997609332,
+        0.033455300028435886
+      ],
+      "provider_requests": [
+        {
+          "http_status": 200,
+          "provider_metadata": {
+            "total_duration": 80584700,
+            "load_duration": 11061500,
+            "prompt_eval_count": 11
+          }
+        },
+        {
+          "http_status": 200,
+          "provider_metadata": {
+            "total_duration": 83367300,
+            "load_duration": 9164900,
+            "prompt_eval_count": 21
+          }
+        },
+        {
+          "http_status": 200,
+          "provider_metadata": {
+            "total_duration": 86369200,
+            "load_duration": 9986300,
+            "prompt_eval_count": 28
+          }
+        },
+        {
+          "http_status": 200,
+          "provider_metadata": {
+            "total_duration": 31253900,
+            "load_duration": 9034000,
+            "prompt_eval_count": 37
+          }
+        }
+      ],
+      "policy_cache_preparation_calls_excluded": 7,
+      "model_resident_before": [
+        {
+          "name": "qwen3-embedding:0.6b",
+          "size_vram": 2370652077,
+          "expires_at": "2026-10-09T00:24:00.897524+05:30"
+        }
+      ],
+      "model_resident_after": [
+        {
+          "name": "qwen3-embedding:0.6b",
+          "size_vram": 2370652077,
+          "expires_at": "2026-10-09T00:24:05.2927741+05:30"
+        }
+      ],
+      "results": [
+        {
+          "clause_id": "P001-C001",
+          "policy_id": "POL-IP-001",
+          "similarity": 0.5232829803658038
+        },
+        {
+          "clause_id": "P001-C001",
+          "policy_id": "POL-LIAB-001",
+          "similarity": 0.48659592022052767
+        },
+        {
+          "clause_id": "P001-C001",
+          "policy_id": "POL-INDEM-001",
+          "similarity": 0.45901746807132626
+        },
+        {
+          "clause_id": "P001-C002",
+          "policy_id": "POL-LIAB-001",
+          "similarity": 0.769574147480143
+        },
+        {
+          "clause_id": "P001-C002",
+          "policy_id": "POL-INDEM-001",
+          "similarity": 0.5111553550960476
+        },
+        {
+          "clause_id": "P001-C002",
+          "policy_id": "POL-DATA-001",
+          "similarity": 0.5081492078197498
+        },
+        {
+          "clause_id": "P002-C001",
+          "policy_id": "POL-IP-001",
+          "similarity": 0.5232829803658038
+        },
+        {
+          "clause_id": "P002-C001",
+          "policy_id": "POL-LIAB-001",
+          "similarity": 0.48659592022052767
+        },
+        {
+          "clause_id": "P002-C001",
+          "policy_id": "POL-INDEM-001",
+          "similarity": 0.45901746807132626
+        },
+        {
+          "clause_id": "P002-C002",
+          "policy_id": "POL-INDEM-001",
+          "similarity": 0.7931038818587112
+        },
+        {
+          "clause_id": "P002-C002",
+          "policy_id": "POL-IP-001",
+          "similarity": 0.5254955484249291
+        },
+        {
+          "clause_id": "P002-C002",
+          "policy_id": "POL-LIAB-001",
+          "similarity": 0.5134505994374283
+        },
+        {
+          "clause_id": "P003-C001",
+          "policy_id": "POL-IP-001",
+          "similarity": 0.5232829803658038
+        },
+        {
+          "clause_id": "P003-C001",
+          "policy_id": "POL-LIAB-001",
+          "similarity": 0.48659592022052767
+        },
+        {
+          "clause_id": "P003-C001",
+          "policy_id": "POL-INDEM-001",
+          "similarity": 0.45901746807132626
+        },
+        {
+          "clause_id": "P003-C002",
+          "policy_id": "POL-PAY-001",
+          "similarity": 0.921870846739159
+        },
+        {
+          "clause_id": "P003-C002",
+          "policy_id": "POL-TERM-001",
+          "similarity": 0.44110068510414935
+        },
+        {
+          "clause_id": "P003-C002",
+          "policy_id": "POL-INDEM-001",
+          "similarity": 0.37302442838100397
+        }
+      ]
+    }
+  ],
+  "warmups": [
+    {
+      "variant": "original",
+      "policy_cache": "cold",
+      "iteration": 0,
+      "total_retrieval_seconds": 23.844062299991492,
+      "embedding_request_count": 11,
+      "embedding_request_seconds": [
+        2.1176777000073344,
+        2.1477333000511862,
+        2.1756945999804884,
+        2.170581599988509,
+        2.1520692000049166,
+        2.203295400016941,
+        2.157256899983622,
+        2.2079353000153787,
+        2.1857928999816068,
+        2.18976570002269,
+        2.121898900019005
+      ],
+      "provider_requests": [
+        {
+          "http_status": 200,
+          "provider_metadata": {
+            "total_duration": 89694600,
+            "load_duration": 9240800,
+            "prompt_eval_count": 44
+          }
+        },
+        {
+          "http_status": 200,
+          "provider_metadata": {
+            "total_duration": 106443600,
+            "load_duration": 8440600,
+            "prompt_eval_count": 41
+          }
+        },
+        {
+          "http_status": 200,
+          "provider_metadata": {
+            "total_duration": 122820500,
+            "load_duration": 11357200,
+            "prompt_eval_count": 42
+          }
+        },
+        {
+          "http_status": 200,
+          "provider_metadata": {
+            "total_duration": 133263500,
+            "load_duration": 10141300,
+            "prompt_eval_count": 39
+          }
+        },
+        {
+          "http_status": 200,
+          "provider_metadata": {
+            "total_duration": 108543300,
+            "load_duration": 10401900,
+            "prompt_eval_count": 44
+          }
+        },
+        {
+          "http_status": 200,
+          "provider_metadata": {
+            "total_duration": 170566600,
+            "load_duration": 10224200,
+            "prompt_eval_count": 44
+          }
+        },
+        {
+          "http_status": 200,
+          "provider_metadata": {
+            "total_duration": 124605400,
+            "load_duration": 9334600,
+            "prompt_eval_count": 45
+          }
+        },
+        {
+          "http_status": 200,
+          "provider_metadata": {
+            "total_duration": 179849300,
+            "load_duration": 9595400,
+            "prompt_eval_count": 11
+          }
+        },
+        {
+          "http_status": 200,
+          "provider_metadata": {
+            "total_duration": 160998000,
+            "load_duration": 9053700,
+            "prompt_eval_count": 21
+          }
+        },
+        {
+          "http_status": 200,
+          "provider_metadata": {
+            "total_duration": 161287800,
+            "load_duration": 8669200,
+            "prompt_eval_count": 28
+          }
+        },
+        {
+          "http_status": 200,
+          "provider_metadata": {
+            "total_duration": 98282700,
+            "load_duration": 8971400,
+            "prompt_eval_count": 37
+          }
+        }
+      ],
+      "policy_cache_preparation_calls_excluded": 0,
+      "model_resident_before": [
+        {
+          "name": "qwen3-embedding:0.6b",
+          "size_vram": 2370652077,
+          "expires_at": "2026-10-09T00:20:36.2385184+05:30"
+        }
+      ],
+      "model_resident_after": [
+        {
+          "name": "qwen3-embedding:0.6b",
+          "size_vram": 2370652077,
+          "expires_at": "2026-10-09T00:21:02.2582172+05:30"
+        }
+      ],
+      "results": [
+        {
+          "clause_id": "P001-C001",
+          "policy_id": "POL-IP-001",
+          "similarity": 0.5232829803658038
+        },
+        {
+          "clause_id": "P001-C001",
+          "policy_id": "POL-LIAB-001",
+          "similarity": 0.48659592022052767
+        },
+        {
+          "clause_id": "P001-C001",
+          "policy_id": "POL-INDEM-001",
+          "similarity": 0.45901746807132626
+        },
+        {
+          "clause_id": "P001-C002",
+          "policy_id": "POL-LIAB-001",
+          "similarity": 0.769574147480143
+        },
+        {
+          "clause_id": "P001-C002",
+          "policy_id": "POL-INDEM-001",
+          "similarity": 0.5111553550960476
+        },
+        {
+          "clause_id": "P001-C002",
+          "policy_id": "POL-DATA-001",
+          "similarity": 0.5081492078197498
+        },
+        {
+          "clause_id": "P002-C001",
+          "policy_id": "POL-IP-001",
+          "similarity": 0.5232829803658038
+        },
+        {
+          "clause_id": "P002-C001",
+          "policy_id": "POL-LIAB-001",
+          "similarity": 0.48659592022052767
+        },
+        {
+          "clause_id": "P002-C001",
+          "policy_id": "POL-INDEM-001",
+          "similarity": 0.45901746807132626
+        },
+        {
+          "clause_id": "P002-C002",
+          "policy_id": "POL-INDEM-001",
+          "similarity": 0.7931038818587112
+        },
+        {
+          "clause_id": "P002-C002",
+          "policy_id": "POL-IP-001",
+          "similarity": 0.5254955484249291
+        },
+        {
+          "clause_id": "P002-C002",
+          "policy_id": "POL-LIAB-001",
+          "similarity": 0.5134505994374283
+        },
+        {
+          "clause_id": "P003-C001",
+          "policy_id": "POL-IP-001",
+          "similarity": 0.5232829803658038
+        },
+        {
+          "clause_id": "P003-C001",
+          "policy_id": "POL-LIAB-001",
+          "similarity": 0.48659592022052767
+        },
+        {
+          "clause_id": "P003-C001",
+          "policy_id": "POL-INDEM-001",
+          "similarity": 0.45901746807132626
+        },
+        {
+          "clause_id": "P003-C002",
+          "policy_id": "POL-PAY-001",
+          "similarity": 0.921870846739159
+        },
+        {
+          "clause_id": "P003-C002",
+          "policy_id": "POL-TERM-001",
+          "similarity": 0.44110068510414935
+        },
+        {
+          "clause_id": "P003-C002",
+          "policy_id": "POL-INDEM-001",
+          "similarity": 0.37302442838100397
+        }
+      ]
+    },
+    {
+      "variant": "optimized",
+      "policy_cache": "cold",
+      "iteration": 0,
+      "total_retrieval_seconds": 2.7166903999750502,
+      "embedding_request_count": 11,
+      "embedding_request_seconds": [
+        2.2970746000064537,
+        0.09458790003554896,
+        0.044807600032072514,
+        0.034259699983522296,
+        0.03398830001242459,
+        0.036464300006628036,
+        0.03482669999357313,
+        0.030027300002984703,
+        0.027051700046285987,
+        0.03025280003203079,
+        0.0315851999912411
+      ],
+      "provider_requests": [
+        {
+          "http_status": 200,
+          "provider_metadata": {
+            "total_duration": 270400400,
+            "load_duration": 9524100,
+            "prompt_eval_count": 44
+          }
+        },
+        {
+          "http_status": 200,
+          "provider_metadata": {
+            "total_duration": 92810000,
+            "load_duration": 8481000,
+            "prompt_eval_count": 41
+          }
+        },
+        {
+          "http_status": 200,
+          "provider_metadata": {
+            "total_duration": 30812300,
+            "load_duration": 9293100,
+            "prompt_eval_count": 42
+          }
+        },
+        {
+          "http_status": 200,
+          "provider_metadata": {
+            "total_duration": 32200900,
+            "load_duration": 6258500,
+            "prompt_eval_count": 39
+          }
+        },
+        {
+          "http_status": 200,
+          "provider_metadata": {
+            "total_duration": 32086800,
+            "load_duration": 8463100,
+            "prompt_eval_count": 44
+          }
+        },
+        {
+          "http_status": 200,
+          "provider_metadata": {
+            "total_duration": 34860300,
+            "load_duration": 10059600,
+            "prompt_eval_count": 44
+          }
+        },
+        {
+          "http_status": 200,
+          "provider_metadata": {
+            "total_duration": 32745900,
+            "load_duration": 8087200,
+            "prompt_eval_count": 45
+          }
+        },
+        {
+          "http_status": 200,
+          "provider_metadata": {
+            "total_duration": 25388800,
+            "load_duration": 10960800,
+            "prompt_eval_count": 11
+          }
+        },
+        {
+          "http_status": 200,
+          "provider_metadata": {
+            "total_duration": 24766800,
+            "load_duration": 8408200,
+            "prompt_eval_count": 21
+          }
+        },
+        {
+          "http_status": 200,
+          "provider_metadata": {
+            "total_duration": 28715700,
+            "load_duration": 10690300,
+            "prompt_eval_count": 28
+          }
+        },
+        {
+          "http_status": 200,
+          "provider_metadata": {
+            "total_duration": 29992500,
+            "load_duration": 8199700,
+            "prompt_eval_count": 37
+          }
+        }
+      ],
+      "policy_cache_preparation_calls_excluded": 0,
+      "model_resident_before": [
+        {
+          "name": "qwen3-embedding:0.6b",
+          "size_vram": 2370652077,
+          "expires_at": "2026-10-09T00:21:02.2582172+05:30"
+        }
+      ],
+      "model_resident_after": [
+        {
+          "name": "qwen3-embedding:0.6b",
+          "size_vram": 2370652077,
+          "expires_at": "2026-10-09T00:21:09.0613868+05:30"
+        }
+      ],
+      "results": [
+        {
+          "clause_id": "P001-C001",
+          "policy_id": "POL-IP-001",
+          "similarity": 0.5232829803658038
+        },
+        {
+          "clause_id": "P001-C001",
+          "policy_id": "POL-LIAB-001",
+          "similarity": 0.48659592022052767
+        },
+        {
+          "clause_id": "P001-C001",
+          "policy_id": "POL-INDEM-001",
+          "similarity": 0.45901746807132626
+        },
+        {
+          "clause_id": "P001-C002",
+          "policy_id": "POL-LIAB-001",
+          "similarity": 0.769574147480143
+        },
+        {
+          "clause_id": "P001-C002",
+          "policy_id": "POL-INDEM-001",
+          "similarity": 0.5111553550960476
+        },
+        {
+          "clause_id": "P001-C002",
+          "policy_id": "POL-DATA-001",
+          "similarity": 0.5081492078197498
+        },
+        {
+          "clause_id": "P002-C001",
+          "policy_id": "POL-IP-001",
+          "similarity": 0.5232829803658038
+        },
+        {
+          "clause_id": "P002-C001",
+          "policy_id": "POL-LIAB-001",
+          "similarity": 0.48659592022052767
+        },
+        {
+          "clause_id": "P002-C001",
+          "policy_id": "POL-INDEM-001",
+          "similarity": 0.45901746807132626
+        },
+        {
+          "clause_id": "P002-C002",
+          "policy_id": "POL-INDEM-001",
+          "similarity": 0.7931038818587112
+        },
+        {
+          "clause_id": "P002-C002",
+          "policy_id": "POL-IP-001",
+          "similarity": 0.5254955484249291
+        },
+        {
+          "clause_id": "P002-C002",
+          "policy_id": "POL-LIAB-001",
+          "similarity": 0.5134505994374283
+        },
+        {
+          "clause_id": "P003-C001",
+          "policy_id": "POL-IP-001",
+          "similarity": 0.5232829803658038
+        },
+        {
+          "clause_id": "P003-C001",
+          "policy_id": "POL-LIAB-001",
+          "similarity": 0.48659592022052767
+        },
+        {
+          "clause_id": "P003-C001",
+          "policy_id": "POL-INDEM-001",
+          "similarity": 0.45901746807132626
+        },
+        {
+          "clause_id": "P003-C002",
+          "policy_id": "POL-PAY-001",
+          "similarity": 0.921870846739159
+        },
+        {
+          "clause_id": "P003-C002",
+          "policy_id": "POL-TERM-001",
+          "similarity": 0.44110068510414935
+        },
+        {
+          "clause_id": "P003-C002",
+          "policy_id": "POL-INDEM-001",
+          "similarity": 0.37302442838100397
+        }
+      ]
+    }
+  ],
+  "status": "completed",
+  "environment": {
+    "platform": "Windows-11-10.0.26200-SP0",
+    "python": "3.14.7",
+    "httpx_version": "0.28.1",
+    "ollama_version": "0.40.1",
+    "base_url": "http://localhost:11434",
+    "model": "qwen3-embedding:0.6b",
+    "model_digest": "ac6da0dfba84a81fdbfbaf330198c33cd77c4cdfc53e8bc50eb581914a15621d",
+    "dimensions": 1024,
+    "connect_timeout": 5.0,
+    "read_timeout": 120.0,
+    "truncate": false,
+    "trust_env": false,
+    "top_k": 3,
+    "contract_id": "SYN-supplier_red",
+    "playbook_id": "sample-company-policy",
+    "playbook_version": "1.0",
+    "input_sha256": "9e59abf24a3780a94161554ac415a0a6d582f8badff9b7519dfcceaba379098a",
+    "policy_sha256": "55469357fe63f51cb85b6107480eb2c73ba6046430699ebc3b71a801ed9a3ca5"
+  },
+  "equivalence": {
+    "tolerance": 1e-06,
+    "identical_ids_order_top_k": true,
+    "all_18_entries_preserved": true,
+    "max_absolute_score_difference": 0.0,
+    "differences": [],
+    "synthetic_clause_ids": [
+      "P001-C001",
+      "P001-C002",
+      "P002-C001",
+      "P002-C002",
+      "P003-C001",
+      "P003-C002"
+    ]
+  },
+  "medians": {
+    "cold": {
+      "original": 24.009863500017673,
+      "optimized": 2.601818200026173,
+      "improvement_percent": 89.16354439072818
+    },
+    "warm": {
+      "original": 8.60661729995627,
+      "optimized": 2.403496399987489,
+      "improvement_percent": 72.07385531131143
+    }
+  },
+  "production_sqlite_unchanged": true
+}

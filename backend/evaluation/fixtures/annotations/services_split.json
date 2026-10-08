@@ -1,0 +1,70 @@
+[
+  {
+    "contract_id": "SYN-services_split",
+    "finding_id": "SYN-services_split-G01",
+    "risk_category": "data_protection",
+    "expected_severity": "high",
+    "expected_clause_text": "1. Provider shall notify Company of a personal data breach",
+    "expected_page_number": 1,
+    "explanation": "One legal clause spans two pages; the second fragment contains the risky deadlines.",
+    "risk_present": true,
+    "annotation_state": "risk",
+    "annotation_confidence": "high",
+    "reviewer_status": "pending_manual_review",
+    "policy_id": "POL-DATA-001",
+    "evidence_spans": [
+      {
+        "clause_id": "P001-C002",
+        "page_number": 1,
+        "quote": "1. Provider shall notify Company of a personal data breach"
+      },
+      {
+        "clause_id": "P002-C001",
+        "page_number": 2,
+        "quote": "SYNTHETIC CONTRACT - Page-spanning hosting services\nwithin 8 days and delete personal data within 60 days after exit."
+      }
+    ]
+  },
+  {
+    "contract_id": "SYN-services_split",
+    "finding_id": "SYN-services_split-G02",
+    "risk_category": "liability",
+    "expected_severity": "low",
+    "expected_clause_text": "2. The cap is fees paid or payable in the preceding 12 months; fraud, willful misconduct,\nconfidentiality and data protection breaches are uncapped.",
+    "expected_page_number": 3,
+    "explanation": "Meets the sample cap and exclusions.",
+    "risk_present": false,
+    "annotation_state": "non_risk",
+    "annotation_confidence": "high",
+    "reviewer_status": "pending_manual_review",
+    "policy_id": "POL-LIAB-001",
+    "evidence_spans": [
+      {
+        "clause_id": "P003-C002",
+        "page_number": 3,
+        "quote": "2. The cap is fees paid or payable in the preceding 12 months; fraud, willful misconduct,\nconfidentiality and data protection breaches are uncapped."
+      }
+    ]
+  },
+  {
+    "contract_id": "SYN-services_split",
+    "finding_id": "SYN-services_split-G03",
+    "risk_category": "payment",
+    "expected_severity": "medium",
+    "expected_clause_text": "3. Disputed invoices are payable within 10 days; interest accrues at 3 percent monthly.",
+    "expected_page_number": 4,
+    "explanation": "Dispute handling and terms conflict with policy.",
+    "risk_present": true,
+    "annotation_state": "risk",
+    "annotation_confidence": "high",
+    "reviewer_status": "pending_manual_review",
+    "policy_id": "POL-PAY-001",
+    "evidence_spans": [
+      {
+        "clause_id": "P004-C002",
+        "page_number": 4,
+        "quote": "3. Disputed invoices are payable within 10 days; interest accrues at 3 percent monthly."
+      }
+    ]
+  }
+]

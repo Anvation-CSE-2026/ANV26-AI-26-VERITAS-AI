@@ -5,6 +5,7 @@ from datetime import datetime, timezone
 from uuid import uuid4
 
 from app.config import settings
+from app.services.analysis_observability import emit, timed
 from app.models.contracts import Analysis, AnalysisFailure, Contract
 from app.services.evidence import verify_analysis
 from app.services.gemini_analysis import generate_analysis
@@ -50,9 +51,11 @@ def _run_analysis(contract: Contract, analysis_id: str, started: float, progress
     )
     progress["stage"] = "sqlite_persistence"
     save_analysis(result, user_id=user_id)
+    emit("analysis_result", result=result)
     return result
 
 
+@timed("contract_analysis")
 def analyze_contract(contract: Contract, user_id: str | None = None) -> Analysis:
     analysis_id, started = str(uuid4()), time.monotonic()
     progress = {"stage": "policy_retrieval", "attempts": 0}
@@ -83,4 +86,5 @@ def analyze_contract(contract: Contract, user_id: str | None = None) -> Analysis
             exc.analysis_id, exc.failure_recorded = analysis_id, True
         except (OSError, sqlite3.Error):
             exc.analysis_id, exc.failure_recorded = None, False
+        emit("analysis_failure", stage=progress["stage"], category=category, analysis_id=getattr(exc, "analysis_id", None))
         raise

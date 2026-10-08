@@ -1,0 +1,56 @@
+{
+  "playbook_id": "sample-company-policy",
+  "version": "1.0",
+  "description": "Synthetic demonstration policy, not a statement of actual company requirements.",
+  "rules": [
+    {
+      "policy_id": "POL-LIAB-001",
+      "category": "liability",
+      "rule": "Aggregate supplier liability must be at least the fees paid or payable in the preceding 12 months. Fraud, willful misconduct, confidentiality breaches, and data protection breaches must be excluded from the cap.",
+      "recommended_action": "Negotiate an adequate cap and explicit exclusions."
+    },
+    {
+      "policy_id": "POL-INDEM-001",
+      "category": "indemnification",
+      "rule": "The supplier must defend and indemnify the company against third-party intellectual property infringement claims arising from supplier deliverables. The company must not give an unlimited indemnity for supplier misconduct.",
+      "recommended_action": "Add supplier IP indemnification and limit company indemnity."
+    },
+    {
+      "policy_id": "POL-TERM-001",
+      "category": "termination",
+      "rule": "The company must be able to terminate for material breach after a cure period of no more than 30 days and terminate for convenience on no more than 30 days notice without a penalty.",
+      "recommended_action": "Add company termination rights and remove early termination penalties."
+    },
+    {
+      "policy_id": "POL-CONF-001",
+      "category": "confidentiality",
+      "rule": "Both parties must protect confidential information, restrict use to contract performance, and preserve confidentiality for at least three years after termination, with trade secrets protected while they remain trade secrets.",
+      "recommended_action": "Make confidentiality mutual and extend survival and trade secret protection."
+    },
+    {
+      "policy_id": "POL-PAY-001",
+      "category": "payment",
+      "rule": "Undisputed invoices must be payable no earlier than 30 days after receipt. The company must be allowed to withhold disputed amounts in good faith and late charges must not exceed 1 percent per month.",
+      "recommended_action": "Negotiate net 30 payment, a dispute process, and capped late charges."
+    },
+    {
+      "policy_id": "POL-DATA-001",
+      "category": "data_protection",
+      "rule": "The supplier must notify the company of a personal data breach within 48 hours of discovery, implement appropriate security measures, and delete or return company personal data within 30 days after termination.",
+      "recommended_action": "Add a 48-hour breach notification deadline, security duties, and timely data deletion or return."
+    },
+    {
+      "policy_id": "POL-IP-001",
+      "category": "intellectual_property",
+      "rule": "The company must own bespoke deliverables paid for under the agreement or receive a perpetual, irrevocable, worldwide license sufficient to use and modify them. Pre-existing supplier IP must be identified separately.",
+      "recommended_action": "Assign bespoke deliverables or secure a sufficient perpetual license."
+    }
+  ],
+  "benchmark_only_rules": [
+    {
+      "policy_id": "BENCH-LAW-001",
+      "category": "governing_law",
+      "rule": "For this synthetic benchmark only, Company prefers England and Wales law with London courts; foreign exclusive law/forum requires negotiation review."
+    }
+  ]
+}

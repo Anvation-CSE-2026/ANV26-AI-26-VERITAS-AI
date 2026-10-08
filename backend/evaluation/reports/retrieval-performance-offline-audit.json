@@ -1,0 +1,130 @@
+{
+  "mapping_basis": "Inferred input association from deterministic source loop order; spans do not record input hashes or explicit purpose.",
+  "requests": [
+    {
+      "request": 1,
+      "purpose": "policy",
+      "source_id": "POL-LIAB-001",
+      "seconds": 2.2197710999753326,
+      "duplicate_of": null,
+      "contract_specific": false
+    },
+    {
+      "request": 2,
+      "purpose": "policy",
+      "source_id": "POL-INDEM-001",
+      "seconds": 2.152776899980381,
+      "duplicate_of": null,
+      "contract_specific": false
+    },
+    {
+      "request": 3,
+      "purpose": "policy",
+      "source_id": "POL-TERM-001",
+      "seconds": 2.1353066999581642,
+      "duplicate_of": null,
+      "contract_specific": false
+    },
+    {
+      "request": 4,
+      "purpose": "policy",
+      "source_id": "POL-CONF-001",
+      "seconds": 2.1521821999922395,
+      "duplicate_of": null,
+      "contract_specific": false
+    },
+    {
+      "request": 5,
+      "purpose": "policy",
+      "source_id": "POL-PAY-001",
+      "seconds": 2.133348200004548,
+      "duplicate_of": null,
+      "contract_specific": false
+    },
+    {
+      "request": 6,
+      "purpose": "policy",
+      "source_id": "POL-DATA-001",
+      "seconds": 2.1341282000066712,
+      "duplicate_of": null,
+      "contract_specific": false
+    },
+    {
+      "request": 7,
+      "purpose": "policy",
+      "source_id": "POL-IP-001",
+      "seconds": 2.2137020000373013,
+      "duplicate_of": null,
+      "contract_specific": false
+    },
+    {
+      "request": 8,
+      "purpose": "clause",
+      "source_id": "P001-C001",
+      "seconds": 2.1074632999952883,
+      "duplicate_of": null,
+      "contract_specific": true
+    },
+    {
+      "request": 9,
+      "purpose": "clause",
+      "source_id": "P001-C002",
+      "seconds": 2.2069344999617897,
+      "duplicate_of": null,
+      "contract_specific": true
+    },
+    {
+      "request": 10,
+      "purpose": "clause",
+      "source_id": "P002-C001",
+      "seconds": 2.114589699951466,
+      "duplicate_of": 8,
+      "contract_specific": true
+    },
+    {
+      "request": 11,
+      "purpose": "clause",
+      "source_id": "P002-C002",
+      "seconds": 2.2100451000151224,
+      "duplicate_of": null,
+      "contract_specific": true
+    },
+    {
+      "request": 12,
+      "purpose": "clause",
+      "source_id": "P003-C001",
+      "seconds": 2.1040655999677256,
+      "duplicate_of": 8,
+      "contract_specific": true
+    },
+    {
+      "request": 13,
+      "purpose": "clause",
+      "source_id": "P003-C002",
+      "seconds": 2.200697400025092,
+      "duplicate_of": null,
+      "contract_specific": true
+    }
+  ],
+  "cold_mock_calls": 13,
+  "warm_mock_calls": 6,
+  "distinct_cold_inputs": 11,
+  "unique_clause_inputs": 4,
+  "cache_after_two_calls": {
+    "hits": 1,
+    "misses": 1,
+    "maxsize": 16,
+    "currsize": 1
+  },
+  "embedding_seconds": 28.085010899871122,
+  "policy_embedding_seconds": 15.141215299954638,
+  "duplicate_header_extra_seconds": 4.218655299919192,
+  "request_mean_seconds": 2.1603854538362404,
+  "request_min_seconds": 2.1040655999677256,
+  "request_max_seconds": 2.2197710999753326,
+  "tests_run": 7,
+  "test_failures": 0,
+  "test_errors": 0,
+  "tests_network_blocked": true,
+  "live_calls": false
+}

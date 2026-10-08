@@ -1,0 +1,65 @@
+[
+  {
+    "contract_id": "SYN-nda_short",
+    "finding_id": "SYN-nda_short-G01",
+    "risk_category": "confidentiality",
+    "expected_severity": "medium",
+    "expected_clause_text": "1. Each party shall use confidential information only for the project. All confidentiality duties\nend 6 months after disclosure, including trade secrets.",
+    "expected_page_number": 1,
+    "explanation": "Mutual use restriction does not cure deficient survival.",
+    "risk_present": true,
+    "annotation_state": "risk",
+    "annotation_confidence": "high",
+    "reviewer_status": "pending_manual_review",
+    "policy_id": "POL-CONF-001",
+    "evidence_spans": [
+      {
+        "clause_id": "P001-C002",
+        "page_number": 1,
+        "quote": "1. Each party shall use confidential information only for the project. All confidentiality duties\nend 6 months after disclosure, including trade secrets."
+      }
+    ]
+  },
+  {
+    "contract_id": "SYN-nda_short",
+    "finding_id": "SYN-nda_short-G02",
+    "risk_category": "liability",
+    "expected_severity": "high",
+    "expected_clause_text": "2. Liability for disclosure of confidential information is capped at USD 10.",
+    "expected_page_number": 2,
+    "explanation": "Nominal confidentiality cap conflicts with the exception requirement.",
+    "risk_present": true,
+    "annotation_state": "risk",
+    "annotation_confidence": "high",
+    "reviewer_status": "pending_manual_review",
+    "policy_id": "POL-LIAB-001",
+    "evidence_spans": [
+      {
+        "clause_id": "P002-C002",
+        "page_number": 2,
+        "quote": "2. Liability for disclosure of confidential information is capped at USD 10."
+      }
+    ]
+  },
+  {
+    "contract_id": "SYN-nda_short",
+    "finding_id": "SYN-nda_short-G03",
+    "risk_category": "intellectual_property",
+    "expected_severity": null,
+    "expected_clause_text": "3. Ownership of ideas shared in workshops will be agreed later by the parties.",
+    "expected_page_number": 3,
+    "explanation": "No present allocation; NDA context may differ from bespoke work policy.",
+    "risk_present": null,
+    "annotation_state": "ambiguous",
+    "annotation_confidence": "medium",
+    "reviewer_status": "pending_manual_review",
+    "policy_id": "POL-IP-001",
+    "evidence_spans": [
+      {
+        "clause_id": "P003-C002",
+        "page_number": 3,
+        "quote": "3. Ownership of ideas shared in workshops will be agreed later by the parties."
+      }
+    ]
+  }
+]

@@ -1,0 +1,59 @@
+[
+  {
+    "contract_id": "SYN-nda_durable",
+    "finding_id": "SYN-nda_durable-G01",
+    "risk_category": "confidentiality",
+    "expected_severity": "low",
+    "expected_clause_text": "1. Both parties use disclosed information only for this research. Duties survive for 4 years\nafter termination and trade secrets remain protected while secret.",
+    "expected_page_number": 1,
+    "explanation": "Meets mutual purpose and survival assumptions.",
+    "risk_present": false,
+    "annotation_state": "non_risk",
+    "annotation_confidence": "high",
+    "reviewer_status": "pending_manual_review",
+    "policy_id": "POL-CONF-001",
+    "evidence_spans": [
+      {
+        "clause_id": "P001-C002",
+        "page_number": 1,
+        "quote": "1. Both parties use disclosed information only for this research. Duties survive for 4 years\nafter termination and trade secrets remain protected while secret."
+      }
+    ]
+  },
+  {
+    "contract_id": "SYN-nda_durable",
+    "finding_id": "SYN-nda_durable-G02",
+    "risk_category": "confidentiality",
+    "expected_severity": "medium",
+    "expected_clause_text": "2. Despite the preceding clause, Recipient may publish any confidential report after 10 days\nwithout consent.",
+    "expected_page_number": 2,
+    "explanation": "Separate publication override undermines the otherwise protective duty.",
+    "risk_present": true,
+    "annotation_state": "risk",
+    "annotation_confidence": "high",
+    "reviewer_status": "pending_manual_review",
+    "policy_id": "POL-CONF-001",
+    "evidence_spans": [
+      {
+        "clause_id": "P002-C002",
+        "page_number": 2,
+        "quote": "2. Despite the preceding clause, Recipient may publish any confidential report after 10 days\nwithout consent."
+      }
+    ]
+  },
+  {
+    "contract_id": "SYN-nda_durable",
+    "finding_id": "SYN-nda_durable-G03",
+    "risk_category": "data_protection",
+    "expected_severity": "medium",
+    "expected_clause_text": null,
+    "expected_page_number": null,
+    "explanation": "Synthetic research involves personal data but includes no breach-notification requirement.",
+    "risk_present": true,
+    "annotation_state": "missing",
+    "annotation_confidence": "medium",
+    "reviewer_status": "pending_manual_review",
+    "policy_id": "POL-DATA-001",
+    "evidence_spans": []
+  }
+]

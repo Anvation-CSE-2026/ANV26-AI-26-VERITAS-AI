@@ -1,0 +1,74 @@
+{
+  "contract_id": "SYN-services_split",
+  "filename": "services_split.pdf",
+  "pages": [
+    {
+      "page_number": 1,
+      "text": "SYNTHETIC CONTRACT - Page-spanning hosting services\n1. Provider shall notify Company of a personal data breach"
+    },
+    {
+      "page_number": 2,
+      "text": "SYNTHETIC CONTRACT - Page-spanning hosting services\nwithin 8 days and delete personal data within 60 days after exit."
+    },
+    {
+      "page_number": 3,
+      "text": "SYNTHETIC CONTRACT - Page-spanning hosting services\n2. The cap is fees paid or payable in the preceding 12 months; fraud, willful misconduct,\nconfidentiality and data protection breaches are uncapped."
+    },
+    {
+      "page_number": 4,
+      "text": "SYNTHETIC CONTRACT - Page-spanning hosting services\n3. Disputed invoices are payable within 10 days; interest accrues at 3 percent monthly."
+    }
+  ],
+  "clauses": [
+    {
+      "clause_id": "P001-C001",
+      "page_number": 1,
+      "text": "SYNTHETIC CONTRACT - Page-spanning hosting services",
+      "start_offset": 0,
+      "end_offset": 51
+    },
+    {
+      "clause_id": "P001-C002",
+      "page_number": 1,
+      "text": "1. Provider shall notify Company of a personal data breach",
+      "start_offset": 52,
+      "end_offset": 110
+    },
+    {
+      "clause_id": "P002-C001",
+      "page_number": 2,
+      "text": "SYNTHETIC CONTRACT - Page-spanning hosting services\nwithin 8 days and delete personal data within 60 days after exit.",
+      "start_offset": 0,
+      "end_offset": 117
+    },
+    {
+      "clause_id": "P003-C001",
+      "page_number": 3,
+      "text": "SYNTHETIC CONTRACT - Page-spanning hosting services",
+      "start_offset": 0,
+      "end_offset": 51
+    },
+    {
+      "clause_id": "P003-C002",
+      "page_number": 3,
+      "text": "2. The cap is fees paid or payable in the preceding 12 months; fraud, willful misconduct,\nconfidentiality and data protection breaches are uncapped.",
+      "start_offset": 52,
+      "end_offset": 200
+    },
+    {
+      "clause_id": "P004-C001",
+      "page_number": 4,
+      "text": "SYNTHETIC CONTRACT - Page-spanning hosting services",
+      "start_offset": 0,
+      "end_offset": 51
+    },
+    {
+      "clause_id": "P004-C002",
+      "page_number": 4,
+      "text": "3. Disputed invoices are payable within 10 days; interest accrues at 3 percent monthly.",
+      "start_offset": 52,
+      "end_offset": 139
+    }
+  ],
+  "warnings": []
+}

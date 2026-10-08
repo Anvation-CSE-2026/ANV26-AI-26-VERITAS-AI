@@ -1,0 +1,2236 @@
+{
+  "metadata": {
+    "evaluated_at_utc": "2026-10-08T15:04:48.134624+00:00",
+    "dataset_id": "synthetic_v1",
+    "dataset_version": "1.0.0",
+    "mode": "fixture",
+    "result_label": "FIXTURE EVALUATION — NOT MODEL ACCURACY",
+    "live_services_used": false,
+    "model_identifier": null,
+    "configured_models": {
+      "gemini": "gemini-3.5-flash",
+      "embedding": "qwen3-embedding:0.6b"
+    },
+    "configuration": {
+      "gemini_model": "gemini-3.5-flash",
+      "embedding_model": "qwen3-embedding:0.6b",
+      "gemini_max_attempts": 3,
+      "gemini_retry_base_seconds": 1.0,
+      "gemini_timeout_seconds": 90.0,
+      "ollama_connect_timeout": 5.0,
+      "ollama_read_timeout": 120.0,
+      "max_upload_bytes": 10485760,
+      "max_contract_pages": 30,
+      "max_contract_chars": 60000,
+      "max_contract_clauses": 100
+    },
+    "configuration_sha256": "f684b1c85869908bb31c1127a3f35089a71fea0d436991ff9fd8beee6bcfbe18",
+    "prompt_sha256": "a1052d408528a4a24e8c8469df04a76c2c69c2b0a969c1cd9712fd3e1cf42292",
+    "engine_source_hashes": {
+      "services/gemini_analysis.py": "9133630cc2ebbf620b3b5ec69728c81ffbcd2ac2825445f180a63e8e504a0fc7",
+      "services/contract_analysis.py": "01180dc90d942828e4f08c8e8285ce3b062d5c9f2045d7c4a49ddfbe9ed9092f",
+      "services/pdf_extraction.py": "1efab86ce4698815003674373204774aef00dd15fcd52c639c2e22114bed7583",
+      "services/evidence.py": "4c83d27cf281679b4aebaf2335c8d4d9faac18ee54f3a11b459d266d9cf7036b",
+      "services/policy_matching.py": "52ff78179c3ffd475f2cc6790353c24ef306abf9c593f9ec2e1e0058235d1f42",
+      "services/ollama_embeddings.py": "3a343b2949f2ff3aebe6eaffcde43fd9935d2e9f791f471cf3126481305225c6",
+      "services/reasoning_boundaries.py": "4efb81868c1eab00d496051f7fc3dbb5d0613171e815fe45fcc76e7ce027b5b7",
+      "services/playbook.py": "59e1da4247f4d55cf41fbe76fb42bb5ffc4adb8d061ba283fdb1e55b9667d5ad",
+      "models/contracts.py": "0fa83c5ab7cba763768f5e1f4a4a2459ee9114debe6e96420aa194f61a770ee6",
+      "resources/sample_playbook.json": "fac92ffe46ca95cf01d53a43b62da1d5ee99367546b8464224f4e4d3b151c0dd"
+    },
+    "dataset_manifest_sha256": "efcebdb26bbb55196b5369b1aff1b8b455df7d3a163561fc0288ea0603b78923",
+    "evaluator_version": "1.0.0",
+    "evaluator_source_hashes": {
+      "__init__.py": "b91888113d4813382e1cec0ffe3ae646130a493f9f767e3317db432ea5022f3f",
+      "build_fixtures.py": "5502e95a72fec2605e34619ad6749e80d59b2bef430fe19882dcd70705d823da",
+      "dataset_loader.py": "d01ba262d0dbd1f85dcdb36df991384121bb43f988f540def3e2f168dabfaec0",
+      "evaluator.py": "40c7f72d322273098e59b04d583a88d04e6d16958e1371f85693eabcb9240dd5",
+      "evidence_metrics.py": "81ef4e6744add57a44a8a0f475ffe3030e4c1aa2cda14ae570cded502c3ae10c",
+      "live_adapter.py": "c827376a735283072952362c664125acb8c9007fb6e99f7ec2cac5bdae91d478",
+      "offline_guard.py": "c340c19dc2259f668de2aadf6a6f53ab797950f4eb1a445340a698d7149981b7",
+      "risk_metrics.py": "afe82b000b2b8df7d121e42614aa116aae1c86a3e54f2dbd8da8bb659e16c7c8",
+      "run_offline_tests.py": "9fbfe64cb53f6b161c2c46c5e6ef7f63a111f4e8aeee3f2e747db379e94d4978",
+      "runner.py": "cb9478b61733617e355c16cb881c77e067fbea494f90c130fea8e771aff0175b",
+      "schema.py": "4d366606c901cc8befca43776c10f2ff3605d90e1b4aec6ca709030d15b0cb2d"
+    },
+    "production_unsupported_categories": [
+      "governing_law"
+    ],
+    "measurement_notes": [
+      "Gold labels are synthetic author judgments pending manual review, not legally validated.",
+      "Detection uses source-target matching; literal evidence and legal interpretation are separate.",
+      "Failed analyses retain all annotated risks as false negatives.",
+      "Governing law is a benchmark-only category; the production schema/playbook lacks it.",
+      "Live quote metrics cover returned findings; rejected raw quotes are not exposed by the engine.",
+      "Token usage and costs are N/A because the current analysis result does not expose usage.",
+      "Fixture processing latency is N/A; runner overhead is not model latency."
+    ],
+    "runner_seconds": 0.10316079997573979,
+    "selected_contract_count": 12
+  },
+  "summary": {
+    "dataset_size": 12,
+    "annotation_count": 42,
+    "annotated_risks": 24,
+    "missing_clause_annotations": 3,
+    "non_risk_annotations": 14,
+    "ambiguous_annotations": 4,
+    "reviewer_status_counts": {
+      "pending_manual_review": 42
+    },
+    "detection": {
+      "tp": 17,
+      "fp": 3,
+      "fn": 7,
+      "precision": 0.85,
+      "recall": 0.7083333333333334,
+      "f1": 0.7727272727272727
+    },
+    "supported_evidence_detection": {
+      "tp": 13,
+      "fp": 2,
+      "fn": 11,
+      "precision": 0.8666666666666667,
+      "recall": 0.5416666666666666,
+      "f1": 0.6666666666666666
+    },
+    "per_category": {
+      "liability": {
+        "tp": 3,
+        "fp": 2,
+        "fn": 1,
+        "precision": 0.6,
+        "recall": 0.75,
+        "f1": 0.6666666666666666
+      },
+      "indemnification": {
+        "tp": 1,
+        "fp": 0,
+        "fn": 1,
+        "precision": 1.0,
+        "recall": 0.5,
+        "f1": 0.6666666666666666
+      },
+      "termination": {
+        "tp": 2,
+        "fp": 0,
+        "fn": 2,
+        "precision": 1.0,
+        "recall": 0.5,
+        "f1": 0.6666666666666666
+      },
+      "payment": {
+        "tp": 2,
+        "fp": 1,
+        "fn": 1,
+        "precision": 0.6666666666666666,
+        "recall": 0.6666666666666666,
+        "f1": 0.6666666666666666
+      },
+      "confidentiality": {
+        "tp": 3,
+        "fp": 0,
+        "fn": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      "data_protection": {
+        "tp": 3,
+        "fp": 1,
+        "fn": 1,
+        "precision": 0.75,
+        "recall": 0.75,
+        "f1": 0.75
+      },
+      "intellectual_property": {
+        "tp": 1,
+        "fp": 0,
+        "fn": 1,
+        "precision": 1.0,
+        "recall": 0.5,
+        "f1": 0.6666666666666666
+      },
+      "governing_law": {
+        "tp": 1,
+        "fp": 0,
+        "fn": 1,
+        "precision": 1.0,
+        "recall": 0.5,
+        "f1": 0.6666666666666666
+      }
+    },
+    "classification_micro": {
+      "tp": 16,
+      "fp": 4,
+      "fn": 8,
+      "precision": 0.8,
+      "recall": 0.6666666666666666,
+      "f1": 0.7272727272727273
+    },
+    "micro_f1": 0.7272727272727273,
+    "macro_f1": 0.71875,
+    "macro_categories_with_defined_f1": 8,
+    "category_accuracy_on_matched_risks": 0.9411764705882353,
+    "severity_accuracy_on_matched_risks": 0.8823529411764706,
+    "category_confusion": [
+      {
+        "gold": "confidentiality",
+        "predicted": "confidentiality",
+        "count": 3
+      },
+      {
+        "gold": "data_protection",
+        "predicted": "data_protection",
+        "count": 3
+      },
+      {
+        "gold": "governing_law",
+        "predicted": "governing_law",
+        "count": 1
+      },
+      {
+        "gold": "indemnification",
+        "predicted": "indemnification",
+        "count": 1
+      },
+      {
+        "gold": "intellectual_property",
+        "predicted": "intellectual_property",
+        "count": 1
+      },
+      {
+        "gold": "intellectual_property",
+        "predicted": "liability",
+        "count": 1
+      },
+      {
+        "gold": "liability",
+        "predicted": "liability",
+        "count": 3
+      },
+      {
+        "gold": "payment",
+        "predicted": "payment",
+        "count": 2
+      },
+      {
+        "gold": "termination",
+        "predicted": "termination",
+        "count": 2
+      }
+    ],
+    "severity_confusion": [
+      {
+        "gold": "high",
+        "predicted": "high",
+        "count": 6
+      },
+      {
+        "gold": "high",
+        "predicted": "medium",
+        "count": 1
+      },
+      {
+        "gold": "medium",
+        "predicted": "high",
+        "count": 1
+      },
+      {
+        "gold": "medium",
+        "predicted": "medium",
+        "count": 9
+      }
+    ],
+    "evidence": {
+      "returned_findings": 21,
+      "quote_eligible_findings": 19,
+      "omission_candidates": 2,
+      "exact_quote_match_rate": 0.8421052631578947,
+      "normalized_quote_match_rate": 0.8947368421052632,
+      "correct_page_citation_rate": 0.7894736842105263,
+      "normalized_correct_page_rate": 0.8421052631578947,
+      "unsupported_evidence_count": 6,
+      "rejected_finding_count": 1,
+      "evidence_verification_failure_rate": 0.2727272727272727,
+      "unsupported_evidence_rate": 0.2727272727272727,
+      "rejected_quotes_not_available": 1
+    },
+    "evidence_error_breakdown": {
+      "whitespace_only_mismatch": 1,
+      "quote_not_exact_on_cited_page": 3,
+      "quote_not_in_cited_clause": 2,
+      "wrong_page": 1,
+      "clause_page_mismatch": 1,
+      "fabricated_quote": 1,
+      "nonexistent_clause": 1,
+      "empty_or_missing_quote": 1
+    },
+    "reliability": {
+      "completed": 10,
+      "partial": 1,
+      "failed": 1,
+      "failure_rate": 0.08333333333333333,
+      "error_breakdown": {
+        "fixture_provider_transient": 1
+      },
+      "rejected_obligations": 0
+    },
+    "average_processing_seconds": null,
+    "latency_available_analyses": 0,
+    "input_tokens": null,
+    "output_tokens": null,
+    "estimated_cost_usd": null,
+    "unmatched_predictions": [
+      {
+        "contract_id": "SYN-supplier_red",
+        "prediction_id": "SYN-supplier_red-P02"
+      },
+      {
+        "contract_id": "SYN-supplier_red",
+        "prediction_id": "SYN-supplier_red-P04"
+      },
+      {
+        "contract_id": "SYN-saas_green",
+        "prediction_id": "SYN-saas_green-P01"
+      }
+    ],
+    "missed_gold_annotations": [
+      {
+        "contract_id": "SYN-supplier_red",
+        "finding_id": "SYN-supplier_red-G04"
+      },
+      {
+        "contract_id": "SYN-services_exit",
+        "finding_id": "SYN-services_exit-G02"
+      },
+      {
+        "contract_id": "SYN-services_split",
+        "finding_id": "SYN-services_split-G03"
+      },
+      {
+        "contract_id": "SYN-supplier_failure",
+        "finding_id": "SYN-supplier_failure-G01"
+      },
+      {
+        "contract_id": "SYN-supplier_failure",
+        "finding_id": "SYN-supplier_failure-G02"
+      },
+      {
+        "contract_id": "SYN-supplier_failure",
+        "finding_id": "SYN-supplier_failure-G03"
+      },
+      {
+        "contract_id": "SYN-supplier_failure",
+        "finding_id": "SYN-supplier_failure-G04"
+      }
+    ],
+    "ambiguous_predictions_excluded": 1,
+    "cases": [
+      {
+        "contract_id": "SYN-supplier_red",
+        "status": "completed",
+        "risk": {
+          "detection": {
+            "tp": 2,
+            "fp": 2,
+            "fn": 1,
+            "precision": 0.5,
+            "recall": 0.6666666666666666,
+            "f1": 0.5714285714285714
+          },
+          "per_category": {
+            "liability": {
+              "tp": 1,
+              "fp": 1,
+              "fn": 0,
+              "precision": 0.5,
+              "recall": 1.0,
+              "f1": 0.6666666666666666
+            },
+            "indemnification": {
+              "tp": 1,
+              "fp": 0,
+              "fn": 0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0
+            },
+            "termination": {
+              "tp": 0,
+              "fp": 0,
+              "fn": 1,
+              "precision": null,
+              "recall": 0.0,
+              "f1": 0.0
+            },
+            "payment": {
+              "tp": 0,
+              "fp": 1,
+              "fn": 0,
+              "precision": 0.0,
+              "recall": null,
+              "f1": 0.0
+            },
+            "confidentiality": {
+              "tp": 0,
+              "fp": 0,
+              "fn": 0,
+              "precision": null,
+              "recall": null,
+              "f1": null
+            },
+            "data_protection": {
+              "tp": 0,
+              "fp": 0,
+              "fn": 0,
+              "precision": null,
+              "recall": null,
+              "f1": null
+            },
+            "intellectual_property": {
+              "tp": 0,
+              "fp": 0,
+              "fn": 0,
+              "precision": null,
+              "recall": null,
+              "f1": null
+            },
+            "governing_law": {
+              "tp": 0,
+              "fp": 0,
+              "fn": 0,
+              "precision": null,
+              "recall": null,
+              "f1": null
+            }
+          },
+          "matches": [
+            {
+              "prediction_id": "SYN-supplier_red-P01",
+              "finding_id": "SYN-supplier_red-G01",
+              "category_correct": true,
+              "severity_correct": true,
+              "omission": false
+            },
+            {
+              "prediction_id": "SYN-supplier_red-P03",
+              "finding_id": "SYN-supplier_red-G02",
+              "category_correct": true,
+              "severity_correct": true,
+              "omission": false
+            }
+          ],
+          "unmatched_predictions": [
+            "SYN-supplier_red-P02",
+            "SYN-supplier_red-P04"
+          ],
+          "missed_gold": [
+            "SYN-supplier_red-G04"
+          ],
+          "ambiguous_predictions_excluded": [],
+          "ambiguous_gold_count": 0,
+          "non_risk_gold_count": 1,
+          "non_risk_false_positives": [
+            "SYN-supplier_red-P04"
+          ],
+          "inactive_prediction_count": 0,
+          "category_confusion": [
+            {
+              "gold": "indemnification",
+              "predicted": "indemnification",
+              "count": 1
+            },
+            {
+              "gold": "liability",
+              "predicted": "liability",
+              "count": 1
+            }
+          ],
+          "severity_confusion": [
+            {
+              "gold": "high",
+              "predicted": "high",
+              "count": 2
+            }
+          ]
+        },
+        "supported_evidence_detection": {
+          "tp": 2,
+          "fp": 2,
+          "fn": 1,
+          "precision": 0.5,
+          "recall": 0.6666666666666666,
+          "f1": 0.5714285714285714
+        },
+        "evidence": [
+          {
+            "prediction_id": "SYN-supplier_red-P01",
+            "quote_eligible": true,
+            "exact_match": true,
+            "normalized_match": true,
+            "correct_page": true,
+            "normalized_correct_page": true,
+            "supported": true,
+            "reasons": [],
+            "omission_not_confirmed": false
+          },
+          {
+            "prediction_id": "SYN-supplier_red-P02",
+            "quote_eligible": true,
+            "exact_match": true,
+            "normalized_match": true,
+            "correct_page": true,
+            "normalized_correct_page": true,
+            "supported": true,
+            "reasons": [],
+            "omission_not_confirmed": false
+          },
+          {
+            "prediction_id": "SYN-supplier_red-P03",
+            "quote_eligible": true,
+            "exact_match": true,
+            "normalized_match": true,
+            "correct_page": true,
+            "normalized_correct_page": true,
+            "supported": true,
+            "reasons": [],
+            "omission_not_confirmed": false
+          },
+          {
+            "prediction_id": "SYN-supplier_red-P04",
+            "quote_eligible": true,
+            "exact_match": true,
+            "normalized_match": true,
+            "correct_page": true,
+            "normalized_correct_page": true,
+            "supported": true,
+            "reasons": [],
+            "omission_not_confirmed": false
+          }
+        ],
+        "processing_seconds": null,
+        "analysis_id": null,
+        "error_category": null,
+        "failed_stage": null,
+        "http_status": null,
+        "upstream_http_status": null,
+        "attempts": 0,
+        "failure_recorded": null,
+        "response_model": null,
+        "rejected_finding_count": 0,
+        "rejected_obligation_count": 0
+      },
+      {
+        "contract_id": "SYN-supplier_green",
+        "status": "completed",
+        "risk": {
+          "detection": {
+            "tp": 2,
+            "fp": 0,
+            "fn": 0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0
+          },
+          "per_category": {
+            "liability": {
+              "tp": 0,
+              "fp": 0,
+              "fn": 0,
+              "precision": null,
+              "recall": null,
+              "f1": null
+            },
+            "indemnification": {
+              "tp": 0,
+              "fp": 0,
+              "fn": 0,
+              "precision": null,
+              "recall": null,
+              "f1": null
+            },
+            "termination": {
+              "tp": 1,
+              "fp": 0,
+              "fn": 0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0
+            },
+            "payment": {
+              "tp": 0,
+              "fp": 0,
+              "fn": 0,
+              "precision": null,
+              "recall": null,
+              "f1": null
+            },
+            "confidentiality": {
+              "tp": 0,
+              "fp": 0,
+              "fn": 0,
+              "precision": null,
+              "recall": null,
+              "f1": null
+            },
+            "data_protection": {
+              "tp": 0,
+              "fp": 0,
+              "fn": 0,
+              "precision": null,
+              "recall": null,
+              "f1": null
+            },
+            "intellectual_property": {
+              "tp": 0,
+              "fp": 0,
+              "fn": 0,
+              "precision": null,
+              "recall": null,
+              "f1": null
+            },
+            "governing_law": {
+              "tp": 1,
+              "fp": 0,
+              "fn": 0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0
+            }
+          },
+          "matches": [
+            {
+              "prediction_id": "SYN-supplier_green-P01",
+              "finding_id": "SYN-supplier_green-G03",
+              "category_correct": true,
+              "severity_correct": false,
+              "omission": false
+            },
+            {
+              "prediction_id": "SYN-supplier_green-P02",
+              "finding_id": "SYN-supplier_green-G04",
+              "category_correct": true,
+              "severity_correct": true,
+              "omission": false
+            }
+          ],
+          "unmatched_predictions": [],
+          "missed_gold": [],
+          "ambiguous_predictions_excluded": [],
+          "ambiguous_gold_count": 0,
+          "non_risk_gold_count": 2,
+          "non_risk_false_positives": [],
+          "inactive_prediction_count": 0,
+          "category_confusion": [
+            {
+              "gold": "governing_law",
+              "predicted": "governing_law",
+              "count": 1
+            },
+            {
+              "gold": "termination",
+              "predicted": "termination",
+              "count": 1
+            }
+          ],
+          "severity_confusion": [
+            {
+              "gold": "medium",
+              "predicted": "high",
+              "count": 1
+            },
+            {
+              "gold": "medium",
+              "predicted": "medium",
+              "count": 1
+            }
+          ]
+        },
+        "supported_evidence_detection": {
+          "tp": 2,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "evidence": [
+          {
+            "prediction_id": "SYN-supplier_green-P01",
+            "quote_eligible": true,
+            "exact_match": true,
+            "normalized_match": true,
+            "correct_page": true,
+            "normalized_correct_page": true,
+            "supported": true,
+            "reasons": [],
+            "omission_not_confirmed": false
+          },
+          {
+            "prediction_id": "SYN-supplier_green-P02",
+            "quote_eligible": true,
+            "exact_match": true,
+            "normalized_match": true,
+            "correct_page": true,
+            "normalized_correct_page": true,
+            "supported": true,
+            "reasons": [],
+            "omission_not_confirmed": false
+          }
+        ],
+        "processing_seconds": null,
+        "analysis_id": null,
+        "error_category": null,
+        "failed_stage": null,
+        "http_status": null,
+        "upstream_http_status": null,
+        "attempts": 0,
+        "failure_recorded": null,
+        "response_model": null,
+        "rejected_finding_count": 0,
+        "rejected_obligation_count": 0
+      },
+      {
+        "contract_id": "SYN-saas_red",
+        "status": "completed",
+        "risk": {
+          "detection": {
+            "tp": 3,
+            "fp": 0,
+            "fn": 0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0
+          },
+          "per_category": {
+            "liability": {
+              "tp": 0,
+              "fp": 1,
+              "fn": 0,
+              "precision": 0.0,
+              "recall": null,
+              "f1": 0.0
+            },
+            "indemnification": {
+              "tp": 0,
+              "fp": 0,
+              "fn": 0,
+              "precision": null,
+              "recall": null,
+              "f1": null
+            },
+            "termination": {
+              "tp": 0,
+              "fp": 0,
+              "fn": 0,
+              "precision": null,
+              "recall": null,
+              "f1": null
+            },
+            "payment": {
+              "tp": 1,
+              "fp": 0,
+              "fn": 0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0
+            },
+            "confidentiality": {
+              "tp": 0,
+              "fp": 0,
+              "fn": 0,
+              "precision": null,
+              "recall": null,
+              "f1": null
+            },
+            "data_protection": {
+              "tp": 1,
+              "fp": 0,
+              "fn": 0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0
+            },
+            "intellectual_property": {
+              "tp": 0,
+              "fp": 0,
+              "fn": 1,
+              "precision": null,
+              "recall": 0.0,
+              "f1": 0.0
+            },
+            "governing_law": {
+              "tp": 0,
+              "fp": 0,
+              "fn": 0,
+              "precision": null,
+              "recall": null,
+              "f1": null
+            }
+          },
+          "matches": [
+            {
+              "prediction_id": "SYN-saas_red-P01",
+              "finding_id": "SYN-saas_red-G01",
+              "category_correct": true,
+              "severity_correct": true,
+              "omission": false
+            },
+            {
+              "prediction_id": "SYN-saas_red-P02",
+              "finding_id": "SYN-saas_red-G02",
+              "category_correct": false,
+              "severity_correct": false,
+              "omission": false
+            },
+            {
+              "prediction_id": "SYN-saas_red-P03",
+              "finding_id": "SYN-saas_red-G03",
+              "category_correct": true,
+              "severity_correct": true,
+              "omission": false
+            }
+          ],
+          "unmatched_predictions": [],
+          "missed_gold": [],
+          "ambiguous_predictions_excluded": [
+            "SYN-saas_red-P04"
+          ],
+          "ambiguous_gold_count": 1,
+          "non_risk_gold_count": 0,
+          "non_risk_false_positives": [],
+          "inactive_prediction_count": 0,
+          "category_confusion": [
+            {
+              "gold": "data_protection",
+              "predicted": "data_protection",
+              "count": 1
+            },
+            {
+              "gold": "intellectual_property",
+              "predicted": "liability",
+              "count": 1
+            },
+            {
+              "gold": "payment",
+              "predicted": "payment",
+              "count": 1
+            }
+          ],
+          "severity_confusion": [
+            {
+              "gold": "high",
+              "predicted": "high",
+              "count": 1
+            },
+            {
+              "gold": "high",
+              "predicted": "medium",
+              "count": 1
+            },
+            {
+              "gold": "medium",
+              "predicted": "medium",
+              "count": 1
+            }
+          ]
+        },
+        "supported_evidence_detection": {
+          "tp": 1,
+          "fp": 0,
+          "fn": 2,
+          "precision": 1.0,
+          "recall": 0.3333333333333333,
+          "f1": 0.5
+        },
+        "evidence": [
+          {
+            "prediction_id": "SYN-saas_red-P01",
+            "quote_eligible": true,
+            "exact_match": false,
+            "normalized_match": true,
+            "correct_page": false,
+            "normalized_correct_page": true,
+            "supported": false,
+            "reasons": [
+              "whitespace_only_mismatch",
+              "quote_not_exact_on_cited_page",
+              "quote_not_in_cited_clause"
+            ],
+            "omission_not_confirmed": false
+          },
+          {
+            "prediction_id": "SYN-saas_red-P02",
+            "quote_eligible": true,
+            "exact_match": true,
+            "normalized_match": true,
+            "correct_page": true,
+            "normalized_correct_page": true,
+            "supported": true,
+            "reasons": [],
+            "omission_not_confirmed": false
+          },
+          {
+            "prediction_id": "SYN-saas_red-P03",
+            "quote_eligible": true,
+            "exact_match": true,
+            "normalized_match": true,
+            "correct_page": false,
+            "normalized_correct_page": false,
+            "supported": false,
+            "reasons": [
+              "wrong_page",
+              "clause_page_mismatch"
+            ],
+            "omission_not_confirmed": false
+          },
+          {
+            "prediction_id": "SYN-saas_red-P04",
+            "quote_eligible": true,
+            "exact_match": true,
+            "normalized_match": true,
+            "correct_page": true,
+            "normalized_correct_page": true,
+            "supported": true,
+            "reasons": [],
+            "omission_not_confirmed": false
+          }
+        ],
+        "processing_seconds": null,
+        "analysis_id": null,
+        "error_category": null,
+        "failed_stage": null,
+        "http_status": null,
+        "upstream_http_status": null,
+        "attempts": 0,
+        "failure_recorded": null,
+        "response_model": null,
+        "rejected_finding_count": 0,
+        "rejected_obligation_count": 0
+      },
+      {
+        "contract_id": "SYN-saas_green",
+        "status": "completed",
+        "risk": {
+          "detection": {
+            "tp": 0,
+            "fp": 1,
+            "fn": 0,
+            "precision": 0.0,
+            "recall": null,
+            "f1": 0.0
+          },
+          "per_category": {
+            "liability": {
+              "tp": 0,
+              "fp": 0,
+              "fn": 0,
+              "precision": null,
+              "recall": null,
+              "f1": null
+            },
+            "indemnification": {
+              "tp": 0,
+              "fp": 0,
+              "fn": 0,
+              "precision": null,
+              "recall": null,
+              "f1": null
+            },
+            "termination": {
+              "tp": 0,
+              "fp": 0,
+              "fn": 0,
+              "precision": null,
+              "recall": null,
+              "f1": null
+            },
+            "payment": {
+              "tp": 0,
+              "fp": 0,
+              "fn": 0,
+              "precision": null,
+              "recall": null,
+              "f1": null
+            },
+            "confidentiality": {
+              "tp": 0,
+              "fp": 0,
+              "fn": 0,
+              "precision": null,
+              "recall": null,
+              "f1": null
+            },
+            "data_protection": {
+              "tp": 0,
+              "fp": 1,
+              "fn": 0,
+              "precision": 0.0,
+              "recall": null,
+              "f1": 0.0
+            },
+            "intellectual_property": {
+              "tp": 0,
+              "fp": 0,
+              "fn": 0,
+              "precision": null,
+              "recall": null,
+              "f1": null
+            },
+            "governing_law": {
+              "tp": 0,
+              "fp": 0,
+              "fn": 0,
+              "precision": null,
+              "recall": null,
+              "f1": null
+            }
+          },
+          "matches": [],
+          "unmatched_predictions": [
+            "SYN-saas_green-P01"
+          ],
+          "missed_gold": [],
+          "ambiguous_predictions_excluded": [],
+          "ambiguous_gold_count": 0,
+          "non_risk_gold_count": 4,
+          "non_risk_false_positives": [
+            "SYN-saas_green-P01"
+          ],
+          "inactive_prediction_count": 0,
+          "category_confusion": [],
+          "severity_confusion": []
+        },
+        "supported_evidence_detection": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "precision": null,
+          "recall": null,
+          "f1": null
+        },
+        "evidence": [
+          {
+            "prediction_id": "SYN-saas_green-P01",
+            "quote_eligible": true,
+            "exact_match": false,
+            "normalized_match": false,
+            "correct_page": false,
+            "normalized_correct_page": false,
+            "supported": false,
+            "reasons": [
+              "fabricated_quote",
+              "quote_not_exact_on_cited_page",
+              "quote_not_in_cited_clause"
+            ],
+            "omission_not_confirmed": false
+          }
+        ],
+        "processing_seconds": null,
+        "analysis_id": null,
+        "error_category": null,
+        "failed_stage": null,
+        "http_status": null,
+        "upstream_http_status": null,
+        "attempts": 0,
+        "failure_recorded": null,
+        "response_model": null,
+        "rejected_finding_count": 0,
+        "rejected_obligation_count": 0
+      },
+      {
+        "contract_id": "SYN-nda_short",
+        "status": "completed",
+        "risk": {
+          "detection": {
+            "tp": 2,
+            "fp": 0,
+            "fn": 0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0
+          },
+          "per_category": {
+            "liability": {
+              "tp": 1,
+              "fp": 0,
+              "fn": 0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0
+            },
+            "indemnification": {
+              "tp": 0,
+              "fp": 0,
+              "fn": 0,
+              "precision": null,
+              "recall": null,
+              "f1": null
+            },
+            "termination": {
+              "tp": 0,
+              "fp": 0,
+              "fn": 0,
+              "precision": null,
+              "recall": null,
+              "f1": null
+            },
+            "payment": {
+              "tp": 0,
+              "fp": 0,
+              "fn": 0,
+              "precision": null,
+              "recall": null,
+              "f1": null
+            },
+            "confidentiality": {
+              "tp": 1,
+              "fp": 0,
+              "fn": 0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0
+            },
+            "data_protection": {
+              "tp": 0,
+              "fp": 0,
+              "fn": 0,
+              "precision": null,
+              "recall": null,
+              "f1": null
+            },
+            "intellectual_property": {
+              "tp": 0,
+              "fp": 0,
+              "fn": 0,
+              "precision": null,
+              "recall": null,
+              "f1": null
+            },
+            "governing_law": {
+              "tp": 0,
+              "fp": 0,
+              "fn": 0,
+              "precision": null,
+              "recall": null,
+              "f1": null
+            }
+          },
+          "matches": [
+            {
+              "prediction_id": "SYN-nda_short-P01",
+              "finding_id": "SYN-nda_short-G01",
+              "category_correct": true,
+              "severity_correct": true,
+              "omission": false
+            },
+            {
+              "prediction_id": "SYN-nda_short-P02",
+              "finding_id": "SYN-nda_short-G02",
+              "category_correct": true,
+              "severity_correct": true,
+              "omission": false
+            }
+          ],
+          "unmatched_predictions": [],
+          "missed_gold": [],
+          "ambiguous_predictions_excluded": [],
+          "ambiguous_gold_count": 1,
+          "non_risk_gold_count": 0,
+          "non_risk_false_positives": [],
+          "inactive_prediction_count": 0,
+          "category_confusion": [
+            {
+              "gold": "confidentiality",
+              "predicted": "confidentiality",
+              "count": 1
+            },
+            {
+              "gold": "liability",
+              "predicted": "liability",
+              "count": 1
+            }
+          ],
+          "severity_confusion": [
+            {
+              "gold": "high",
+              "predicted": "high",
+              "count": 1
+            },
+            {
+              "gold": "medium",
+              "predicted": "medium",
+              "count": 1
+            }
+          ]
+        },
+        "supported_evidence_detection": {
+          "tp": 1,
+          "fp": 0,
+          "fn": 1,
+          "precision": 1.0,
+          "recall": 0.5,
+          "f1": 0.6666666666666666
+        },
+        "evidence": [
+          {
+            "prediction_id": "SYN-nda_short-P01",
+            "quote_eligible": true,
+            "exact_match": true,
+            "normalized_match": true,
+            "correct_page": true,
+            "normalized_correct_page": true,
+            "supported": true,
+            "reasons": [],
+            "omission_not_confirmed": false
+          },
+          {
+            "prediction_id": "SYN-nda_short-P02",
+            "quote_eligible": true,
+            "exact_match": true,
+            "normalized_match": true,
+            "correct_page": true,
+            "normalized_correct_page": true,
+            "supported": false,
+            "reasons": [
+              "nonexistent_clause"
+            ],
+            "omission_not_confirmed": false
+          }
+        ],
+        "processing_seconds": null,
+        "analysis_id": null,
+        "error_category": null,
+        "failed_stage": null,
+        "http_status": null,
+        "upstream_http_status": null,
+        "attempts": 0,
+        "failure_recorded": null,
+        "response_model": null,
+        "rejected_finding_count": 0,
+        "rejected_obligation_count": 0
+      },
+      {
+        "contract_id": "SYN-nda_durable",
+        "status": "completed",
+        "risk": {
+          "detection": {
+            "tp": 2,
+            "fp": 0,
+            "fn": 0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0
+          },
+          "per_category": {
+            "liability": {
+              "tp": 0,
+              "fp": 0,
+              "fn": 0,
+              "precision": null,
+              "recall": null,
+              "f1": null
+            },
+            "indemnification": {
+              "tp": 0,
+              "fp": 0,
+              "fn": 0,
+              "precision": null,
+              "recall": null,
+              "f1": null
+            },
+            "termination": {
+              "tp": 0,
+              "fp": 0,
+              "fn": 0,
+              "precision": null,
+              "recall": null,
+              "f1": null
+            },
+            "payment": {
+              "tp": 0,
+              "fp": 0,
+              "fn": 0,
+              "precision": null,
+              "recall": null,
+              "f1": null
+            },
+            "confidentiality": {
+              "tp": 1,
+              "fp": 0,
+              "fn": 0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0
+            },
+            "data_protection": {
+              "tp": 1,
+              "fp": 0,
+              "fn": 0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0
+            },
+            "intellectual_property": {
+              "tp": 0,
+              "fp": 0,
+              "fn": 0,
+              "precision": null,
+              "recall": null,
+              "f1": null
+            },
+            "governing_law": {
+              "tp": 0,
+              "fp": 0,
+              "fn": 0,
+              "precision": null,
+              "recall": null,
+              "f1": null
+            }
+          },
+          "matches": [
+            {
+              "prediction_id": "SYN-nda_durable-P01",
+              "finding_id": "SYN-nda_durable-G02",
+              "category_correct": true,
+              "severity_correct": true,
+              "omission": false
+            },
+            {
+              "prediction_id": "SYN-nda_durable-P02",
+              "finding_id": "SYN-nda_durable-G03",
+              "category_correct": true,
+              "severity_correct": true,
+              "omission": true
+            }
+          ],
+          "unmatched_predictions": [],
+          "missed_gold": [],
+          "ambiguous_predictions_excluded": [],
+          "ambiguous_gold_count": 0,
+          "non_risk_gold_count": 1,
+          "non_risk_false_positives": [],
+          "inactive_prediction_count": 0,
+          "category_confusion": [
+            {
+              "gold": "confidentiality",
+              "predicted": "confidentiality",
+              "count": 1
+            },
+            {
+              "gold": "data_protection",
+              "predicted": "data_protection",
+              "count": 1
+            }
+          ],
+          "severity_confusion": [
+            {
+              "gold": "medium",
+              "predicted": "medium",
+              "count": 2
+            }
+          ]
+        },
+        "supported_evidence_detection": {
+          "tp": 2,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "evidence": [
+          {
+            "prediction_id": "SYN-nda_durable-P01",
+            "quote_eligible": true,
+            "exact_match": true,
+            "normalized_match": true,
+            "correct_page": true,
+            "normalized_correct_page": true,
+            "supported": true,
+            "reasons": [],
+            "omission_not_confirmed": false
+          },
+          {
+            "prediction_id": "SYN-nda_durable-P02",
+            "quote_eligible": false,
+            "exact_match": null,
+            "normalized_match": null,
+            "correct_page": null,
+            "normalized_correct_page": null,
+            "supported": true,
+            "reasons": [],
+            "omission_not_confirmed": true
+          }
+        ],
+        "processing_seconds": null,
+        "analysis_id": null,
+        "error_category": null,
+        "failed_stage": null,
+        "http_status": null,
+        "upstream_http_status": null,
+        "attempts": 0,
+        "failure_recorded": null,
+        "response_model": null,
+        "rejected_finding_count": 0,
+        "rejected_obligation_count": 0
+      },
+      {
+        "contract_id": "SYN-services_exit",
+        "status": "completed",
+        "risk": {
+          "detection": {
+            "tp": 1,
+            "fp": 0,
+            "fn": 1,
+            "precision": 1.0,
+            "recall": 0.5,
+            "f1": 0.6666666666666666
+          },
+          "per_category": {
+            "liability": {
+              "tp": 0,
+              "fp": 0,
+              "fn": 0,
+              "precision": null,
+              "recall": null,
+              "f1": null
+            },
+            "indemnification": {
+              "tp": 0,
+              "fp": 0,
+              "fn": 1,
+              "precision": null,
+              "recall": 0.0,
+              "f1": 0.0
+            },
+            "termination": {
+              "tp": 1,
+              "fp": 0,
+              "fn": 0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0
+            },
+            "payment": {
+              "tp": 0,
+              "fp": 0,
+              "fn": 0,
+              "precision": null,
+              "recall": null,
+              "f1": null
+            },
+            "confidentiality": {
+              "tp": 0,
+              "fp": 0,
+              "fn": 0,
+              "precision": null,
+              "recall": null,
+              "f1": null
+            },
+            "data_protection": {
+              "tp": 0,
+              "fp": 0,
+              "fn": 0,
+              "precision": null,
+              "recall": null,
+              "f1": null
+            },
+            "intellectual_property": {
+              "tp": 0,
+              "fp": 0,
+              "fn": 0,
+              "precision": null,
+              "recall": null,
+              "f1": null
+            },
+            "governing_law": {
+              "tp": 0,
+              "fp": 0,
+              "fn": 0,
+              "precision": null,
+              "recall": null,
+              "f1": null
+            }
+          },
+          "matches": [
+            {
+              "prediction_id": "SYN-services_exit-P01",
+              "finding_id": "SYN-services_exit-G01",
+              "category_correct": true,
+              "severity_correct": true,
+              "omission": false
+            }
+          ],
+          "unmatched_predictions": [],
+          "missed_gold": [
+            "SYN-services_exit-G02"
+          ],
+          "ambiguous_predictions_excluded": [],
+          "ambiguous_gold_count": 0,
+          "non_risk_gold_count": 1,
+          "non_risk_false_positives": [],
+          "inactive_prediction_count": 0,
+          "category_confusion": [
+            {
+              "gold": "termination",
+              "predicted": "termination",
+              "count": 1
+            }
+          ],
+          "severity_confusion": [
+            {
+              "gold": "medium",
+              "predicted": "medium",
+              "count": 1
+            }
+          ]
+        },
+        "supported_evidence_detection": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 2,
+          "precision": null,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "evidence": [
+          {
+            "prediction_id": "SYN-services_exit-P01",
+            "quote_eligible": true,
+            "exact_match": false,
+            "normalized_match": false,
+            "correct_page": false,
+            "normalized_correct_page": false,
+            "supported": false,
+            "reasons": [
+              "empty_or_missing_quote",
+              "quote_not_exact_on_cited_page"
+            ],
+            "omission_not_confirmed": false
+          }
+        ],
+        "processing_seconds": null,
+        "analysis_id": null,
+        "error_category": null,
+        "failed_stage": null,
+        "http_status": null,
+        "upstream_http_status": null,
+        "attempts": 0,
+        "failure_recorded": null,
+        "response_model": null,
+        "rejected_finding_count": 0,
+        "rejected_obligation_count": 0
+      },
+      {
+        "contract_id": "SYN-services_balanced",
+        "status": "completed",
+        "risk": {
+          "detection": {
+            "tp": 1,
+            "fp": 0,
+            "fn": 0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0
+          },
+          "per_category": {
+            "liability": {
+              "tp": 1,
+              "fp": 0,
+              "fn": 0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0
+            },
+            "indemnification": {
+              "tp": 0,
+              "fp": 0,
+              "fn": 0,
+              "precision": null,
+              "recall": null,
+              "f1": null
+            },
+            "termination": {
+              "tp": 0,
+              "fp": 0,
+              "fn": 0,
+              "precision": null,
+              "recall": null,
+              "f1": null
+            },
+            "payment": {
+              "tp": 0,
+              "fp": 0,
+              "fn": 0,
+              "precision": null,
+              "recall": null,
+              "f1": null
+            },
+            "confidentiality": {
+              "tp": 0,
+              "fp": 0,
+              "fn": 0,
+              "precision": null,
+              "recall": null,
+              "f1": null
+            },
+            "data_protection": {
+              "tp": 0,
+              "fp": 0,
+              "fn": 0,
+              "precision": null,
+              "recall": null,
+              "f1": null
+            },
+            "intellectual_property": {
+              "tp": 0,
+              "fp": 0,
+              "fn": 0,
+              "precision": null,
+              "recall": null,
+              "f1": null
+            },
+            "governing_law": {
+              "tp": 0,
+              "fp": 0,
+              "fn": 0,
+              "precision": null,
+              "recall": null,
+              "f1": null
+            }
+          },
+          "matches": [
+            {
+              "prediction_id": "SYN-services_balanced-P01",
+              "finding_id": "SYN-services_balanced-G04",
+              "category_correct": true,
+              "severity_correct": true,
+              "omission": true
+            }
+          ],
+          "unmatched_predictions": [],
+          "missed_gold": [],
+          "ambiguous_predictions_excluded": [],
+          "ambiguous_gold_count": 1,
+          "non_risk_gold_count": 2,
+          "non_risk_false_positives": [],
+          "inactive_prediction_count": 0,
+          "category_confusion": [
+            {
+              "gold": "liability",
+              "predicted": "liability",
+              "count": 1
+            }
+          ],
+          "severity_confusion": [
+            {
+              "gold": "medium",
+              "predicted": "medium",
+              "count": 1
+            }
+          ]
+        },
+        "supported_evidence_detection": {
+          "tp": 1,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "evidence": [
+          {
+            "prediction_id": "SYN-services_balanced-P01",
+            "quote_eligible": false,
+            "exact_match": null,
+            "normalized_match": null,
+            "correct_page": null,
+            "normalized_correct_page": null,
+            "supported": true,
+            "reasons": [],
+            "omission_not_confirmed": true
+          }
+        ],
+        "processing_seconds": null,
+        "analysis_id": null,
+        "error_category": null,
+        "failed_stage": null,
+        "http_status": null,
+        "upstream_http_status": null,
+        "attempts": 0,
+        "failure_recorded": null,
+        "response_model": null,
+        "rejected_finding_count": 0,
+        "rejected_obligation_count": 0
+      },
+      {
+        "contract_id": "SYN-consulting_owned",
+        "status": "completed",
+        "risk": {
+          "detection": {
+            "tp": 2,
+            "fp": 0,
+            "fn": 0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0
+          },
+          "per_category": {
+            "liability": {
+              "tp": 0,
+              "fp": 0,
+              "fn": 0,
+              "precision": null,
+              "recall": null,
+              "f1": null
+            },
+            "indemnification": {
+              "tp": 0,
+              "fp": 0,
+              "fn": 0,
+              "precision": null,
+              "recall": null,
+              "f1": null
+            },
+            "termination": {
+              "tp": 0,
+              "fp": 0,
+              "fn": 0,
+              "precision": null,
+              "recall": null,
+              "f1": null
+            },
+            "payment": {
+              "tp": 1,
+              "fp": 0,
+              "fn": 0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0
+            },
+            "confidentiality": {
+              "tp": 1,
+              "fp": 0,
+              "fn": 0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0
+            },
+            "data_protection": {
+              "tp": 0,
+              "fp": 0,
+              "fn": 0,
+              "precision": null,
+              "recall": null,
+              "f1": null
+            },
+            "intellectual_property": {
+              "tp": 0,
+              "fp": 0,
+              "fn": 0,
+              "precision": null,
+              "recall": null,
+              "f1": null
+            },
+            "governing_law": {
+              "tp": 0,
+              "fp": 0,
+              "fn": 0,
+              "precision": null,
+              "recall": null,
+              "f1": null
+            }
+          },
+          "matches": [
+            {
+              "prediction_id": "SYN-consulting_owned-P01",
+              "finding_id": "SYN-consulting_owned-G02",
+              "category_correct": true,
+              "severity_correct": true,
+              "omission": false
+            },
+            {
+              "prediction_id": "SYN-consulting_owned-P02",
+              "finding_id": "SYN-consulting_owned-G03",
+              "category_correct": true,
+              "severity_correct": true,
+              "omission": false
+            }
+          ],
+          "unmatched_predictions": [],
+          "missed_gold": [],
+          "ambiguous_predictions_excluded": [],
+          "ambiguous_gold_count": 0,
+          "non_risk_gold_count": 1,
+          "non_risk_false_positives": [],
+          "inactive_prediction_count": 0,
+          "category_confusion": [
+            {
+              "gold": "confidentiality",
+              "predicted": "confidentiality",
+              "count": 1
+            },
+            {
+              "gold": "payment",
+              "predicted": "payment",
+              "count": 1
+            }
+          ],
+          "severity_confusion": [
+            {
+              "gold": "medium",
+              "predicted": "medium",
+              "count": 2
+            }
+          ]
+        },
+        "supported_evidence_detection": {
+          "tp": 2,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "evidence": [
+          {
+            "prediction_id": "SYN-consulting_owned-P01",
+            "quote_eligible": true,
+            "exact_match": true,
+            "normalized_match": true,
+            "correct_page": true,
+            "normalized_correct_page": true,
+            "supported": true,
+            "reasons": [],
+            "omission_not_confirmed": false
+          },
+          {
+            "prediction_id": "SYN-consulting_owned-P02",
+            "quote_eligible": true,
+            "exact_match": true,
+            "normalized_match": true,
+            "correct_page": true,
+            "normalized_correct_page": true,
+            "supported": true,
+            "reasons": [],
+            "omission_not_confirmed": false
+          }
+        ],
+        "processing_seconds": null,
+        "analysis_id": null,
+        "error_category": null,
+        "failed_stage": null,
+        "http_status": null,
+        "upstream_http_status": null,
+        "attempts": 0,
+        "failure_recorded": null,
+        "response_model": null,
+        "rejected_finding_count": 0,
+        "rejected_obligation_count": 0
+      },
+      {
+        "contract_id": "SYN-consulting_retained",
+        "status": "completed",
+        "risk": {
+          "detection": {
+            "tp": 1,
+            "fp": 0,
+            "fn": 0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0
+          },
+          "per_category": {
+            "liability": {
+              "tp": 0,
+              "fp": 0,
+              "fn": 0,
+              "precision": null,
+              "recall": null,
+              "f1": null
+            },
+            "indemnification": {
+              "tp": 0,
+              "fp": 0,
+              "fn": 0,
+              "precision": null,
+              "recall": null,
+              "f1": null
+            },
+            "termination": {
+              "tp": 0,
+              "fp": 0,
+              "fn": 0,
+              "precision": null,
+              "recall": null,
+              "f1": null
+            },
+            "payment": {
+              "tp": 0,
+              "fp": 0,
+              "fn": 0,
+              "precision": null,
+              "recall": null,
+              "f1": null
+            },
+            "confidentiality": {
+              "tp": 0,
+              "fp": 0,
+              "fn": 0,
+              "precision": null,
+              "recall": null,
+              "f1": null
+            },
+            "data_protection": {
+              "tp": 0,
+              "fp": 0,
+              "fn": 0,
+              "precision": null,
+              "recall": null,
+              "f1": null
+            },
+            "intellectual_property": {
+              "tp": 1,
+              "fp": 0,
+              "fn": 0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0
+            },
+            "governing_law": {
+              "tp": 0,
+              "fp": 0,
+              "fn": 0,
+              "precision": null,
+              "recall": null,
+              "f1": null
+            }
+          },
+          "matches": [
+            {
+              "prediction_id": "SYN-consulting_retained-P01",
+              "finding_id": "SYN-consulting_retained-G01",
+              "category_correct": true,
+              "severity_correct": true,
+              "omission": false
+            }
+          ],
+          "unmatched_predictions": [],
+          "missed_gold": [],
+          "ambiguous_predictions_excluded": [],
+          "ambiguous_gold_count": 1,
+          "non_risk_gold_count": 1,
+          "non_risk_false_positives": [],
+          "inactive_prediction_count": 0,
+          "category_confusion": [
+            {
+              "gold": "intellectual_property",
+              "predicted": "intellectual_property",
+              "count": 1
+            }
+          ],
+          "severity_confusion": [
+            {
+              "gold": "high",
+              "predicted": "high",
+              "count": 1
+            }
+          ]
+        },
+        "supported_evidence_detection": {
+          "tp": 1,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "evidence": [
+          {
+            "prediction_id": "SYN-consulting_retained-P01",
+            "quote_eligible": true,
+            "exact_match": true,
+            "normalized_match": true,
+            "correct_page": true,
+            "normalized_correct_page": true,
+            "supported": true,
+            "reasons": [],
+            "omission_not_confirmed": false
+          }
+        ],
+        "processing_seconds": null,
+        "analysis_id": null,
+        "error_category": null,
+        "failed_stage": null,
+        "http_status": null,
+        "upstream_http_status": null,
+        "attempts": 0,
+        "failure_recorded": null,
+        "response_model": null,
+        "rejected_finding_count": 0,
+        "rejected_obligation_count": 0
+      },
+      {
+        "contract_id": "SYN-services_split",
+        "status": "partial",
+        "risk": {
+          "detection": {
+            "tp": 1,
+            "fp": 0,
+            "fn": 1,
+            "precision": 1.0,
+            "recall": 0.5,
+            "f1": 0.6666666666666666
+          },
+          "per_category": {
+            "liability": {
+              "tp": 0,
+              "fp": 0,
+              "fn": 0,
+              "precision": null,
+              "recall": null,
+              "f1": null
+            },
+            "indemnification": {
+              "tp": 0,
+              "fp": 0,
+              "fn": 0,
+              "precision": null,
+              "recall": null,
+              "f1": null
+            },
+            "termination": {
+              "tp": 0,
+              "fp": 0,
+              "fn": 0,
+              "precision": null,
+              "recall": null,
+              "f1": null
+            },
+            "payment": {
+              "tp": 0,
+              "fp": 0,
+              "fn": 1,
+              "precision": null,
+              "recall": 0.0,
+              "f1": 0.0
+            },
+            "confidentiality": {
+              "tp": 0,
+              "fp": 0,
+              "fn": 0,
+              "precision": null,
+              "recall": null,
+              "f1": null
+            },
+            "data_protection": {
+              "tp": 1,
+              "fp": 0,
+              "fn": 0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0
+            },
+            "intellectual_property": {
+              "tp": 0,
+              "fp": 0,
+              "fn": 0,
+              "precision": null,
+              "recall": null,
+              "f1": null
+            },
+            "governing_law": {
+              "tp": 0,
+              "fp": 0,
+              "fn": 0,
+              "precision": null,
+              "recall": null,
+              "f1": null
+            }
+          },
+          "matches": [
+            {
+              "prediction_id": "SYN-services_split-P01",
+              "finding_id": "SYN-services_split-G01",
+              "category_correct": true,
+              "severity_correct": true,
+              "omission": false
+            }
+          ],
+          "unmatched_predictions": [],
+          "missed_gold": [
+            "SYN-services_split-G03"
+          ],
+          "ambiguous_predictions_excluded": [],
+          "ambiguous_gold_count": 0,
+          "non_risk_gold_count": 1,
+          "non_risk_false_positives": [],
+          "inactive_prediction_count": 0,
+          "category_confusion": [
+            {
+              "gold": "data_protection",
+              "predicted": "data_protection",
+              "count": 1
+            }
+          ],
+          "severity_confusion": [
+            {
+              "gold": "high",
+              "predicted": "high",
+              "count": 1
+            }
+          ]
+        },
+        "supported_evidence_detection": {
+          "tp": 1,
+          "fp": 0,
+          "fn": 1,
+          "precision": 1.0,
+          "recall": 0.5,
+          "f1": 0.6666666666666666
+        },
+        "evidence": [
+          {
+            "prediction_id": "SYN-services_split-P01",
+            "quote_eligible": true,
+            "exact_match": true,
+            "normalized_match": true,
+            "correct_page": true,
+            "normalized_correct_page": true,
+            "supported": true,
+            "reasons": [],
+            "omission_not_confirmed": false
+          }
+        ],
+        "processing_seconds": null,
+        "analysis_id": null,
+        "error_category": "fixture_evidence_rejection",
+        "failed_stage": null,
+        "http_status": null,
+        "upstream_http_status": null,
+        "attempts": 0,
+        "failure_recorded": null,
+        "response_model": null,
+        "rejected_finding_count": 1,
+        "rejected_obligation_count": 0
+      },
+      {
+        "contract_id": "SYN-supplier_failure",
+        "status": "failed",
+        "risk": {
+          "detection": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 4,
+            "precision": null,
+            "recall": 0.0,
+            "f1": 0.0
+          },
+          "per_category": {
+            "liability": {
+              "tp": 0,
+              "fp": 0,
+              "fn": 1,
+              "precision": null,
+              "recall": 0.0,
+              "f1": 0.0
+            },
+            "indemnification": {
+              "tp": 0,
+              "fp": 0,
+              "fn": 0,
+              "precision": null,
+              "recall": null,
+              "f1": null
+            },
+            "termination": {
+              "tp": 0,
+              "fp": 0,
+              "fn": 1,
+              "precision": null,
+              "recall": 0.0,
+              "f1": 0.0
+            },
+            "payment": {
+              "tp": 0,
+              "fp": 0,
+              "fn": 0,
+              "precision": null,
+              "recall": null,
+              "f1": null
+            },
+            "confidentiality": {
+              "tp": 0,
+              "fp": 0,
+              "fn": 0,
+              "precision": null,
+              "recall": null,
+              "f1": null
+            },
+            "data_protection": {
+              "tp": 0,
+              "fp": 0,
+              "fn": 1,
+              "precision": null,
+              "recall": 0.0,
+              "f1": 0.0
+            },
+            "intellectual_property": {
+              "tp": 0,
+              "fp": 0,
+              "fn": 0,
+              "precision": null,
+              "recall": null,
+              "f1": null
+            },
+            "governing_law": {
+              "tp": 0,
+              "fp": 0,
+              "fn": 1,
+              "precision": null,
+              "recall": 0.0,
+              "f1": 0.0
+            }
+          },
+          "matches": [],
+          "unmatched_predictions": [],
+          "missed_gold": [
+            "SYN-supplier_failure-G01",
+            "SYN-supplier_failure-G02",
+            "SYN-supplier_failure-G03",
+            "SYN-supplier_failure-G04"
+          ],
+          "ambiguous_predictions_excluded": [],
+          "ambiguous_gold_count": 0,
+          "non_risk_gold_count": 0,
+          "non_risk_false_positives": [],
+          "inactive_prediction_count": 0,
+          "category_confusion": [],
+          "severity_confusion": []
+        },
+        "supported_evidence_detection": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 4,
+          "precision": null,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "evidence": [],
+        "processing_seconds": null,
+        "analysis_id": null,
+        "error_category": "fixture_provider_transient",
+        "failed_stage": "gemini_reasoning",
+        "http_status": 503,
+        "upstream_http_status": 503,
+        "attempts": 3,
+        "failure_recorded": true,
+        "response_model": null,
+        "rejected_finding_count": 0,
+        "rejected_obligation_count": 0
+      }
+    ]
+  }
+}

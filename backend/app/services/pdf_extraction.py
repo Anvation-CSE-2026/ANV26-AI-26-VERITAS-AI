@@ -5,6 +5,7 @@ from uuid import uuid4
 import pymupdf
 
 from app.config import settings
+from app.services.analysis_observability import timed
 from app.models.contracts import Clause, Contract, PageText
 
 
@@ -45,6 +46,7 @@ def split_clauses(page: PageText) -> list[Clause]:
     return clauses
 
 
+@timed("pdf_extraction")
 def extract_contract(pdf_bytes: bytes, filename: str) -> Contract:
     if len(pdf_bytes) > settings.max_upload_bytes:
         raise ContractLimitError("PDF exceeds the configured upload size limit.")

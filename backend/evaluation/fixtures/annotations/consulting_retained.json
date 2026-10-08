@@ -1,0 +1,65 @@
+[
+  {
+    "contract_id": "SYN-consulting_retained",
+    "finding_id": "SYN-consulting_retained-G01",
+    "risk_category": "intellectual_property",
+    "expected_severity": "high",
+    "expected_clause_text": "1. Consultant retains custom designs and grants Company a temporary, non-transferable\nlicense with no right to modify.",
+    "expected_page_number": 1,
+    "explanation": "Neither ownership nor qualifying perpetual modification license.",
+    "risk_present": true,
+    "annotation_state": "risk",
+    "annotation_confidence": "high",
+    "reviewer_status": "pending_manual_review",
+    "policy_id": "POL-IP-001",
+    "evidence_spans": [
+      {
+        "clause_id": "P001-C002",
+        "page_number": 1,
+        "quote": "1. Consultant retains custom designs and grants Company a temporary, non-transferable\nlicense with no right to modify."
+      }
+    ]
+  },
+  {
+    "contract_id": "SYN-consulting_retained",
+    "finding_id": "SYN-consulting_retained-G02",
+    "risk_category": "confidentiality",
+    "expected_severity": "low",
+    "expected_clause_text": "2. Both parties use information only for the engagement, preserve secrecy for 3 years after\ntermination, and protect trade secrets while secret.",
+    "expected_page_number": 2,
+    "explanation": "Meets the company confidentiality rule.",
+    "risk_present": false,
+    "annotation_state": "non_risk",
+    "annotation_confidence": "high",
+    "reviewer_status": "pending_manual_review",
+    "policy_id": "POL-CONF-001",
+    "evidence_spans": [
+      {
+        "clause_id": "P002-C002",
+        "page_number": 2,
+        "quote": "2. Both parties use information only for the engagement, preserve secrecy for 3 years after\ntermination, and protect trade secrets while secret."
+      }
+    ]
+  },
+  {
+    "contract_id": "SYN-consulting_retained",
+    "finding_id": "SYN-consulting_retained-G03",
+    "risk_category": "termination",
+    "expected_severity": null,
+    "expected_clause_text": "3. Company may end the engagement on reasonable notice subject to fair compensation.",
+    "expected_page_number": 3,
+    "explanation": "Notice duration and whether compensation is a penalty are unclear.",
+    "risk_present": null,
+    "annotation_state": "ambiguous",
+    "annotation_confidence": "medium",
+    "reviewer_status": "pending_manual_review",
+    "policy_id": "POL-TERM-001",
+    "evidence_spans": [
+      {
+        "clause_id": "P003-C002",
+        "page_number": 3,
+        "quote": "3. Company may end the engagement on reasonable notice subject to fair compensation."
+      }
+    ]
+  }
+]

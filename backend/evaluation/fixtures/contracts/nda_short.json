@@ -1,0 +1,63 @@
+{
+  "contract_id": "SYN-nda_short",
+  "filename": "nda_short.pdf",
+  "pages": [
+    {
+      "page_number": 1,
+      "text": "SYNTHETIC CONTRACT - Mutual prototype NDA\n1. Each party shall use confidential information only for the project. All confidentiality duties\nend 6 months after disclosure, including trade secrets."
+    },
+    {
+      "page_number": 2,
+      "text": "SYNTHETIC CONTRACT - Mutual prototype NDA\n2. Liability for disclosure of confidential information is capped at USD 10."
+    },
+    {
+      "page_number": 3,
+      "text": "SYNTHETIC CONTRACT - Mutual prototype NDA\n3. Ownership of ideas shared in workshops will be agreed later by the parties."
+    }
+  ],
+  "clauses": [
+    {
+      "clause_id": "P001-C001",
+      "page_number": 1,
+      "text": "SYNTHETIC CONTRACT - Mutual prototype NDA",
+      "start_offset": 0,
+      "end_offset": 41
+    },
+    {
+      "clause_id": "P001-C002",
+      "page_number": 1,
+      "text": "1. Each party shall use confidential information only for the project. All confidentiality duties\nend 6 months after disclosure, including trade secrets.",
+      "start_offset": 42,
+      "end_offset": 195
+    },
+    {
+      "clause_id": "P002-C001",
+      "page_number": 2,
+      "text": "SYNTHETIC CONTRACT - Mutual prototype NDA",
+      "start_offset": 0,
+      "end_offset": 41
+    },
+    {
+      "clause_id": "P002-C002",
+      "page_number": 2,
+      "text": "2. Liability for disclosure of confidential information is capped at USD 10.",
+      "start_offset": 42,
+      "end_offset": 118
+    },
+    {
+      "clause_id": "P003-C001",
+      "page_number": 3,
+      "text": "SYNTHETIC CONTRACT - Mutual prototype NDA",
+      "start_offset": 0,
+      "end_offset": 41
+    },
+    {
+      "clause_id": "P003-C002",
+      "page_number": 3,
+      "text": "3. Ownership of ideas shared in workshops will be agreed later by the parties.",
+      "start_offset": 42,
+      "end_offset": 120
+    }
+  ],
+  "warnings": []
+}

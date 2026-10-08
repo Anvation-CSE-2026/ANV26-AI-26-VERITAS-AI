@@ -1,0 +1,146 @@
+{
+  "dataset_id": "synthetic_v1",
+  "version": "1.0.0",
+  "synthetic": true,
+  "gold_provenance": "Original author labels, not legally validated; pending human review",
+  "policy_ids": [
+    "POL-LIAB-001",
+    "POL-INDEM-001",
+    "POL-TERM-001",
+    "POL-PAY-001",
+    "POL-CONF-001",
+    "POL-DATA-001",
+    "POL-IP-001",
+    "BENCH-LAW-001"
+  ],
+  "production_unsupported_categories": [
+    "governing_law"
+  ],
+  "predictions": "predictions.json",
+  "contracts": [
+    {
+      "contract_id": "SYN-supplier_red",
+      "type": "Supplier equipment agreement",
+      "pdf": "contracts/supplier_red.pdf",
+      "source": "contracts/supplier_red.json",
+      "annotations": "annotations/supplier_red.json"
+    },
+    {
+      "contract_id": "SYN-supplier_green",
+      "type": "Supplier maintenance agreement",
+      "pdf": "contracts/supplier_green.pdf",
+      "source": "contracts/supplier_green.json",
+      "annotations": "annotations/supplier_green.json"
+    },
+    {
+      "contract_id": "SYN-saas_red",
+      "type": "SaaS analytics subscription",
+      "pdf": "contracts/saas_red.pdf",
+      "source": "contracts/saas_red.json",
+      "annotations": "annotations/saas_red.json"
+    },
+    {
+      "contract_id": "SYN-saas_green",
+      "type": "SaaS records subscription",
+      "pdf": "contracts/saas_green.pdf",
+      "source": "contracts/saas_green.json",
+      "annotations": "annotations/saas_green.json"
+    },
+    {
+      "contract_id": "SYN-nda_short",
+      "type": "Mutual prototype NDA",
+      "pdf": "contracts/nda_short.pdf",
+      "source": "contracts/nda_short.json",
+      "annotations": "annotations/nda_short.json"
+    },
+    {
+      "contract_id": "SYN-nda_durable",
+      "type": "Mutual research NDA",
+      "pdf": "contracts/nda_durable.pdf",
+      "source": "contracts/nda_durable.json",
+      "annotations": "annotations/nda_durable.json"
+    },
+    {
+      "contract_id": "SYN-services_exit",
+      "type": "Facilities services agreement",
+      "pdf": "contracts/services_exit.pdf",
+      "source": "contracts/services_exit.json",
+      "annotations": "annotations/services_exit.json"
+    },
+    {
+      "contract_id": "SYN-services_balanced",
+      "type": "Technical support services",
+      "pdf": "contracts/services_balanced.pdf",
+      "source": "contracts/services_balanced.json",
+      "annotations": "annotations/services_balanced.json"
+    },
+    {
+      "contract_id": "SYN-consulting_owned",
+      "type": "Design consulting engagement",
+      "pdf": "contracts/consulting_owned.pdf",
+      "source": "contracts/consulting_owned.json",
+      "annotations": "annotations/consulting_owned.json"
+    },
+    {
+      "contract_id": "SYN-consulting_retained",
+      "type": "Engineering consulting engagement",
+      "pdf": "contracts/consulting_retained.pdf",
+      "source": "contracts/consulting_retained.json",
+      "annotations": "annotations/consulting_retained.json"
+    },
+    {
+      "contract_id": "SYN-services_split",
+      "type": "Page-spanning hosting services",
+      "pdf": "contracts/services_split.pdf",
+      "source": "contracts/services_split.json",
+      "annotations": "annotations/services_split.json"
+    },
+    {
+      "contract_id": "SYN-supplier_failure",
+      "type": "Synthetic logistics agreement",
+      "pdf": "contracts/supplier_failure.pdf",
+      "source": "contracts/supplier_failure.json",
+      "annotations": "annotations/supplier_failure.json"
+    }
+  ],
+  "file_hashes": {
+    "contracts/supplier_red.pdf": "26741f99954d2584fee4279908bfaa3ad54db89e085d0e33258dc413122bd2e3",
+    "contracts/supplier_red.json": "bc92b608970ae27bfe6e8127257dff0a4840962e3698040e3052cec353866427",
+    "annotations/supplier_red.json": "e4496afa7ebb2102b4cd4e1874d5b0292b6f36652d97a3980164031c5737a494",
+    "contracts/supplier_green.pdf": "42d59644d31a594e27d90ddc96df1cd3ac8bf922ac696445548a6821be5df06b",
+    "contracts/supplier_green.json": "9eb26ed1f55710f377d2e71ad0b917e47a0d1515dfecf91ac524340852c10484",
+    "annotations/supplier_green.json": "1e2869540850e3c5315e7f91840973459705a20af9047fb6078e03754f2ec4ee",
+    "contracts/saas_red.pdf": "65702f224502b4aca384cf4d5879b0a57e83184f01d0bb7647e413473e3cdf53",
+    "contracts/saas_red.json": "6b5106e44f9161fd6ff06d65d3e9f853d38f5f86c0de08d2c07a604517f41c12",
+    "annotations/saas_red.json": "433232c285336f1e5a88d2a3c197faf5a552cdde389d46baa3b2c39b9d47ef33",
+    "contracts/saas_green.pdf": "6229c201f34970c7e076bb35ecd22c376791ed682a98ce458ad0bd6fad49e398",
+    "contracts/saas_green.json": "5b243cbf273b124564ec827eec3217b1a3cd51702dfc957ace3e96bc6db5f18f",
+    "annotations/saas_green.json": "22c10ee71e1feca64ee737187521f95b84de27a7599e905b5163f49b2edba86e",
+    "contracts/nda_short.pdf": "7359178ac280bbdcd3cc41c1531b4810cee2ea33d1f7b99b0872cb9a7fd540d0",
+    "contracts/nda_short.json": "79c84e47c1bb74c9591aad37e3f675fa7e7344436b8ed022ed8b190eba1701e4",
+    "annotations/nda_short.json": "bf8568a65d1884b303d160f5878f3d3bae89fff7f65e0c5a08d5894d00923284",
+    "contracts/nda_durable.pdf": "31692b8ac527514f3d3f010d0e49556ba721a0e01cc7ea94a94d0c8c79eb25d5",
+    "contracts/nda_durable.json": "c5f9ecd34d8674338fb1b34b1add7b1b5430383c59a34e3aae9c9f9be9289cce",
+    "annotations/nda_durable.json": "20b5b40160787cb4f826380fe43f1a7a6d975c03df97dd61a9b420315686bdb2",
+    "contracts/services_exit.pdf": "59a84962122b5cd049376a415ac274286722673e956b24760d62e72915ecef2b",
+    "contracts/services_exit.json": "2ac9fbb96f24c05c0ca71a6f20ee9264b5be92abc1d4455d9768c27efaf347e0",
+    "annotations/services_exit.json": "09fa49eff2d27e9a8d094b6a796c3f16eb51870891be6d340dc2f9ddd8d955db",
+    "contracts/services_balanced.pdf": "5f61a53bc5f62d2832a35aff41e837873736a782650353260a795bced3242bc2",
+    "contracts/services_balanced.json": "f0f9ac902a8c0b2d1dce1a74da403f8ca3e8371a06ce49c41d87571faa1bd61a",
+    "annotations/services_balanced.json": "6fa27bcbc92e51b4b70ee9a52a52280ff2d72fa059d2a6a3f6b6efb6ab8a4d6a",
+    "contracts/consulting_owned.pdf": "a25b4408f9e945282e6b240a47ebfbd6344b1b74e9c7b2780effa3983296c4dd",
+    "contracts/consulting_owned.json": "27ee96532c02053d1a6120173b4549c828bacd52eea95bc5cdea53587707c5b6",
+    "annotations/consulting_owned.json": "93df3e6a7b3cb319cc0017bdc1a7d380c6843d11146ab360b5c7d6d92ccef884",
+    "contracts/consulting_retained.pdf": "e0864a01034429de0b9ae56367aaf2874b05357025cc1fa31e1d9fffd578831c",
+    "contracts/consulting_retained.json": "2304b7398a2402b2e6f39dd372790ef346c9dc6ea3151a5ec6ca0bb3438ef021",
+    "annotations/consulting_retained.json": "891d9face7959edd174060d338279727bec47b605d495a774fa084e182b42a05",
+    "contracts/services_split.pdf": "f96139897de075b7dfbbb6128ab14e0542a861b90bcb70ef3dbb42b24375cd34",
+    "contracts/services_split.json": "d058c217cbda5c3736d02b7afc78950c4751a66edbadc85960b5273056968c4a",
+    "annotations/services_split.json": "d6cca1702964c29db8d9d895f3b2b2b9dfbc0b2b4c8786717d7d987d6a114ead",
+    "contracts/supplier_failure.pdf": "0ea35518db1e9d11c1152a69f42d11213f52f10fee0065e4f3bb01770c5d1444",
+    "contracts/supplier_failure.json": "b42820cfde45baacefb9346e85cd0a48d1a16f87833155bf6677585f9fe71a22",
+    "annotations/supplier_failure.json": "37207f4ed82ca126d35caeeeba91b27aeea0352e13e5ac20ec2155eecf9af319",
+    "predictions.json": "92694428fa5075e9b9212d63c9d011deec13fbdc259ee6016a0c2ad992812f59",
+    "benchmark_playbook.json": "f5ca5f34dcdae4904f3ba5efae7c2fbaaaec1148a1a610f1be2fb97fb909b7e8"
+  }
+}
