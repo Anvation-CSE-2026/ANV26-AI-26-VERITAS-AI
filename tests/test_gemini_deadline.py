@@ -47,7 +47,7 @@ class GeminiDeadlineTests(unittest.TestCase):
 
     def test_timeout_failure_persisted_upload_retained_no_success_saved(self):
         self.client.models.generate_content.side_effect=errors.APIError(504,{})
-        with tempfile.TemporaryDirectory() as folder,patch.object(settings,'storage_path',Path(folder)/'test.sqlite3'),patch.object(settings,'gemini_api_key','offline-test-key'),patch.object(settings,'gemini_max_attempts',1),patch('app.services.contract_analysis.match_policies',return_value=[]),patch('app.services.gemini_analysis.genai.Client',self.factory):
+        with tempfile.TemporaryDirectory() as folder,patch.object(settings,'database_url',''),patch.object(settings,'storage_path',Path(folder)/'test.sqlite3'),patch.object(settings,'gemini_api_key','offline-test-key'),patch.object(settings,'gemini_max_attempts',1),patch('app.services.contract_analysis.match_policies',return_value=[]),patch('app.services.gemini_analysis.genai.Client',self.factory):
             save_contract(self.contract,b'%PDF-offline-fixture')
             with self.assertRaises(GeminiError) as caught:analyze_contract(self.contract)
             exc=caught.exception

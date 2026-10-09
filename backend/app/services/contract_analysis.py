@@ -1,4 +1,3 @@
-import sqlite3
 import time
 
 from datetime import datetime, timezone
@@ -11,7 +10,7 @@ from app.services.evidence import verify_analysis
 from app.services.gemini_analysis import generate_analysis
 from app.services.playbook import load_playbook
 from app.services.policy_matching import match_policies
-from app.services.storage import save_analysis, save_failure
+from app.services.storage import STORAGE_ERRORS, save_analysis, save_failure
 from app.services.evidence import EvidenceError
 from app.services.gemini_analysis import GeminiError
 from app.services.ollama_embeddings import EmbeddingError, EmbeddingTimeout, EmbeddingUnavailable
@@ -51,7 +50,7 @@ def _run_analysis(contract: Contract, analysis_id: str, started: float, progress
         unassessed_policy_ids=[rule.policy_id for rule in playbook.rules if rule.policy_id not in addressed],
         verification_rejections=rejections, warnings=warnings,
     )
-    progress["stage"] = "sqlite_persistence"
+    progress["stage"] = "postgresql_persistence" if settings.database_url.strip() else "sqlite_persistence"
     save_analysis(result, user_id=user_id)
     emit("analysis_result", result=result)
     return result
@@ -63,7 +62,7 @@ def analyze_contract(contract: Contract, user_id: str | None = None) -> Analysis
     progress = {"stage": "policy_retrieval", "attempts": 0}
     try:
         return _run_analysis(contract, analysis_id, started, progress, user_id=user_id)
-    except (GeminiError, EmbeddingError, EvidenceError, ValueError, OSError, sqlite3.Error) as exc:
+    except (GeminiError, EmbeddingError, EvidenceError, ValueError, *STORAGE_ERRORS) as exc:
         if isinstance(exc, GeminiError):
             status, category, message = exc.status_code, exc.category, str(exc)
             progress["stage"], progress["attempts"] = exc.stage, exc.attempts
@@ -76,7 +75,7 @@ def analyze_contract(contract: Contract, user_id: str | None = None) -> Analysis
         elif isinstance(exc, EmbeddingUnavailable):
             status, category, message = 503, "embedding_connection", "Ollama embedding service is unavailable."
         else:
-            status = 503 if isinstance(exc, (OSError, sqlite3.Error)) else 502
+            status = 503 if isinstance(exc, STORAGE_ERRORS) else 502
             category, message = "storage" if status == 503 else "policy_retrieval", "Analysis failed; no successful result was saved."
         failure = AnalysisFailure(
             analysis_id=analysis_id, contract_id=contract.contract_id, created_at=datetime.now(timezone.utc),
@@ -88,7 +87,7 @@ def analyze_contract(contract: Contract, user_id: str | None = None) -> Analysis
         try:
             save_failure(failure, user_id=user_id)
             exc.analysis_id, exc.failure_recorded = analysis_id, True
-        except (OSError, sqlite3.Error):
+        except STORAGE_ERRORS:
             exc.analysis_id, exc.failure_recorded = None, False
         emit("analysis_failure", stage=progress["stage"], category=category, analysis_id=getattr(exc, "analysis_id", None))
         raise

@@ -238,6 +238,9 @@ class ContractAPITests(unittest.TestCase):
     def setUp(self):
         self.temp = tempfile.TemporaryDirectory()
         self.addCleanup(self.temp.cleanup)
+        database_patch = patch.object(settings, "database_url", "")
+        database_patch.start()
+        self.addCleanup(database_patch.stop)
         self.storage_patch = patch.object(settings, "storage_path", Path(self.temp.name) / "test.sqlite3")
         self.storage_patch.start()
         self.addCleanup(self.storage_patch.stop)

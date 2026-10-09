@@ -1,6 +1,8 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
+import psycopg
+from fastapi.responses import JSONResponse
 
 from app.config import settings
 from app.routes.auth import router as auth_router
@@ -10,6 +12,12 @@ from app.routes.embeddings import router as embeddings_router
 from app.routes.webhooks import router as webhooks_router
 
 app = FastAPI(title=settings.app_name, version="0.1.0")
+
+
+@app.exception_handler(psycopg.Error)
+async def postgres_failure(request, exc):
+    # Cover database failures in auth/billing dependencies too; never expose DSNs or SQL values.
+    return JSONResponse(status_code=503, content={"detail": "Contract storage is unavailable. Please retry later."})
 
 # Register routes
 app.include_router(auth_router)

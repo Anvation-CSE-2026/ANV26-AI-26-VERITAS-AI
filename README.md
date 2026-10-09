@@ -10,6 +10,10 @@ Evidence-grounded contract analysis MVP: PDF extraction, local Ollama policy ret
 
 ## Cloud deployment
 
+For Vercel backend + Neon PostgreSQL, see [Vercel + Neon instructions](docs/VERCEL_DEPLOYMENT.md).
+Set backend-only `DATABASE_URL` to select PostgreSQL; leave it blank to retain local SQLite.
+Run `python scripts/verify_postgres.py` from `backend/` for an explicit synthetic database check.
+
 See [Render + Vercel deployment instructions](docs/CLOUD_DEPLOYMENT.md) for exact build/start commands,
 environment variables, persistent SQLite storage and the deployed PDF acceptance workflow.
 `EMBEDDING_PROVIDER=ollama` remains the local default; `EMBEDDING_PROVIDER=gemini` enables
@@ -24,13 +28,13 @@ Verified with Python 3.14.7, Node.js 24.19.0, npm 11.17.0 on Windows. Use Node 2
 
 ```powershell
 python -m venv backend/.venv
-.\backend\.venv\Scripts\python.exe -m pip install -r backend/requirements-lock.txt
+.\backend\.venv\Scripts\python.exe -m pip install -r backend/requirements.txt
 npm.cmd --prefix frontend ci
 Copy-Item backend/.env.example backend/.env
 Copy-Item frontend/.env.example frontend/.env
 ```
 
-Copy environment files only when they do not already exist, to preserve your settings. `requirements.txt` lists direct dependencies; `requirements-lock.txt` records the full verified Python environment. `package-lock.json` locks frontend dependencies. `npm.cmd` avoids PowerShell script execution policy errors; no activation or execution-policy change is needed.
+Copy environment files only when they do not already exist, to preserve your settings. `requirements.txt` lists current runtime dependencies, including authentication, billing and psycopg. The older `requirements-lock.txt` snapshot predates these additions; use `requirements.txt` for current installation. `package-lock.json` locks frontend dependencies. `npm.cmd` avoids PowerShell script execution policy errors; no activation or execution-policy change is needed.
 
 ## Start (two terminals, both initially at workspace root)
 
