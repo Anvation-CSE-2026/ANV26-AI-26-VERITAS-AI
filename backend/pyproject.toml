@@ -1,0 +1,21 @@
+[project]
+name = "veritas-ai-backend"
+version = "0.1.0"
+requires-python = ">=3.14,<3.15"
+dynamic = ["dependencies"]
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.dynamic]
+dependencies = {file = ["requirements.txt"]}
+
+[tool.setuptools.packages.find]
+include = ["app*"]
+
+[tool.setuptools.package-data]
+app = ["resources/*.json"]
+
+[tool.vercel]
+entrypoint = "index:app"

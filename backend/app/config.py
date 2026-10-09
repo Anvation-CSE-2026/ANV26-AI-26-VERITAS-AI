@@ -15,6 +15,9 @@ class Settings(BaseSettings):
     gemini_retry_base_seconds: float = Field(default=1.0, ge=0, le=10)
     gemini_timeout_seconds: float = Field(default=180.0, gt=0)
     storage_path: Path = Path(__file__).resolve().parents[2] / "data" / "contracts" / "veritas.sqlite3"
+    database_url: str = Field(default="", repr=False)
+    database_connect_timeout: int = Field(default=10, gt=0)
+    database_statement_timeout_ms: int = Field(default=15000, gt=0)
     max_upload_bytes: int = Field(default=10 * 1024 * 1024, gt=0)
     max_contract_pages: int = Field(default=30, gt=0)
     max_contract_chars: int = Field(default=60000, gt=0)

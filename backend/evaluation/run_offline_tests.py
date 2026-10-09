@@ -3,6 +3,8 @@ import json
 import os
 import socket
 import unittest
+from unittest.mock import patch
+from app.config import settings
 from pathlib import Path
 from .offline_guard import no_network
 
@@ -11,7 +13,7 @@ def main():
         os.environ.pop(flag,None)
     tests=Path(__file__).resolve().parents[2]/"tests"
     suite=unittest.defaultTestLoader.discover(str(tests),pattern="test_*.py")
-    with no_network():
+    with no_network(), patch.object(settings, "database_url", ""):
         result=unittest.TextTestRunner(verbosity=2).run(suite)
     summary=dict(tests_run=result.testsRun,passed=result.testsRun-len(result.errors)-len(result.failures)-len(result.skipped),
                  skipped=len(result.skipped),failures=len(result.failures),errors=len(result.errors),

@@ -1,0 +1,35 @@
+{
+  "database_configured": true,
+  "checks": {
+    "connection_string_parse": true,
+    "tables": [
+      "analyses",
+      "analysis_failures",
+      "contracts",
+      "payment_events",
+      "subscriptions",
+      "usage_records",
+      "users"
+    ],
+    "migrations_idempotent": true,
+    "pdf_column_bytea": true,
+    "user_creation_retrieval_password_and_trial": true,
+    "registration_login_authenticated_profile": true,
+    "pdf_contract_analysis_history_and_isolation": true,
+    "failure_persistence_and_isolation": true,
+    "subscriptions_payment_events_usage": true,
+    "transaction_rollback": true,
+    "synthetic_records_cleaned_up": true
+  },
+  "ai_calls": 0,
+  "payment_provider_calls": 0,
+  "url_format_checks": {
+    "postgres_uri": true,
+    "sqlalchemy_uri": false,
+    "psql_command": false,
+    "outer_quote": false,
+    "contains_newline": false
+  },
+  "status": "passed",
+  "existing_records_modified": false
+}

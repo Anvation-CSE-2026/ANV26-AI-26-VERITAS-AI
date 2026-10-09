@@ -89,7 +89,7 @@ class QuoteGroundingTests(unittest.TestCase):
         self.assertEqual(len(findings),1)
         self.assertEqual(len(rejected),1)
         self.assertEqual(rejected[0].evidence_status,'unsupported')
-        with tempfile.TemporaryDirectory() as folder, patch.object(settings,'storage_path',Path(folder)/'test.sqlite3'), patch('app.services.contract_analysis.match_policies',return_value=[]), patch('app.services.contract_analysis.generate_analysis',return_value=d) as generate:
+        with tempfile.TemporaryDirectory() as folder, patch.object(settings,'database_url',''),patch.object(settings,'storage_path',Path(folder)/'test.sqlite3'), patch('app.services.contract_analysis.match_policies',return_value=[]), patch('app.services.contract_analysis.generate_analysis',return_value=d) as generate:
             result = analyze_contract(self.contract)
             self.assertEqual(result.status,'partial')
             self.assertEqual(len(result.findings),1)
@@ -99,7 +99,7 @@ class QuoteGroundingTests(unittest.TestCase):
         d = self.draft.model_copy(deep=True)
         d.findings[0].evidence_quote = 'Unsupported finding.'
         d.obligations[0].evidence_quote = 'Unsupported obligation.'
-        with tempfile.TemporaryDirectory() as folder, patch.object(settings,'storage_path',Path(folder)/'test.sqlite3'), patch('app.services.contract_analysis.match_policies',return_value=[]), patch('app.services.contract_analysis.generate_analysis',return_value=d) as generate:
+        with tempfile.TemporaryDirectory() as folder, patch.object(settings,'database_url',''),patch.object(settings,'storage_path',Path(folder)/'test.sqlite3'), patch('app.services.contract_analysis.match_policies',return_value=[]), patch('app.services.contract_analysis.generate_analysis',return_value=d) as generate:
             save_contract(self.contract,b'%PDF-synthetic-fixture')
             with self.assertRaises(EvidenceError) as caught: analyze_contract(self.contract)
             exc = caught.exception

@@ -211,7 +211,7 @@ class EmbeddingProviderTests(unittest.TestCase):
         error = gemini_embeddings.HostedEmbeddingError("Gemini embedding service rejected the request.",
                                                       "embedding_rate_limit", 429, 429)
         with tempfile.TemporaryDirectory() as directory, \
-             patch.object(settings, "storage_path", Path(directory) / "nested" / "veritas.sqlite3"), \
+             patch.object(settings, "database_url", ""), patch.object(settings, "storage_path", Path(directory) / "nested" / "veritas.sqlite3"), \
              patch("app.services.contract_analysis.match_policies", side_effect=error), \
              patch("app.services.contract_analysis.generate_analysis") as reasoning:
             save_contract(contract, b"synthetic PDF fixture")
@@ -238,7 +238,7 @@ class EmbeddingProviderTests(unittest.TestCase):
         factory, sdk = self.client(error=errors.APIError(429, {"error": {
             "code": 429, "message": "synthetic-secret private-clause"}}))
         with tempfile.TemporaryDirectory() as directory, no_network(), \
-             patch.object(settings, "storage_path", Path(directory) / "veritas.sqlite3"), \
+             patch.object(settings, "database_url", ""), patch.object(settings, "storage_path", Path(directory) / "veritas.sqlite3"), \
              patch("app.services.gemini_embeddings.genai.Client", factory), TestClient(app) as client:
             registered = client.post("/api/auth/register", json={"email": "cloud@test.invalid", "password": "synthetic-password"})
             client.headers["Authorization"] = "Bearer " + registered.json()["access_token"]
@@ -267,7 +267,7 @@ class EmbeddingProviderTests(unittest.TestCase):
             with patch.dict(os.environ, {"STORAGE_PATH": str(path)}):
                 config = Settings(_env_file=None)
                 self.assertEqual(config.storage_path, path)
-            with patch.object(settings, "storage_path", config.storage_path):
+            with patch.object(settings, "database_url", ""), patch.object(settings, "storage_path", config.storage_path):
                 with connection() as conn:
                     tables = {row[0] for row in conn.execute("SELECT name FROM sqlite_master WHERE type='table'")}
                 self.assertTrue({"contracts", "analyses", "analysis_failures", "users"}.issubset(tables))

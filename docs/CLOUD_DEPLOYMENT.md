@@ -1,5 +1,9 @@
 # Render backend + Vercel frontend
 
+For Vercel backend + Neon, follow [the PostgreSQL deployment guide](VERCEL_DEPLOYMENT.md).
+The SQLite disk instructions below apply only when `DATABASE_URL` is absent. Render can also use
+the new backend-only PostgreSQL setting and then does not require a SQLite disk.
+
 Code and offline tests are prepared for deployment. **Deployment is not verified.** No hosted
 embedding call, deployment, or deployed PDF analysis was performed during this change.
 Do not announce success until the acceptance workflow below completes against the deployed backend.

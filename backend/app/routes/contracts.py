@@ -1,4 +1,3 @@
-import sqlite3
 from pathlib import Path
 
 from fastapi import APIRouter, Depends, File, HTTPException, UploadFile, status
@@ -20,6 +19,7 @@ from app.services.gemini_embeddings import HostedEmbeddingError
 from app.services.pdf_extraction import ContractLimitError, PDFError, extract_contract
 from app.services.security import get_current_user
 from app.services.storage import (
+    STORAGE_ERRORS,
     get_analysis,
     get_contract,
     get_failure,
@@ -53,7 +53,7 @@ def upload_contract(
         raise HTTPException(status_code=413, detail=str(exc)) from None
     except PDFError as exc:
         raise HTTPException(status_code=422, detail=str(exc)) from None
-    except (sqlite3.Error, OSError):
+    except STORAGE_ERRORS:
         raise storage_failure() from None
     finally:
         file.file.close()
@@ -119,7 +119,7 @@ def analyze(
                 "error_category": "unsupported_evidence",
             },
         ) from None
-    except (sqlite3.Error, OSError):
+    except STORAGE_ERRORS:
         raise storage_failure() from None
 
 
@@ -131,7 +131,7 @@ def read_analysis(
     """Retrieves verified analysis or failure report with strict account scoping and plan history retention limits."""
     try:
         result = get_analysis(analysis_id, user_id=current_user.id) or get_failure(analysis_id, user_id=current_user.id)
-    except (sqlite3.Error, OSError):
+    except STORAGE_ERRORS:
         raise storage_failure() from None
     if result is None:
         raise HTTPException(status_code=404, detail="Analysis not found.")
